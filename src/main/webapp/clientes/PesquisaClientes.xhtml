@@ -1,0 +1,59 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Pesquisa de clientes</ui:define>
+
+    <ui:define name="corpo">
+        <h1>Pesquisa de clientes</h1>
+
+        <h:form id="frm">
+            <p:toolbar style="margin-top: 20px">
+                <p:toolbarGroup>
+                    <p:commandButton value="Pesquisar"/>
+                </p:toolbarGroup>
+                <p:toolbarGroup align="right">
+                    <p:button value="Novo" outcome="/clientes/CadastroCliente"/>
+                </p:toolbarGroup>
+            </p:toolbar>
+
+            <p:panelGrid columns="2" style="margin-top: 20px; width: 100%" columnClasses="rotulo, campo"
+                         styleClass="ui-noborder" id="painel">
+                <p:outputLabel value="CPF/CNPJ" for="cpfCNPJ"/>
+                <p:inputText id="cpfCNPJ" size="20"/>
+
+                <p:outputLabel value="Nome" for="nome"/>
+                <p:inputText id="nome" size="60"/>
+
+            </p:panelGrid>
+
+            <p:dataTable id="pesquisa-tessoas-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"
+                         paginatorAlwaysVisible="false" emptyMessage="Nenhum cliente encontrado."
+                         value="#{pesquisaClientesBean.pessoas}" var="pessoa">
+                <p:column headerText="Nome" style="width: 140px">
+                    <h:outputText value="#{pessoa}"/>
+                </p:column>
+                <p:column headerText="Tipo" style="width: 3px">
+                    <h:outputText value="Física"/>
+                </p:column>
+
+                <p:column headerText="CPF/CNPJ" style="width: 17px">
+                    <h:outputText value="02.134.234/0001-09"/>
+                </p:column>
+
+                <p:column style="width: 3px; text-align: center">
+                    <p:button icon="ui-icon-pencil" title="Editar"/>
+                    <p:commandButton icon="ui-icon-trash" title="Excluir"/>
+                </p:column>
+
+            </p:dataTable>
+
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>
