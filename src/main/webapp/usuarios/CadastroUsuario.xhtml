@@ -1,0 +1,43 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Novo usuário</ui:define>
+    <ui:define name="corpo">
+        <h1>Novo usuário</h1>
+
+        <h:form id="frm">
+            <p:toolbar style="margin-top: 20px">
+                <p:toolbarGroup>
+                    <p:button value="Novo" outcome="/produtos/CadastroProduto"/>
+                    <p:commandButton value="Salvar" id="btnSalvar"/>
+                </p:toolbarGroup>
+                <p:toolbarGroup align="right">
+                    <p:button value="Pesquisar"/>
+                </p:toolbarGroup>
+            </p:toolbar>
+
+            <p:panelGrid id="painel" columns="2" styleClass="ui-noborder" style="margin-top: 20px">
+                <p:outputLabel value="Nome" for="nome"/>
+                <p:inputText id="nome" size="50"/>
+
+                <p:outputLabel value="E-mail" for="email"/>
+                <p:inputText id="email" size="50"/>
+
+                <p:outputLabel value="Senha" for="senha"/>
+                <p:password id="senha" feedback="true" match="confSenha" promptLabel="Informe a senha"
+                            weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" inline="true" size="10"/>
+
+                <p:outputLabel value="Confirme a senha" for="confSenha"/>
+                <p:password id="confSenha" size="10"/>
+
+            </p:panelGrid>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>
