@@ -40,6 +40,95 @@
                 <p:inputText id="email" size="50"/>
 
             </p:panelGrid>
+
+            <p:button value="Adicionar endereço" style="margin-top: 20px"
+                      onclick="PF('dialod-add-cliente').show(); return false;"/>
+
+            <p:dataTable id="enderecos-clientes-table" style="margin-top: 10px"
+                         value="#{cadastroClienteBean.cliente.enderecos}"
+                         var="endereco" rows="5"
+                         paginatorAlwaysVisible="false" paginatorPosition="bottom"
+                         emptyMessage="Não há endereços relacionados" paginator="true">
+
+                <p:column headerText="Logradouro" style="width: 574px">
+                    <h:outputText value="#{endereco.logradouro}"/>
+                </p:column>
+
+                <p:column headerText="Número" style="width: 47px">
+                    <h:outputText value="#{endereco.numero}"/>
+                </p:column>
+
+                <p:column headerText="Complemento" style="width: 107px">
+                    <h:outputText value="#{endereco.complemento}"/>
+                </p:column>
+
+                <p:column headerText="CEP" style="width: 66px">
+                    <h:outputText value="#{endereco.cep}" readonly="true"/>
+                </p:column>
+
+                <p:column headerText="Cidade/UF">
+                    <h:outputText value="#{endereco.cidade}/#{endereco.uf}"/>
+                </p:column>
+
+                <p:column style="text-align: center; width: 72px">
+                    <p:button icon="ui-icon-pencil" title="Editar"/>
+                    <p:commandButton icon="ui-icon-trash" title="Excluir"
+                                     oncomplete="PF('confirm-remover-endereco-cliente').show();"/>
+                </p:column>
+
+            </p:dataTable>
+
+            <p:dialog widgetVar="dialod-add-cliente" header="Inclusão de endereço" modal="true" resizable="false"
+                      closeOnEscape="true">
+
+                <h:panelGroup layout="block" id="panel-add-cliente">
+                    <p:messages/>
+
+                    <p:panelGrid columns="2" styleClass="ui-noborder" columnClasses="rotulo, campo">
+                        <p:outputLabel value="Logradouro" for="logradoudoro"/>
+                        <p:inputText id="logradoudoro" value="#{cadastroClienteBean.endereco.logradouro}"
+                                     required="true" size="80" requiredMessage="Informe o logradouro"/>
+
+                        <p:outputLabel value="Número" for="numero"/>
+                        <p:inputText id="numero" value="#{cadastroClienteBean.endereco.numero}" required="true"
+                                     requiredMessage="Informe o número"/>
+
+                        <p:outputLabel value="Complemento" for="complemento"/>
+                        <p:inputText id="complemento" value="#{cadastroClienteBean.endereco.complemento}"
+                                     required="true" requiredMessage="Informe o complemento"/>
+
+                        <p:outputLabel value="CEP" for="cep"/>
+                        <p:inputText id="cep" value="#{cadastroClienteBean.endereco.cep}"/>
+
+                        <p:outputLabel value="Cidade" for="cidade"/>
+
+                        <p:panelGrid columns="3" style="margin-left: -9px">
+                            <p:inputText id="cidade" value="#{cadastroClienteBean.endereco.cidade}"/>
+
+                            <p:outputLabel value="UF" for="uf"/>
+                            <p:inputText id="uf" value="#{cadastroClienteBean.endereco.uf}" size="5"/>
+                        </p:panelGrid>
+
+                        <p:spacer/>
+                        <p:commandButton value="Incluir endereco" process="panel-add-cliente"
+                                         action="#{cadastroClienteBean.incluirEndereco}"
+                                         update="panel-add-cliente enderecos-clientes-table"
+                                         oncomplete="if (!args.validationFailed) PF('dialod-add-cliente').hide()"/>
+                    </p:panelGrid>
+                </h:panelGroup>
+
+            </p:dialog>
+
+            <p:confirmDialog widgetVar="confirm-remover-endereco-cliente" header="Exclusão de enredeço"
+                             message="Deseja realmente remover o endereço selecionado?">
+
+                <p:commandButton value="Sim"
+                                 oncomplete="if (!args.validationFailed) {PF('confirm-remover-endereco-cliente').hide();}"/>
+
+                <p:button value="Não" onclick="PF('confirm-remover-endereco-cliente').hide(); return false;"/>
+
+            </p:confirmDialog>
+
         </h:form>
 
     </ui:define>

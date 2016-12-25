@@ -31,26 +31,35 @@
             </p:panelGrid>
 
             <p:dataTable id="pesquisa-tessoas-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"
-                         paginatorAlwaysVisible="false" emptyMessage="Nenhum cliente encontrado."
-                         value="#{pesquisaClientesBean.pessoas}" var="pessoa">
+                         paginatorAlwaysVisible="false" emptyMessage="Nenhum cliente encontrado." paginator="true"
+                         value="#{pesquisaClientesBean.clientes}" var="pessoa">
                 <p:column headerText="Nome" style="width: 140px">
-                    <h:outputText value="#{pessoa}"/>
+                    <h:outputText value="#{pessoa.nome}"/>
                 </p:column>
                 <p:column headerText="Tipo" style="width: 3px">
-                    <h:outputText value="Física"/>
+                    <h:outputText value="#{pessoa.tipo.name()}"/>
                 </p:column>
 
                 <p:column headerText="CPF/CNPJ" style="width: 17px">
-                    <h:outputText value="02.134.234/0001-09"/>
+                    <h:outputText value="#{pessoa.cnpj} #{pessoa.cpf}"/>
                 </p:column>
 
                 <p:column style="width: 3px; text-align: center">
                     <p:button icon="ui-icon-pencil" title="Editar"/>
-                    <p:commandButton icon="ui-icon-trash" title="Excluir"/>
+                    <p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirm-remover-cliente').show();"/>
                 </p:column>
 
             </p:dataTable>
 
+            <p:confirmDialog widgetVar="confirm-remover-cliente" header="Exclusão de cliente"
+                             message="Deseja realmente remover o cliente?">
+
+                <p:commandButton value="Sim"
+                                 oncomplete="if (!args.validationFailed) {PF('confirm-remover-cliente').hide();}"/>
+
+                <p:button value="Não" onclick="PF('confirm-remover-cliente').hide(); return false;"/>
+
+            </p:confirmDialog>
 
         </h:form>
 

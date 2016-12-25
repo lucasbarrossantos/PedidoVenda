@@ -16,11 +16,12 @@
                     <p:commandButton value="Salvar" id="btnSalvar"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
-                    <p:button value="Pesquisar"/>
+                    <p:button value="Pesquisar" outcome="/usuarios/PesquisaUsuarios"/>
                 </p:toolbarGroup>
             </p:toolbar>
 
-            <p:panelGrid id="painel" columns="2" styleClass="ui-noborder" style="margin-top: 20px">
+            <p:panelGrid id="painel" columns="2" styleClass="ui-noborder" columnClasses="rotulo, campo"
+                         style="margin-top: 20px">
                 <p:outputLabel value="Nome" for="nome"/>
                 <p:inputText id="nome" size="50"/>
 
@@ -32,9 +33,41 @@
                             weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" inline="true" size="10"/>
 
                 <p:outputLabel value="Confirme a senha" for="confSenha"/>
-                <p:password id="confSenha" size="10"/>
+                <p:password id="confSenha" size="10" feedback="true" promptLabel="Confirme a senha" inline="true"/>
 
+                <p:selectOneMenu>
+                    <f:selectItem itemLabel="Selecione"/>
+                    <f:selectItem itemLabel="Administrador"/>
+                </p:selectOneMenu>
+
+                <p:commandButton value="Adicionar grupo"/>
             </p:panelGrid>
+
+            <p:dataTable id="produtosTable" value="#{cadastroUsuariosBean.grupos}" var="grupo"
+                         style="margin-top: 20px"
+                         emptyMessage="Nenhum grupo adicionado."
+                         rows="10" paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
+
+                <p:column headerText="Grupo" style="width: 1150px">
+                    <h:outputText value="#{grupo}"/>
+                </p:column>
+
+                <p:column style="text-align: center; width: 37px">
+                    <p:commandButton icon="ui-icon-trash" title="Excluir"
+                                     oncomplete="PF('confirm-remover-grupo-usuario').show();"/>
+                </p:column>
+
+            </p:dataTable>
+
+            <p:confirmDialog widgetVar="confirm-remover-grupo-usuario" header="Exclusão de grupo do usuário"
+                             message="Deseja realmente remover este grupo do usuário?">
+
+                <p:commandButton value="Sim" action="#{cadastroUsuariosBean.excluirGrupoDoUsuario}"
+                                 oncomplete="if (!args.validationFailed) {PF('confirm-remover-grupo-usuario').hide();}"/>
+
+                <p:button value="Não" onclick="PF('confirm-remover-grupo-usuario').hide(); return false;"/>
+
+            </p:confirmDialog>
 
         </h:form>
 

@@ -1,5 +1,8 @@
 package controller;
 
+import modelo.Cliente;
+import modelo.TipoPessoa;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
@@ -10,21 +13,45 @@ import java.util.List;
 @SessionScoped
 public class PesquisaClientesBean {
 
-    private List<Integer> produtosFiltrados;
-    private String[] nomes = {"Supermercado João das Couves Ltda", "Maria Conceição da Abadia", "Supermercado Preço Bom Ltda"};
-
-    private List<String> pessoas = new ArrayList<>();
+    private Cliente cliente;
+    private List<Cliente> clientes = new ArrayList<>();
 
     public PesquisaClientesBean() {
-        produtosFiltrados = new ArrayList<>();
-        pessoas.addAll(Arrays.asList(nomes).subList(0, 3));
+        cliente = new Cliente();
+        cliente.setId(1);
+        cliente.setNome("Supermercado João das Couves Ltda");
+        cliente.setCnpj("02.493.738/0001-83");
+        cliente.setTipo(TipoPessoa.JURIDICA);
+        clientes.add(cliente);
+
+        Cliente cliente1 = new Cliente();
+        cliente1.setId(2);
+        cliente1.setNome("Maria Conceião da Abadia");
+        cliente1.setCnpj("045.938.553-99");
+        cliente1.setTipo(TipoPessoa.FISICA);
+        clientes.add(cliente1);
+
+        Cliente cliente3 = new Cliente();
+        cliente3.setId(3);
+        cliente3.setNome("Supermercado Preço Bom Ltda");
+        cliente3.setCnpj("08.111.344/0001-12");
+        cliente3.setTipo(TipoPessoa.JURIDICA);
+        clientes.add(cliente3);
     }
 
-    public List<Integer> getProdutosFiltrados() {
-        return produtosFiltrados;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public List<String> getPessoas() {
-        return pessoas;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
     }
 }

@@ -1,0 +1,64 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Pesquisa de usuários</ui:define>
+
+    <ui:define name="corpo">
+        <h1>Pesquisa de usuários</h1>
+
+        <h:form id="frm">
+            <p:toolbar style="margin-top: 20px">
+                <p:toolbarGroup>
+                    <p:commandButton value="Pesquisar"/>
+                </p:toolbarGroup>
+                <p:toolbarGroup align="right">
+                    <p:button value="Novo" outcome="/usuarios/CadastroUsuario"/>
+                </p:toolbarGroup>
+            </p:toolbar>
+
+            <p:panelGrid columns="2" style="margin-top: 20px; width: 100%" columnClasses="rotulo, campo"
+                         styleClass="ui-noborder" id="painel">
+
+                <p:outputLabel value="Nome" for="nome"/>
+                <p:inputText id="nome" size="70"/>
+
+            </p:panelGrid>
+
+            <p:dataTable id="pesquisa-tessoas-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"
+                         paginatorAlwaysVisible="false" emptyMessage="Nenhum cliente encontrado."
+                         value="#{pesquisaUsuariosBean.usuarios}" var="usuario">
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{usuario.nome}"/>
+                </p:column>
+                <p:column headerText="E-mail">
+                    <h:outputText value="#{usuario.email}"/>
+                </p:column>
+
+                <p:column style="text-align: center; width: 66px">
+                    <p:button icon="ui-icon-pencil" title="Editar"/>
+                    <p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirm-remover-usuario').show();"/>
+                </p:column>
+
+            </p:dataTable>
+
+
+            <p:confirmDialog widgetVar="confirm-remover-usuario" header="Exclusão de usuário"
+                             message="Deseja realmente remover o usuário?">
+
+                <p:commandButton value="Sim"
+                                 oncomplete="if (!args.validationFailed) {PF('confirm-remover-usuario').hide();}"/>
+
+                <p:button value="Não" onclick="PF('confirm-remover-usuario').hide(); return false;"/>
+
+            </p:confirmDialog>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

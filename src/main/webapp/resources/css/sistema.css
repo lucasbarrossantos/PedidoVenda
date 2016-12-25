@@ -77,7 +77,7 @@ footer {
     margin-right: 8px;
 }
 
-.produto-tabela input{
+.produto-tabela input {
     width: 429%;
 }
 
@@ -99,3 +99,20 @@ footer {
 }
 
 /* Customiza TabView - fim */
+
+/* Menu sistema inicio */
+.menu-sistema {
+    border: 0px !important;
+    padding: 0px !important;
+    background: none !important;
+}
+
+.menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
+    color: #ffffff !important;
+}
+
+.menu-sistema .ui-icon-triangle-1-s {
+    background: url(#{resource[ 'images:seta-para-baixo.png' ]}) no-repeat !important;
+}
+
+/* Menu sistema fim */

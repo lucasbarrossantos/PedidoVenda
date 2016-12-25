@@ -54,10 +54,16 @@
 
                 <p:column style="width: 70px; text-align: center">
                     <p:button icon="ui-icon-pencil" title="Editar"/>
-                    <p:commandButton icon="ui-icon-trash" title="Excluir"/>
+                    <p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirmExclusaoProduto').show()"/>
                 </p:column>
 
             </p:dataTable>
+
+            <p:confirmDialog widgetVar="confirmExclusaoProduto" header="Exclusão de produto"
+                             message="Deseja realmente excluir o produto?">
+                <p:commandButton value="Sim" oncomplete="PF('confirmExclusaoProduto').hide();"/>
+                <p:button value="Não" onclick="PF('confirmExclusaoProduto').hide(); return false;"/>
+            </p:confirmDialog>
 
         </h:form>
 
