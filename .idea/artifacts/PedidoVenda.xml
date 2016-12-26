@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="PedidoVenda">
+    <output-path>$PROJECT_DIR$/classes/artifacts/PedidoVenda</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="PedidoVenda" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.jboss.weld.servlet:weld-servlet:1.1.10.Final" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.faces:2.1.22" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:3.5" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="PedidoVenda/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -9,7 +9,9 @@
     <ui:define name="corpo">
         <h1>Bem-vindo!</h1>
         <h:form id="frm">
+            <p:commandButton value="Nome" action="#{meuBeans.CDI}" update="nomeDoCliente"/>
 
+            <p:outputLabel value="#{meuBeans.cliente.nome}" id="nomeDoCliente"/>
         </h:form>
 
     </ui:define>
