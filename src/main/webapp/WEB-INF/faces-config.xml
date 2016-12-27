@@ -12,4 +12,10 @@
         </locale-config>
     </application>
 
+    <factory>
+        <exception-handler-factory>
+            util.jsf.JsfExceptionHandlerFactory
+        </exception-handler-factory>
+    </factory>
+
 </faces-config>

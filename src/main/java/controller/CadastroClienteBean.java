@@ -3,21 +3,35 @@ package controller;
 import modelo.Cliente;
 import modelo.Endereco;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean
-@SessionScoped
-public class CadastroClienteBean {
+@Named
+@ViewScoped
+public class CadastroClienteBean implements Serializable {
 
-    private Cliente cliente = new Cliente();
+    private static final long serialVersionUID = 1L;
+
+    @Inject
+    private Cliente cliente;
+
+    @Inject
+    private Endereco endereco;
+
     private List<Cliente> clientes = new ArrayList<>();
-    private Endereco endereco = new Endereco();
     private List<Endereco> enderecos = new ArrayList<>();
 
     public CadastroClienteBean() {
+
+    }
+
+    @PostConstruct
+    public void init(){
         endereco.setId(1);
         endereco.setCep("56328900");
         endereco.setCidade("Petrolina");
