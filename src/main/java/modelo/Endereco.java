@@ -1,22 +1,29 @@
 package modelo;
 
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "endereco")
 public class Endereco extends EntidadeBase {
 
+    @Column(nullable = false)
     private String logradouro;
+    @Column(nullable = false, length = 20)
     private String numero;
+    @Column(length = 150)
     private String complemento;
+    @Column(nullable = false, length = 60)
     private String cidade;
+    @Column(nullable = false, length = 60)
     private String uf;
+    @Column(nullable = false, length = 9)
     private String cep;
+    @Column(nullable = false, length = 60)
+    private String bairro;
 
     @ManyToOne
-    @JoinColumn(name = "clienteId")
+    @JoinColumn(name = "clienteId", nullable = false)
     private Cliente cliente;
 
     public String getLogradouro() {
@@ -73,5 +80,13 @@ public class Endereco extends EntidadeBase {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 }

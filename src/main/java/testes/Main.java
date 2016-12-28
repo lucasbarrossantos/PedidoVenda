@@ -28,14 +28,29 @@ public class Main {
         Endereco endereco = new Endereco();
         endereco.setComplemento("Casa");
         endereco.setCep("56328-120");
+        endereco.setBairro("Vila Eduardo");
         endereco.setLogradouro("Rua Dantas Barreto");
         endereco.setCidade("Petrolina");
         endereco.setUf("PE");
         endereco.setNumero("11");
         endereco.setCliente(cliente);
-        cliente.getEnderecos().add(endereco);
 
-        manager.persist(cliente);
+        Endereco endereco1 = new Endereco();
+        endereco1.setComplemento("Casa");
+        endereco1.setCep("56328-120");
+        endereco1.setLogradouro("Rua Pedrinhas");
+        endereco1.setCidade("Petrolina");
+        endereco1.setUf("PE");
+        endereco1.setBairro("Areia Branca");
+        endereco1.setNumero("26");
+        endereco1.setCliente(cliente);
+
+        cliente.setEnderecos(Arrays.asList(endereco, endereco1));
+
+        if (!cliente.isPersisted())
+            manager.persist(cliente);
+        else
+            manager.merge(cliente);
 
         trx.commit();
 
