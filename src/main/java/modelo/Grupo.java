@@ -1,10 +1,15 @@
 package modelo;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "grupo")
 public class Grupo extends EntidadeBase{
+
+    @Column(nullable = false, length = 90)
     private String nome;
+    @Column(nullable = false)
     private String descricao;
-    private Usuario usuario;
 
     public String getNome() {
         return nome;
@@ -20,13 +25,5 @@ public class Grupo extends EntidadeBase{
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 }

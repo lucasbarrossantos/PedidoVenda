@@ -1,9 +1,7 @@
 package testes;
 
 
-import modelo.Cliente;
-import modelo.Endereco;
-import modelo.TipoPessoa;
+import modelo.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,38 +17,22 @@ public class Main {
         EntityTransaction trx = manager.getTransaction();
         trx.begin();
 
-        Cliente cliente = new Cliente();
-        cliente.setNome("Lucas Barros");
-        cliente.setDocumentoReceitaFederal("123.123.123-12");
-        cliente.setEmail("lucas@lucas.barros");
-        cliente.setTipo(TipoPessoa.FISICA);
+        Usuario usuario = new Usuario();
+        usuario.setNome("Maria");
+        usuario.setEmail("maria@abadia.com");
+        usuario.setSenha("123");
 
-        Endereco endereco = new Endereco();
-        endereco.setComplemento("Casa");
-        endereco.setCep("56328-120");
-        endereco.setBairro("Vila Eduardo");
-        endereco.setLogradouro("Rua Dantas Barreto");
-        endereco.setCidade("Petrolina");
-        endereco.setUf("PE");
-        endereco.setNumero("11");
-        endereco.setCliente(cliente);
+        Grupo grupo = new Grupo();
+        grupo.setNome("Vendedores");
+        grupo.setDescricao("Vendedores da empresa");
 
-        Endereco endereco1 = new Endereco();
-        endereco1.setComplemento("Casa");
-        endereco1.setCep("56328-120");
-        endereco1.setLogradouro("Rua Pedrinhas");
-        endereco1.setCidade("Petrolina");
-        endereco1.setUf("PE");
-        endereco1.setBairro("Areia Branca");
-        endereco1.setNumero("26");
-        endereco1.setCliente(cliente);
+        Grupo grupo1 = new Grupo();
+        grupo1.setNome("Auxiliares");
+        grupo1.setDescricao("Auxiliares de vendas");
 
-        cliente.setEnderecos(Arrays.asList(endereco, endereco1));
+        usuario.setGrupos(Arrays.asList(grupo, grupo1));
 
-        if (!cliente.isPersisted())
-            manager.persist(cliente);
-        else
-            manager.merge(cliente);
+        manager.persist(usuario);
 
         trx.commit();
 

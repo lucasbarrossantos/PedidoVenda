@@ -1,13 +1,31 @@
 package modelo;
 
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "usuario")
 public class Usuario extends EntidadeBase{
+
+    @Column(nullable = false, length = 60)
     private String nome;
+    @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false, length = 20)
     private String senha;
+
+    /**
+     * @JoinTable
+     * name = nome da tabela
+     * joinColumns = chave estrangeira da tabela origem
+     * inverseJoinColumns = chave estrangeira da tabela destino
+     */
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "grupo_id"))
     private List<Grupo> grupos = new ArrayList<>();
 
     public String getNome() {
