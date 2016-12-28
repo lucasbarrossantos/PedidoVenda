@@ -1,5 +1,7 @@
 package util.jsf;
 
+import service.NegocioException;
+
 import javax.faces.FacesException;
 import javax.faces.application.ViewExpiredException;
 import javax.faces.context.ExceptionHandler;
@@ -35,12 +37,24 @@ public class JsfExceptionHandler extends ExceptionHandlerWrapper {
 
             Throwable exception = context.getException();
 
+            boolean handled = false;
+            NegocioException negocioException = getNegocioException(exception);
+
             try {
                 if (exception instanceof ViewExpiredException) {
+                    handled = true;
                     redirect("/index.xhtml");
+                } else if (negocioException != null) {
+                    handled = true;
+                    FacesUtil.addErrorMessage(negocioException.getMessage());
+                } else {
+                    handled = true;
+                    redirect("/Erro.xhtml");
                 }
             } finally {
-                events.remove();
+                if (handled) {
+                    events.remove();
+                }
             }
         }
 
@@ -49,6 +63,15 @@ public class JsfExceptionHandler extends ExceptionHandlerWrapper {
          */
         getWrapped().handle();
 
+    }
+
+    private NegocioException getNegocioException(Throwable exception) {
+        if (exception instanceof NegocioException) {
+            return (NegocioException) exception;
+        } else if (exception.getCause() != null) {
+            return getNegocioException(exception.getCause());
+        }
+        return null;
     }
 
     private void redirect(String page) {
