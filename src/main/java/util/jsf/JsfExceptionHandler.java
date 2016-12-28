@@ -1,5 +1,4 @@
 package util.jsf;
-
 import service.NegocioException;
 
 import javax.faces.FacesException;
@@ -14,7 +13,6 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class JsfExceptionHandler extends ExceptionHandlerWrapper {
-
 
     private ExceptionHandler wrapped;
 

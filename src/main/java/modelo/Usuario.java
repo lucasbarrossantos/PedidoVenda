@@ -1,20 +1,14 @@
 package modelo;
 
-/**
- * Created by lucasbarros on 23/12/16.
- */
-public class Usuario {
-    private Integer id;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Usuario extends EntidadeBase{
     private String nome;
     private String email;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String senha;
+    private List<Grupo> grupos = new ArrayList<>();
 
     public String getNome() {
         return nome;
@@ -32,28 +26,19 @@ public class Usuario {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getSenha() {
+        return senha;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Usuario)) return false;
-
-        Usuario usuario = (Usuario) o;
-
-        return getId() != null ? getId().equals(usuario.getId()) : usuario.getId() == null;
-
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    @Override
-    public int hashCode() {
-        return getId() != null ? getId().hashCode() : 0;
+    public List<Grupo> getGrupos() {
+        return grupos;
+    }
+
+    public void setGrupos(List<Grupo> grupos) {
+        this.grupos = grupos;
     }
 }

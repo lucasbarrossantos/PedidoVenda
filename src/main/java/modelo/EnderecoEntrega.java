@@ -1,9 +1,11 @@
 package modelo;
 
 
-import javax.persistence.Entity;
+import java.io.Serializable;
 
-public class Endereco extends EntidadeBase {
+public class EnderecoEntrega implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     private String logradouro;
     private String numero;
@@ -11,7 +13,6 @@ public class Endereco extends EntidadeBase {
     private String cidade;
     private String uf;
     private String cep;
-    private Cliente cliente;
 
     public String getLogradouro() {
         return logradouro;
@@ -59,13 +60,5 @@ public class Endereco extends EntidadeBase {
 
     public void setCep(String cep) {
         this.cep = cep;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 }
