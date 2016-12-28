@@ -10,11 +10,10 @@ import java.io.Serializable;
 abstract class EntidadeBase implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    private Long id;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     public Long getId() {
         return id;
     }

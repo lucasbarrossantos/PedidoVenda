@@ -34,7 +34,6 @@ public class TesteCDI implements Serializable {
     public void adicionar() {
         clientes.add(cliente);
         System.out.println("Nome: " + cliente.getNome());
-        System.out.println("CPF: " + cliente.getCpf());
     }
 
     @PostConstruct

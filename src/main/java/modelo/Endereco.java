@@ -2,7 +2,10 @@ package modelo;
 
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
 public class Endereco extends EntidadeBase {
 
     private String logradouro;
@@ -11,6 +14,9 @@ public class Endereco extends EntidadeBase {
     private String cidade;
     private String uf;
     private String cep;
+
+    @ManyToOne
+    @JoinColumn(name = "clienteId")
     private Cliente cliente;
 
     public String getLogradouro() {
