@@ -39,13 +39,15 @@ public class TesteProduto {
         Produto produto = new Produto();
         produto.setCategoria(categoriaFilha);
         produto.setNome("Guaraná 2L");
-        produto.setQuantidadeEstoque(10);
+        produto.setQuantidadeEstoque(-1);
         produto.setSku("GUA00123");
         produto.setValorUnitario(new BigDecimal(2.21));
 
         manager.persist(produto);
 
         trx.commit();
+        manager.clear();
+        factory.close();
 
     }
 

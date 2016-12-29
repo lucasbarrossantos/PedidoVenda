@@ -29,17 +29,18 @@ abstract class EntidadeBase implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof EntidadeBase)) return false;
+
+        //add por causa multselect
+        if (o == null || id == null || getClass() != o.getClass()) return false;
 
         EntidadeBase that = (EntidadeBase) o;
 
-        return getId().equals(that.getId());
-
+        return id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return getId().hashCode();
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override

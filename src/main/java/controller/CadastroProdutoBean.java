@@ -1,15 +1,30 @@
 package controller;
 
-import javax.enterprise.context.RequestScoped;
+import modelo.Produto;
+
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named
-@RequestScoped
-public class CadastroProdutoBean {
+@ViewScoped
+public class CadastroProdutoBean implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @Inject
+    private Produto produto;
 
     public void salvar(){
-        throw new RuntimeException("Teste de exceção");
+        System.out.println("Sanvando produto: " + produto.toString());
     }
 
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
 }

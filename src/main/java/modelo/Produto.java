@@ -2,6 +2,9 @@ package modelo;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
@@ -14,6 +17,7 @@ public class Produto extends EntidadeBase{
     private String sku;
     @Column(precision = 10, scale = 2, name = "valor_unitario")
     private BigDecimal valorUnitario;
+    @NotNull @Min(1) @Max(9999)
     @Column(precision = 10, scale = 2, name = "quantidade_estoque", length = 5, nullable = false)
     private Integer quantidadeEstoque;
     @ManyToOne
@@ -58,5 +62,16 @@ public class Produto extends EntidadeBase{
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", sku='" + sku + '\'' +
+                ", valorUnitario=" + valorUnitario +
+                ", quantidadeEstoque=" + quantidadeEstoque +
+                ", categoria=" + categoria +
+                '}';
     }
 }
