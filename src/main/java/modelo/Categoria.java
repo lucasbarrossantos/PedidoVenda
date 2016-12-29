@@ -12,6 +12,7 @@ public class Categoria extends EntidadeBase {
     private String descricao;
 
     @ManyToOne
+    @JoinColumn(name = "categoria_pai_id")
     private Categoria categoriaPai;
 
     @OneToMany(mappedBy = "categoriaPai", cascade = CascadeType.ALL)

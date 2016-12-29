@@ -1,23 +1,44 @@
 package modelo;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name = "pedido")
 public class Pedido extends EntidadeBase {
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_criacao", nullable = false)
     private Date dataCriacao;
+    @Column(columnDefinition = "text")
     private String observacao;
+    @Column(name = "data_entrega", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date dataEntrega;
+    @Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorFrete;
+    @Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorDesconto;
+    @Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorTotal;
+    @Column(nullable = false, length = 20)
+    @Enumerated(EnumType.STRING)
     private StatusPedido status;
+    @Column(nullable = false, length = 20, name = "forma_pagamento")
+    @Enumerated(EnumType.STRING)
     private FormaPagamento formaPagamento;
+    @ManyToOne
+    @JoinColumn(name = "vendedor_id", nullable = false)
     private Usuario vendedor;
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
+    @Embedded
     private EnderecoEntrega enderecoEntrega;
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemPedido> itens = new ArrayList<>();
 
     public Date getDataCriacao() {
