@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Main {
@@ -17,22 +18,28 @@ public class Main {
         EntityTransaction trx = manager.getTransaction();
         trx.begin();
 
-        Usuario usuario = new Usuario();
-        usuario.setNome("Maria");
-        usuario.setEmail("maria@abadia.com");
-        usuario.setSenha("123");
+        Categoria categoriaPai = new Categoria();
+        categoriaPai.setDescricao("Computadores");
 
-        Grupo grupo = new Grupo();
-        grupo.setNome("Vendedores");
-        grupo.setDescricao("Vendedores da empresa");
+        Categoria categoriaMesa = new Categoria();
+        categoriaMesa.setDescricao("Desktop");
+        categoriaMesa.setCategoriaPai(categoriaPai);
 
-        Grupo grupo1 = new Grupo();
-        grupo1.setNome("Auxiliares");
-        grupo1.setDescricao("Auxiliares de vendas");
+        Categoria categoriaPessoal = new Categoria();
+        categoriaPessoal.setDescricao("Pessoal");
+        categoriaPessoal.setCategoriaPai(categoriaPai);
 
-        usuario.setGrupos(Arrays.asList(grupo, grupo1));
+        categoriaPai.setSubcategorias(Arrays.asList(categoriaMesa,categoriaPessoal));
 
-        manager.persist(usuario);
+        Produto produto = new Produto();
+        produto.setSku("CME00123");
+        produto.setNome("Computador All in One Samsung E3");
+        produto.setCategoria(categoriaMesa);
+        produto.setQuantidadeEstoque(10);
+        produto.setValorUnitario(new BigDecimal(1804.05));
+
+        manager.persist(categoriaPai);
+        manager.persist(produto);
 
         trx.commit();
 

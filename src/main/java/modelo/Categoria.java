@@ -1,12 +1,20 @@
 package modelo;
 
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Categoria extends EntidadeBase{
+@Entity
+@Table(name = "categoria")
+public class Categoria extends EntidadeBase {
+    @Column(nullable = false, length = 100)
     private String descricao;
+
+    @ManyToOne
     private Categoria categoriaPai;
+
+    @OneToMany(mappedBy = "categoriaPai", cascade = CascadeType.ALL)
     private List<Categoria> subcategorias = new ArrayList<>();
 
     public String getDescricao() {

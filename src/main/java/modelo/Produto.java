@@ -1,13 +1,25 @@
 package modelo;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "produto")
 public class Produto extends EntidadeBase{
+
+    @Column(nullable = false, length = 100)
     private String nome;
+    @Column(nullable = false, unique = true)
     private String sku;
+    @Column(precision = 10, scale = 2)
     private BigDecimal valorUnitario;
+    @Column(precision = 10, scale = 2)
     private Integer quantidadeEstoque;
+    @ManyToOne
     private Categoria categoria;
 
     public String getNome() {
