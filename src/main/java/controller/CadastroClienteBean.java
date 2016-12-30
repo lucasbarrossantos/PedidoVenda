@@ -2,7 +2,6 @@ package controller;
 
 import modelo.Cliente;
 import modelo.Endereco;
-
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
