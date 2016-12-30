@@ -1,7 +1,12 @@
 package modelo;
 
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,10 +14,17 @@ import java.util.List;
 @Table(name = "usuario")
 public class Usuario extends EntidadeBase{
 
+    @NotBlank
+    @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String nome;
+
+    @NotBlank
+    @Email
     @Column(nullable = false, unique = true)
     private String email;
+
+    @NotBlank @Size(max = 20)
     @Column(nullable = false, length = 20)
     private String senha;
 
@@ -23,6 +35,7 @@ public class Usuario extends EntidadeBase{
      * inverseJoinColumns = chave estrangeira da tabela destino
      */
 
+    @NotNull
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "grupo_id"))

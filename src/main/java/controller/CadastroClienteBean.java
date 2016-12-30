@@ -23,6 +23,8 @@ public class CadastroClienteBean implements Serializable {
     @Inject
     private Endereco endereco;
 
+    private Endereco enderecoSelecionado;
+
     private List<Cliente> clientes = new ArrayList<>();
     private List<Endereco> enderecos = new ArrayList<>();
 
@@ -57,7 +59,12 @@ public class CadastroClienteBean implements Serializable {
         cliente.setEnderecos(enderecos);
     }
 
+    public void excluirEnderecoSelecionado(){
+        enderecos.remove(enderecoSelecionado);
+    }
+
     public void incluirEndereco(){
+        cliente.getEnderecos().add(endereco);
         enderecos.add(endereco);
     }
 
@@ -91,5 +98,13 @@ public class CadastroClienteBean implements Serializable {
 
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
+    }
+
+    public Endereco getEnderecoSelecionado() {
+        return enderecoSelecionado;
+    }
+
+    public void setEnderecoSelecionado(Endereco enderecoSelecionado) {
+        this.enderecoSelecionado = enderecoSelecionado;
     }
 }

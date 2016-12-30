@@ -1,25 +1,40 @@
 package modelo;
 
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "produto")
-public class Produto extends EntidadeBase{
+public class Produto extends EntidadeBase {
 
     @Column(nullable = false, length = 80)
+    @NotBlank
+    @Size(max = 80)
     private String nome;
+
     @Column(nullable = false, unique = true, length = 20)
+    @NotBlank
     private String sku;
+
+    @NotNull
+    @Min(1)
     @Column(precision = 10, scale = 2, name = "valor_unitario")
     private BigDecimal valorUnitario;
-    @NotNull @Min(1) @Max(9999)
+
+    @NotNull
+    @Min(1)
+    @Max(99999)
     @Column(precision = 10, scale = 2, name = "quantidade_estoque", length = 5, nullable = false)
     private Integer quantidadeEstoque;
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;

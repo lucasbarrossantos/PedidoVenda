@@ -21,23 +21,25 @@
                 </p:toolbarGroup>
             </p:toolbar>
 
-            <p:panelGrid columns="2" style="margin-top: 20px; margin-left: -10px" columnClasses="rotulo, campo"
+            <p:panelGrid columns="2" style="margin-top: 20px; margin-left: -10px"
+                         columnClasses="rotulo, campo"
                          styleClass="ui-noborder" id="painel">
 
                 <p:outputLabel value="Nome" for="nome"/>
-                <p:inputText id="nome" size="50"/>
+                <p:inputText id="nome" size="50" value="#{cadastroClienteBean.cliente.nome}"/>
 
                 <p:outputLabel value="Tipo"/>
-                <p:selectOneRadio id="tipo" styleClass="classeParaSelectOneRadio">
+                <p:selectOneRadio id="tipo" styleClass="classeParaSelectOneRadio"
+                                  value="#{cadastroClienteBean.cliente.tipo}">
                     <f:selectItem itemLabel="Física" itemValue="F"/>
                     <f:selectItem itemLabel="Jurídica" itemValue="J"/>
                 </p:selectOneRadio>
 
                 <p:outputLabel value="CNPJ" for="cnpj"/>
-                <p:inputMask id="cnpj" mask="99.999.999/9999-99" size="15"/>
+                <p:inputMask id="cnpj" mask="99.999.999/9999-99" size="15" value="#{cadastroClienteBean.cliente.cnpj}"/>
 
                 <p:outputLabel value="Email" for="email"/>
-                <p:inputText id="email" size="50"/>
+                <p:inputText id="email" size="50" value="#{cadastroClienteBean.cliente.email}"/>
 
             </p:panelGrid>
 
@@ -73,7 +75,10 @@
                 <p:column style="text-align: center; width: 72px">
                     <p:button icon="ui-icon-pencil" title="Editar"/>
                     <p:commandButton icon="ui-icon-trash" title="Excluir"
-                                     oncomplete="PF('confirm-remover-endereco-cliente').show();"/>
+                                     oncomplete="PF('confirm-remover-endereco-cliente').show();">
+                        <f:setPropertyActionListener value="#{endereco}"
+                                                     target="#{cadastroClienteBean.enderecoSelecionado}"/>
+                    </p:commandButton>
                 </p:column>
 
             </p:dataTable>
@@ -122,7 +127,8 @@
             <p:confirmDialog widgetVar="confirm-remover-endereco-cliente" header="Exclusão de enredeço"
                              message="Deseja realmente remover o endereço selecionado?">
 
-                <p:commandButton value="Sim"
+                <p:commandButton value="Sim" action="#{cadastroClienteBean.excluirEnderecoSelecionado}"
+                                 update="enderecos-clientes-table"
                                  oncomplete="if (!args.validationFailed) {PF('confirm-remover-endereco-cliente').hide();}"/>
 
                 <p:button value="Não" onclick="PF('confirm-remover-endereco-cliente').hide(); return false;"/>

@@ -16,11 +16,11 @@
             <ui:include src="/WEB-INF/template/pedidos/BotoesPedido.xhtml"/> <!-- inclusão de um trexo de código -->
             <ui:include src="/WEB-INF/template/pedidos/CapaPedido.xhtml"/>
 
-            <p:tabView style="margin-top: 20px">
+            <p:tabView style="margin-top: 20px" dynamic="true" effect="fade">
                 <p:tab title="Itens">
                     <ui:include src="/WEB-INF/template/pedidos/ItensPedido.xhtml"/>
                 </p:tab>
-                <p:tab title="Daodos de entrega">
+                <p:tab title="Dados de entrega">
                     <ui:include src="/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml"/>
                 </p:tab>
                 <p:tab title="Observação">

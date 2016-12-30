@@ -1,6 +1,12 @@
 package modelo;
 
+import org.jboss.logging.annotations.Pos;
+
 import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,34 +16,59 @@ import java.util.List;
 @Table(name = "pedido")
 public class Pedido extends EntidadeBase {
 
+    @Past
+    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_criacao", nullable = false)
     private Date dataCriacao;
+
     @Column(columnDefinition = "text")
     private String observacao;
+
+    @NotNull
+    @Past
     @Column(name = "data_entrega", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataEntrega;
+
+    @NotNull
+    @Min(1)
     @Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorFrete;
+
+    @NotNull
+    @Min(1)
     @Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorDesconto;
+
+    @NotNull
+    @Min(1)
     @Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorTotal;
+
+    @NotNull
     @Column(nullable = false, length = 20)
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
+
+    @NotNull
     @Column(nullable = false, length = 20, name = "forma_pagamento")
     @Enumerated(EnumType.STRING)
     private FormaPagamento formaPagamento;
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "vendedor_id", nullable = false)
     private Usuario vendedor;
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
+
     @Embedded
     private EnderecoEntrega enderecoEntrega;
+
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemPedido> itens = new ArrayList<>();
 

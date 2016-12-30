@@ -47,7 +47,7 @@
 
 <h:body>
 
-    <p:ajaxStatus styleClass="ajax-status">
+    <p:ajaxStatus styleClass="ajax-status" onsuccess="setTimeout(configurarMoeda, 500)">
         <f:facet name="start">
             <p:graphicImage library="images" name="carregando.gif"/>
         </f:facet>
@@ -97,7 +97,7 @@
         JPA e PrimeFaces - <a href="http://bit.ly/Y8saFl" target="_blank">www.algaworks.com</a>
     </footer>
 
-    <script type="javascript">
+    <script type="text/javascript">
         function configurarMoeda() {
             $(".moeda").maskMoney({decimal: ",", thousands: ".", allowZero: true});
         }

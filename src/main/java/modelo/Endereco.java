@@ -1,27 +1,51 @@
 package modelo;
 
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "endereco")
 public class Endereco extends EntidadeBase {
 
-    @Column(nullable = false)
+    @NotBlank
+    @Size(max = 150)
+    @Column(nullable = false, length = 150)
     private String logradouro;
+
+    @NotBlank
+    @Size(max = 20)
     @Column(nullable = false, length = 20)
     private String numero;
+
+    @Size(max = 150)
     @Column(length = 150)
     private String complemento;
+
+    @NotBlank
+    @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String cidade;
+
+    @NotBlank
+    @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String uf;
+
+    @NotBlank
+    @Size(max = 60)
     @Column(nullable = false, length = 9)
     private String cep;
+
+    @NotBlank
+    @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String bairro;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "clienteId", nullable = false)
     private Cliente cliente;
