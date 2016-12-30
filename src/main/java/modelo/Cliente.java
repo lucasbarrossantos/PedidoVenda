@@ -2,6 +2,8 @@ package modelo;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CNPJ;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,31 +15,33 @@ import java.util.List;
 @Table(name = "cliente")
 public class Cliente extends EntidadeBase {
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 60)
     @Column(length = 60, nullable = false)
     private String nome;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Column(name = "e_mail", nullable = false)
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
+    @CPF
     @Size(max = 14)
     @Column(name = "documento_receita_federal", length = 14, nullable = false, unique = true)
     private String documentoReceitaFederal;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
+    @CNPJ
     @Size(max = 18)
     @Column(length = 18, unique = true)
     private String cnpj;
 
-    @NotNull
+    @NotBlank(message = "deve ser informado")
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     private TipoPessoa tipo;

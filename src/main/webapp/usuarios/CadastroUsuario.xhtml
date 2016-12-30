@@ -10,10 +10,13 @@
         <h1>Novo usuário</h1>
 
         <h:form id="frm">
+            <p:messages autoUpdate="true" closable="true" id="msg"/>
+
             <p:toolbar style="margin-top: 20px">
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/produtos/CadastroProduto"/>
-                    <p:commandButton value="Salvar" id="btnSalvar"/>
+                    <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroUsuariosBean.salvar}"
+                                     update="frm:msg frm:painel"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
                     <p:button value="Pesquisar" outcome="/usuarios/PesquisaUsuarios"/>
@@ -23,14 +26,15 @@
             <p:panelGrid id="painel" columns="2" styleClass="ui-noborder" columnClasses="rotulo, campo"
                          style="margin-top: 20px">
                 <p:outputLabel value="Nome" for="nome"/>
-                <p:inputText id="nome" size="50"/>
+                <p:inputText id="nome" size="50" value="#{cadastroUsuariosBean.usuario.nome}"/>
 
                 <p:outputLabel value="E-mail" for="email"/>
-                <p:inputText id="email" size="50"/>
+                <p:inputText id="email" size="50" value="#{cadastroUsuariosBean.usuario.email}"/>
 
                 <p:outputLabel value="Senha" for="senha"/>
                 <p:password id="senha" feedback="true" match="confSenha" promptLabel="Informe a senha"
-                            weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" inline="true" size="10"/>
+                            weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" inline="true" size="10"
+                            value="#{cadastroUsuariosBean.usuario.senha}"/>
 
                 <p:outputLabel value="Confirme a senha" for="confSenha"/>
                 <p:password id="confSenha" size="10" feedback="true" promptLabel="Confirme a senha" inline="true"/>
@@ -62,7 +66,7 @@
             <p:confirmDialog widgetVar="confirm-remover-grupo-usuario" header="Exclusão de grupo do usuário"
                              message="Deseja realmente remover este grupo do usuário?">
 
-                <p:commandButton value="Sim" action="#{cadastroUsuariosBean.excluirGrupoDoUsuario}"
+                <p:commandButton value="Sim" action="#{cadastroUsuariosBean.excluirGrupoDoUsuario}" process="@this"
                                  oncomplete="if (!args.validationFailed) {PF('confirm-remover-grupo-usuario').hide();}"/>
 
                 <p:button value="Não" onclick="PF('confirm-remover-grupo-usuario').hide(); return false;"/>

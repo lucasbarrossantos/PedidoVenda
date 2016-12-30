@@ -11,12 +11,12 @@ import javax.validation.constraints.Size;
 @Table(name = "endereco")
 public class Endereco extends EntidadeBase {
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 150)
     @Column(nullable = false, length = 150)
     private String logradouro;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 20)
     @Column(nullable = false, length = 20)
     private String numero;
@@ -25,27 +25,27 @@ public class Endereco extends EntidadeBase {
     @Column(length = 150)
     private String complemento;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String cidade;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String uf;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 60)
     @Column(nullable = false, length = 9)
     private String cep;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String bairro;
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @ManyToOne
     @JoinColumn(name = "clienteId", nullable = false)
     private Cliente cliente;

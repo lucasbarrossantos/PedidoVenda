@@ -15,11 +15,14 @@ public class CadastroProdutoBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Inject
     private Produto produto;
     private List<Produto> produtos = new ArrayList<>();
 
-    public void salvar(){
+    public CadastroProdutoBean() {
+        produto = new Produto();
+    }
+
+    public void salvar() {
         produtos.add(produto);
         System.out.println("Sanvando produto: " + produto.toString());
         produtos.forEach(p -> System.out.println("Produto: " + p.getNome() + "\n" + "SKU: " + p.getSku()));

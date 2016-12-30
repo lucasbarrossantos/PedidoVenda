@@ -11,10 +11,15 @@
         <h1>Novo cliente</h1>
 
         <h:form id="frm">
-            <p:toolbar style="margin-top: 20px">
+
+            <p:messages id="msg" closable="true"/>
+
+            <p:toolbar style="margin-top: 20px" id="tollbar">
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/clientes/CadastroCliente"/>
-                    <p:commandButton value="Salvar" id="btnSalvar"/>
+                    <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroClienteBean.salvar}"
+                                     update="frm:msg frm:tollbar frm:painel"
+                                     process="frm:tollbar frm:painel"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
                     <p:button value="Pesquisar" outcome="/clientes/PesquisaClientes"/>
@@ -43,8 +48,12 @@
 
             </p:panelGrid>
 
-            <p:button value="Adicionar endereço" style="margin-top: 20px"
-                      onclick="PF('dialod-add-cliente').show(); return false;"/>
+            <p:commandButton value="Adicionar endereço" style="margin-top: 20px"
+                             action="#{cadastroClienteBean.prepararEndereco}"
+                             process="@this" update="panel-add-cliente"
+                             oncomplete="PF('dialod-add-cliente').show(); return null;">
+                <p:resetInput target="panel-add-cliente"/>
+            </p:commandButton>
 
             <p:dataTable id="enderecos-clientes-table" style="margin-top: 10px"
                          value="#{cadastroClienteBean.cliente.enderecos}"
@@ -74,7 +83,7 @@
 
                 <p:column style="text-align: center; width: 72px">
                     <p:button icon="ui-icon-pencil" title="Editar"/>
-                    <p:commandButton icon="ui-icon-trash" title="Excluir"
+                    <p:commandButton icon="ui-icon-trash" title="Excluir" process="@this"
                                      oncomplete="PF('confirm-remover-endereco-cliente').show();">
                         <f:setPropertyActionListener value="#{endereco}"
                                                      target="#{cadastroClienteBean.enderecoSelecionado}"/>
@@ -87,7 +96,7 @@
                       closeOnEscape="true">
 
                 <h:panelGroup layout="block" id="panel-add-cliente">
-                    <p:messages/>
+                    <p:messages id="msgPanel" closable="true"/>
 
                     <p:panelGrid columns="2" styleClass="ui-noborder" columnClasses="rotulo, campo">
                         <p:outputLabel value="Logradouro" for="logradoudoro"/>
@@ -115,9 +124,10 @@
                         </p:panelGrid>
 
                         <p:spacer/>
-                        <p:commandButton value="Incluir endereco" process="panel-add-cliente"
+                        <p:commandButton value="Incluir endereco"
                                          action="#{cadastroClienteBean.incluirEndereco}"
-                                         update="panel-add-cliente enderecos-clientes-table"
+                                         process="@this frm:panel-add-cliente"
+                                         update="msgPanel panel-add-cliente enderecos-clientes-table"
                                          oncomplete="if (!args.validationFailed) PF('dialod-add-cliente').hide()"/>
                     </p:panelGrid>
                 </h:panelGroup>
@@ -129,6 +139,7 @@
 
                 <p:commandButton value="Sim" action="#{cadastroClienteBean.excluirEnderecoSelecionado}"
                                  update="enderecos-clientes-table"
+                                 process="@this"
                                  oncomplete="if (!args.validationFailed) {PF('confirm-remover-endereco-cliente').hide();}"/>
 
                 <p:button value="Não" onclick="PF('confirm-remover-endereco-cliente').hide(); return false;"/>

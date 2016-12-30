@@ -1,7 +1,5 @@
 package modelo;
 
-import org.jboss.logging.annotations.Pos;
-
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
@@ -17,7 +15,7 @@ import java.util.List;
 public class Pedido extends EntidadeBase {
 
     @Past
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_criacao", nullable = false)
     private Date dataCriacao;
@@ -25,23 +23,23 @@ public class Pedido extends EntidadeBase {
     @Column(columnDefinition = "text")
     private String observacao;
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Past
     @Column(name = "data_entrega", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataEntrega;
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Min(1)
     @Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorFrete;
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Min(1)
     @Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorDesconto;
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Min(1)
     @Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorTotal;

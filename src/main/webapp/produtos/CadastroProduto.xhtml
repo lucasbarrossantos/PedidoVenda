@@ -12,13 +12,13 @@
 
         <h:form id="frm">
 
-            <p:messages autoUpdate="true" closable="true"/>
+            <p:messages autoUpdate="true" closable="true" id="msg"/>
 
             <p:toolbar style="margin-top: 20px">
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/produtos/CadastroProduto"/>
                     <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroProdutoBean.salvar}"
-                                     process="@form" update="@form"/>
+                                     update="frm:msg frm:painel"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
                     <p:button value="Pesquisar" outcome="/produtos/PesquisaProdutos"/>
@@ -45,10 +45,10 @@
                 </p:selectOneMenu>
 
                 <p:outputLabel value="Valor unitário" for="valorUnitario"/>
-                <p:inputNumber id="valorUnitario" size="10" maxlength="10"
+                <p:inputText id="valorUnitario" size="10" maxlength="10"
                                value="#{cadastroProdutoBean.produto.valorUnitario}">
                     <f:convertNumber maxIntegerDigits="2" maxFractionDigits="2"/>
-                </p:inputNumber>
+                </p:inputText>
 
                 <p:outputLabel value="Estoque" for="estoque"/>
                 <p:inputText id="estoque" size="10" maxlength="5"

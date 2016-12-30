@@ -12,15 +12,15 @@ import java.math.BigDecimal;
 @Table(name = "item_pedido")
 public class ItemPedido extends EntidadeBase {
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @Min(1)
     @Max(999)
     @Column(nullable = false, length = 3)
     private Integer quantidade;
     @Column(nullable = false, precision = 10, scale = 2, name = "valor_unitario")
     private BigDecimal valorUnitario;
-    @NotBlank
-    @NotNull
+
+    @NotBlank(message = "deve ser informado")
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;

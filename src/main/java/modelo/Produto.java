@@ -15,26 +15,26 @@ import java.math.BigDecimal;
 public class Produto extends EntidadeBase {
 
     @Column(nullable = false, length = 80)
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 80)
     private String nome;
 
     @Column(nullable = false, unique = true, length = 20)
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     private String sku;
 
-    @NotNull
-    @Min(1)
+    @NotNull(message = "deve ser informado")
+    @Min(value = 1, message = "valor mínimo é 1")
     @Column(precision = 10, scale = 2, name = "valor_unitario")
     private BigDecimal valorUnitario;
 
-    @NotNull
-    @Min(1)
-    @Max(99999)
+    @NotNull(message = "deve ser informado")
+    @Min(value = 1, message = "valor mínimo é 1")
+    @Max(value = 9999, message = "tem um valor muito alto")
     @Column(precision = 10, scale = 2, name = "quantidade_estoque", length = 5, nullable = false)
     private Integer quantidadeEstoque;
 
-    @NotNull
+    @NotNull(message = "deve ser informado")
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;

@@ -3,6 +3,7 @@ package modelo;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,25 +13,25 @@ import java.util.List;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario extends EntidadeBase{
+public class Usuario extends EntidadeBase {
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Size(max = 60)
     @Column(nullable = false, length = 60)
     private String nome;
 
-    @NotBlank
+    @NotBlank(message = "deve ser informado")
     @Email
     @Column(nullable = false, unique = true)
     private String email;
 
-    @NotBlank @Size(max = 20)
+    @NotBlank(message = "deve ser informado")
+    @Size(max = 20)
     @Column(nullable = false, length = 20)
     private String senha;
 
     /**
-     * @JoinTable
-     * name = nome da tabela
+     * @JoinTable name = nome da tabela
      * joinColumns = chave estrangeira da tabela origem
      * inverseJoinColumns = chave estrangeira da tabela destino
      */
