@@ -18,28 +18,10 @@ public class Main {
         EntityTransaction trx = manager.getTransaction();
         trx.begin();
 
-        Categoria categoriaPai = new Categoria();
-        categoriaPai.setDescricao("Computadores");
+        Categoria categoria = new Categoria();
+        categoria.setDescricao("Acessórios");
 
-        Categoria categoriaMesa = new Categoria();
-        categoriaMesa.setDescricao("Desktop");
-        categoriaMesa.setCategoriaPai(categoriaPai);
-
-        Categoria categoriaPessoal = new Categoria();
-        categoriaPessoal.setDescricao("Pessoal");
-        categoriaPessoal.setCategoriaPai(categoriaPai);
-
-        categoriaPai.setSubcategorias(Arrays.asList(categoriaMesa,categoriaPessoal));
-
-        Produto produto = new Produto();
-        produto.setSku("CME00123");
-        produto.setNome("Computador All in One Samsung E3");
-        produto.setCategoria(categoriaMesa);
-        produto.setQuantidadeEstoque(10);
-        produto.setValorUnitario(new BigDecimal(1804.05));
-
-        manager.persist(categoriaPai);
-        manager.persist(produto);
+        manager.persist(categoria);
 
         trx.commit();
 

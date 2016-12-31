@@ -2,12 +2,10 @@ package modelo;
 
 
 import org.hibernate.validator.constraints.NotBlank;
+import validation.SKU;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -21,6 +19,7 @@ public class Produto extends EntidadeBase {
 
     @Column(nullable = false, unique = true, length = 20)
     @NotBlank(message = "deve ser informado")
+    @SKU
     private String sku;
 
     @NotNull(message = "deve ser informado")
