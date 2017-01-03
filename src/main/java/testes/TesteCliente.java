@@ -21,7 +21,8 @@ public class TesteCliente {
         Cliente cliente = new Cliente();
         cliente.setNome("João das Couves");
         cliente.setEmail("joao@dascouves.com");
-        cliente.setDocumentoReceitaFederal("123.123.123-12");
+        cliente.setDocumentoReceitaFederal("111.694.964-40");
+        cliente.setCnpj("03.405.355/0001-59");
         cliente.setTipo(TipoPessoa.FISICA);
 
         Endereco endereco = new Endereco();
@@ -32,13 +33,14 @@ public class TesteCliente {
         endereco.setComplemento("casa");
         endereco.setCep("38400-000");
         endereco.setBairro("Vila Eulalia");
-        endereco.setCliente(cliente);
 
+        endereco.setCliente(cliente);
         cliente.getEnderecos().add(endereco);
 
         manager.persist(cliente);
 
         trx.commit();
+
     }
 
 }

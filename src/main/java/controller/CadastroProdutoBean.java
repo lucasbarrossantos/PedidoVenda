@@ -2,13 +2,14 @@ package controller;
 
 import modelo.Categoria;
 import modelo.Produto;
+import repository.Categorias;
+import service.CadastroProdutoService;
+import util.jsf.FacesUtil;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,29 +21,43 @@ public class CadastroProdutoBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Inject
-    private EntityManager manager;
+    private Categorias categorias;
 
     @Inject
+    private CadastroProdutoService cadastroProdutoService;
+
+
     private Produto produto;
+    private Categoria categoriaPai;
+
     private List<Produto> produtos = new ArrayList<>();
     private List<Categoria> categoriasRaizes;
+    private List<Categoria> subcategorias;
 
     public CadastroProdutoBean() {
-
+        produto = new Produto();
+        limpar();
     }
 
     public void inicializar() {
-
-        categoriasRaizes = manager.createQuery("from Categoria as c where c.categoriaPai is null ", Categoria.class).
-                getResultList();
-
+        if (FacesUtil.isNotPostback())
+        categoriasRaizes = categorias.raizes();
     }
 
     public void salvar() {
-        produtos.add(produto);
-        System.out.println("Sanvando produto: " + produto.toString());
-        produtos.forEach(p -> System.out.println("Produto: " + p.getNome() + "\n" + "SKU: " + p.getSku()));
-        produtos.clear();
+        this.produto = cadastroProdutoService.salvar(this.produto);
+        limpar();
+        FacesUtil.addSussesMessage("Produto salvo com sucesso!");
+    }
+
+    private void limpar(){
+        produto = new Produto();
+        categoriaPai = null;
+        subcategorias = new ArrayList<>();
+    }
+
+    public void carregarSubcategorias(){
+        subcategorias = categorias.subcategoriasDe(categoriaPai);
     }
 
     public Produto getProduto() {
@@ -65,4 +80,16 @@ public class CadastroProdutoBean implements Serializable {
         return categoriasRaizes;
     }
 
+    @NotNull
+    public Categoria getCategoriaPai() {
+        return categoriaPai;
+    }
+
+    public void setCategoriaPai(Categoria categoriaPai) {
+        this.categoriaPai = categoriaPai;
+    }
+
+    public List<Categoria> getSubcategorias() {
+        return subcategorias;
+    }
 }

@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class Cliente extends EntidadeBase {
     @Column(length = 18, unique = true)
     private String cnpj;
 
-    @NotBlank(message = "deve ser informado")
+    @NotNull(message = "deve ser informadado")
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
 
