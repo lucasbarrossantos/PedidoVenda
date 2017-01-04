@@ -2,6 +2,7 @@ package service;
 
 import modelo.Produto;
 import repository.Produtos;
+import util.jsf.jpa.Transactional;
 
 import javax.inject.Inject;
 import java.io.Serializable;
@@ -13,10 +14,11 @@ public class CadastroProdutoService implements Serializable {
     @Inject
     private Produtos produtos;
 
+    @Transactional
     public Produto salvar(Produto produto) {
         Produto produtoExistente = produtos.porSKU(produto.getSku());
 
-        if (produtoExistente != null) {
+        if (produtoExistente != null && !produtoExistente.equals(produto)) {
             throw new NegocioException("Já existe um produto com o SKU informado.");
         }
 

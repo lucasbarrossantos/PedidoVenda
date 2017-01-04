@@ -60,7 +60,7 @@
     <orderEntry type="library" name="Maven: org.primefaces.themes:bootstrap:1.0.10" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.weld.servlet:weld-servlet:2.2.9.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss:jandex:2.0.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.omnifaces:omnifaces:1.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.omnifaces:omnifaces:2.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-jcl:2.7" level="project" />
@@ -68,5 +68,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: javax.el:javax.el-api:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.web:javax.el:2.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.1" level="project" />
   </component>
 </module>
