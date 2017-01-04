@@ -11,9 +11,13 @@
         <h1>Pesquisa de usuários</h1>
 
         <h:form id="frm">
+
+            <p:messages autoUpdate="true" closable="true"/>
+
             <p:toolbar style="margin-top: 20px">
                 <p:toolbarGroup>
-                    <p:commandButton value="Pesquisar"/>
+                    <p:commandButton value="Pesquisar" action="#{pesquisaUsuariosBean.pesquisar}"
+                                     update="pesquisa-usuarios-table"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
                     <p:button value="Novo" outcome="/usuarios/CadastroUsuario"/>
@@ -24,13 +28,13 @@
                          styleClass="ui-noborder" id="painel">
 
                 <p:outputLabel value="Nome" for="nome"/>
-                <p:inputText id="nome" size="70"/>
+                <p:inputText id="nome" size="70" value="#{pesquisaUsuariosBean.filtro.nome}"/>
 
             </p:panelGrid>
 
-            <p:dataTable id="pesquisa-tessoas-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"
+            <p:dataTable id="pesquisa-usuarios-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"
                          paginatorAlwaysVisible="false" emptyMessage="Nenhum cliente encontrado."
-                         value="#{pesquisaUsuariosBean.usuarios}" var="usuario">
+                         value="#{pesquisaUsuariosBean.usuariosFiltrados}" var="usuario">
 
                 <p:column headerText="Nome">
                     <h:outputText value="#{usuario.nome}"/>
@@ -40,17 +44,25 @@
                 </p:column>
 
                 <p:column style="text-align: center; width: 66px">
-                    <p:button icon="ui-icon-pencil" title="Editar"/>
-                    <p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirm-remover-usuario').show();"/>
+                    <p:button icon="ui-icon-pencil" title="Editar" outcome="/usuarios/CadastroUsuario">
+                        <f:param name="usuario" value="#{usuario.id}"/>
+                    </p:button>
+
+                    <p:commandButton icon="ui-icon-trash" title="Excluir" process="@this"
+                                     update=":frm:removerUsuarioDialog"
+                                     oncomplete="PF('confirm-remover-usuario').show();">
+                        <f:setPropertyActionListener value="#{usuario}"
+                                                     target="#{pesquisaUsuariosBean.usuarioSelecionado}"/>
+                    </p:commandButton>
                 </p:column>
 
             </p:dataTable>
 
 
-            <p:confirmDialog widgetVar="confirm-remover-usuario" header="Exclusão de usuário"
+            <p:confirmDialog widgetVar="confirm-remover-usuario" header="Exclusão de usuário" id="removerUsuarioDialog"
                              message="Deseja realmente remover o usuário?">
 
-                <p:commandButton value="Sim"
+                <p:commandButton value="Sim" action="#{pesquisaUsuariosBean.excluirUsuario}" update="@form"
                                  oncomplete="if (!args.validationFailed) {PF('confirm-remover-usuario').hide();}"/>
 
                 <p:button value="Não" onclick="PF('confirm-remover-usuario').hide(); return false;"/>

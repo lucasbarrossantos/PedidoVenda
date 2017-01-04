@@ -17,18 +17,13 @@ public class TesteUsuario {
         EntityTransaction trx = manager.getTransaction();
         trx.begin();
 
-        Usuario usuario = new Usuario();
-        usuario.setNome("Maria");
-        usuario.setEmail("maria@abadia.com");
-        usuario.setSenha("123");
 
         Grupo grupo = new Grupo();
-        grupo.setNome("Vendedores");
-        grupo.setDescricao("Vendedores da empresa");
+        grupo.setNome("Vendas");
+        grupo.setDescricao("Gerente e supervisor");
 
-        usuario.getGrupos().add(grupo);
 
-        manager.persist(usuario);
+        manager.persist(grupo);
 
         trx.commit();
     }
