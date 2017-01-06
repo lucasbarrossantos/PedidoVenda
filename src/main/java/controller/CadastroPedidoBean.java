@@ -1,13 +1,13 @@
 package controller;
 
-import modelo.EnderecoEntrega;
-import modelo.Pedido;
-import service.NegocioException;
+import modelo.*;
+import repository.Clientes;
+import repository.Usuarios;
+import service.CadastroPedidoService;
+import util.jsf.FacesUtil;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -20,26 +20,69 @@ public class CadastroPedidoBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Inject
-    private Pedido pedido;
+    private Usuarios usuarios;
 
-    private List<Integer> itens;
+    @Inject
+    private Clientes clientes;
+
+    @Inject
+    private CadastroPedidoService cadastroPedidoService;
+
+    private Pedido pedido;
+    private List<Usuario> vendedores;
 
     public CadastroPedidoBean() {
-        itens = new ArrayList<>();
-        itens.add(1);
+        limpar();
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
+        vendedores = usuarios.vendedores();
+    }
+
+    /**
+     * Métodos
+     */
+
+    public void salvar() {
+        this.pedido = cadastroPedidoService.salvar(pedido);
+        FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
+    }
+
+    private void limpar() {
+        pedido = new Pedido();
         pedido.setEnderecoEntrega(new EnderecoEntrega());
     }
 
-    public List<Integer> getItens() {
-        return itens;
+    public void inicializar() {
+        if (FacesUtil.isPostback()) {
+            this.vendedores = usuarios.vendedores();
+        }
     }
 
-    public void salvar() {
-        System.out.println("Está salvando");
+    public boolean isEditando() {
+        if (pedido == null)
+            pedido = new Pedido();
+
+        return this.pedido.getId() != null;
+    }
+
+    public FormaPagamento[] getFormasPagamento() {
+        return FormaPagamento.values();
+    }
+
+    public List<Cliente> completarCliente(String nomeCliente) {
+        return clientes.porNome(nomeCliente);
+    }
+
+    /**
+     * gets and sets
+     *
+     * @return
+     */
+
+    public List<Usuario> getVendedores() {
+        return vendedores;
     }
 
     public Pedido getPedido() {

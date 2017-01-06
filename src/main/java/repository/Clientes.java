@@ -51,6 +51,12 @@ public class Clientes implements Serializable {
 
     }
 
+    public List<Cliente> porNome(String nome){
+        return this.manager.createQuery("from Cliente as c where c.nome like :nome", Cliente.class)
+                .setParameter("nome", "%"+nome+"%")
+                .getResultList();
+    }
+
     public Cliente porId(Long id) {
         return manager.find(Cliente.class, id);
     }

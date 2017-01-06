@@ -12,7 +12,7 @@ header {
     margin-bottom: 20px;
     height: 30px;
 
-    background-color: #545454;
+    background: -webkit-linear-gradient(#0095da, #004869);
     color: #fff;
 
     box-shadow: 0px 2px 2px #ccc;

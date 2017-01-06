@@ -15,6 +15,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import repository.filter.PedidoFilter;
+import util.jpa.Transactional;
 
 public class Pedidos implements Serializable {
 
@@ -69,4 +70,12 @@ public class Pedidos implements Serializable {
         return criteria.addOrder(Order.asc("id")).list();
     }
 
+    public Pedido guardar(Pedido pedido) {
+        return this.manager.merge(pedido);
+    }
+
+
+    public Pedido porId(Long id) {
+        return this.manager.find(Pedido.class, id);
+    }
 }

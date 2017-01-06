@@ -1,12 +1,13 @@
 package modelo;
 
 import javax.persistence.*;
-import javax.validation.constraints.Future;
+import javax.transaction.Transactional;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,6 @@ public class Pedido extends EntidadeBase {
     private String observacao;
 
     @NotNull(message = "deve ser informado")
-    @Past
     @Column(name = "data_entrega", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataEntrega;
@@ -32,22 +32,22 @@ public class Pedido extends EntidadeBase {
     @NotNull(message = "deve ser informado")
     @Min(0)
     @Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
-    private BigDecimal valorFrete;
+    private BigDecimal valorFrete = BigDecimal.ZERO;
 
     @NotNull(message = "deve ser informado")
     @Min(0)
     @Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
-    private BigDecimal valorDesconto;
+    private BigDecimal valorDesconto = BigDecimal.ZERO;
 
     @NotNull(message = "deve ser informado")
-    @Min(1)
+    @Min(0)
     @Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
-    private BigDecimal valorTotal;
+    private BigDecimal valorTotal = BigDecimal.ZERO;
 
     @NotNull
     @Column(nullable = false, length = 20)
     @Enumerated(EnumType.STRING)
-    private StatusPedido status;
+    private StatusPedido status = StatusPedido.ORCAMENTO;
 
     @NotNull
     @Column(nullable = false, length = 20, name = "forma_pagamento")
@@ -164,5 +164,15 @@ public class Pedido extends EntidadeBase {
 
     public void setItens(List<ItemPedido> itens) {
         this.itens = itens;
+    }
+
+    @Transactional
+    public boolean isExistente(){
+        return isPersisted();
+    }
+
+    @PrePersist
+    void prePersist() {
+        setDataCriacao(new Date());
     }
 }

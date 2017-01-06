@@ -61,7 +61,6 @@ public class Usuarios implements Serializable {
     }
 
     public List<Usuario> vendedores() {
-        // TODO colocar filtro para saber quando um usuário é vendedor e quando é usuário normal
         return this.manager.createQuery("from Usuario ", Usuario.class).getResultList();
     }
 }

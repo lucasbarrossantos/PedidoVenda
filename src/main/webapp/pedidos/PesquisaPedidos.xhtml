@@ -85,7 +85,9 @@
                 </p:column>
 
                 <p:column style="width: 50px; text-align: center">
-                    <p:button icon="ui-icon-pencil" title="Editar"/>
+                    <p:button icon="ui-icon-pencil" title="Editar" outcome="/pedidos/CadastroPedido">
+                        <f:param name="pedido" value="#{pedido.id}"/>
+                    </p:button>
                 </p:column>
 
             </p:dataTable>
