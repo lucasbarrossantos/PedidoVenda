@@ -77,7 +77,6 @@ public class CadastroPedidoBean implements Serializable {
 
     /**
      * gets and sets
-     *
      * @return
      */
 
