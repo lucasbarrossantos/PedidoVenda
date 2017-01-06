@@ -8,7 +8,6 @@ import service.CadastroUsuarioService;
 import service.NegocioException;
 import util.jsf.FacesUtil;
 
-import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;

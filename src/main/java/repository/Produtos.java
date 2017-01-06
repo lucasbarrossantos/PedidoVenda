@@ -1,7 +1,7 @@
 package repository;
 
 
-import filter.ProdutoFilter;
+import repository.filter.ProdutoFilter;
 import modelo.Produto;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;
@@ -10,7 +10,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import service.NegocioException;
-import util.jsf.jpa.Transactional;
+import util.jpa.Transactional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;

@@ -1,8 +1,7 @@
 package repository;
 
 
-import filter.UsuarioFilter;
-import modelo.Grupo;
+import repository.filter.UsuarioFilter;
 import modelo.Usuario;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;
@@ -11,7 +10,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import service.NegocioException;
-import util.jsf.jpa.Transactional;
+import util.jpa.Transactional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -52,12 +51,17 @@ public class Usuarios implements Serializable {
             usuario = porId(usuario.getId());
             manager.remove(usuario);
             manager.flush();
-        }catch (PersistenceException e){
+        } catch (PersistenceException e) {
             throw new NegocioException("Usuário não pode ser excluído, pois, há grupos vinculados!");
         }
     }
 
     public Usuario porId(Long id) {
         return manager.find(Usuario.class, id);
+    }
+
+    public List<Usuario> vendedores() {
+        // TODO colocar filtro para saber quando um usuário é vendedor e quando é usuário normal
+        return this.manager.createQuery("from Usuario ", Usuario.class).getResultList();
     }
 }

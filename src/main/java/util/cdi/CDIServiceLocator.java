@@ -1,4 +1,4 @@
-package util.jsf.cdi;
+package util.cdi;
 
 import javax.enterprise.context.spi.CreationalContext;
 import javax.enterprise.inject.spi.Bean;

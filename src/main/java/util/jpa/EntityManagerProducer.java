@@ -1,4 +1,4 @@
-package util.jsf.jpa;
+package util.jpa;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;

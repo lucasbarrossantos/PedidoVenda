@@ -3,7 +3,7 @@ package converter;
 
 import modelo.Cliente;
 import repository.Clientes;
-import util.jsf.cdi.CDIServiceLocator;
+import util.cdi.CDIServiceLocator;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;

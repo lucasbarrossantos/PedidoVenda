@@ -2,7 +2,7 @@ package service;
 
 import modelo.Cliente;
 import repository.Clientes;
-import util.jsf.jpa.Transactional;
+import util.jpa.Transactional;
 
 import javax.inject.Inject;
 import java.io.Serializable;

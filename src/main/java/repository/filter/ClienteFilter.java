@@ -1,4 +1,4 @@
-package filter;
+package repository.filter;
 
 
 import java.io.Serializable;

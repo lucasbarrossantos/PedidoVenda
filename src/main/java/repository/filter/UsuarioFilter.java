@@ -1,4 +1,4 @@
-package filter;
+package repository.filter;
 
 
 import org.hibernate.validator.constraints.Email;

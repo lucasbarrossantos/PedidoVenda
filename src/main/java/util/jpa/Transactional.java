@@ -1,4 +1,4 @@
-package util.jsf.jpa;
+package util.jpa;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

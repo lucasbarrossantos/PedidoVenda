@@ -1,11 +1,9 @@
 package converter;
 
 
-import modelo.Produto;
 import modelo.Usuario;
-import repository.Produtos;
 import repository.Usuarios;
-import util.jsf.cdi.CDIServiceLocator;
+import util.cdi.CDIServiceLocator;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;

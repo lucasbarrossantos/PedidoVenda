@@ -18,8 +18,8 @@ public class TestePedido {
         EntityTransaction trx = manager.getTransaction();
         trx.begin();
 
-        Cliente cliente = manager.find(Cliente.class, 5L);
-        Produto produto = manager.find(Produto.class, 1L);
+        Cliente cliente = manager.find(Cliente.class, 10L);
+        Produto produto = manager.find(Produto.class, 2L);
         Usuario vendedor = manager.find(Usuario.class, 1L);
 
         EnderecoEntrega enderecoEntrega = new EnderecoEntrega();

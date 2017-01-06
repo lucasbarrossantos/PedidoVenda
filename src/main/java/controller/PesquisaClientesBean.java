@@ -1,6 +1,6 @@
 package controller;
 
-import filter.ClienteFilter;
+import repository.filter.ClienteFilter;
 import modelo.Cliente;
 import repository.Clientes;
 import util.jsf.FacesUtil;

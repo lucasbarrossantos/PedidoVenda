@@ -1,4 +1,4 @@
-package util.jsf.jpa;
+package util.jpa;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;

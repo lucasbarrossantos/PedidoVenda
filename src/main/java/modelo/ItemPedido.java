@@ -20,7 +20,7 @@ public class ItemPedido extends EntidadeBase {
     @Column(nullable = false, precision = 10, scale = 2, name = "valor_unitario")
     private BigDecimal valorUnitario;
 
-    @NotBlank(message = "deve ser informado")
+    @NotNull(message = "deve ser informado")
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;

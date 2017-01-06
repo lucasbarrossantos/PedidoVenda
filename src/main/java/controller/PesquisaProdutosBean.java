@@ -1,6 +1,6 @@
 package controller;
 
-import filter.ProdutoFilter;
+import repository.filter.ProdutoFilter;
 import modelo.Produto;
 import repository.Produtos;
 import util.jsf.FacesUtil;

@@ -30,12 +30,12 @@ public class Pedido extends EntidadeBase {
     private Date dataEntrega;
 
     @NotNull(message = "deve ser informado")
-    @Min(1)
+    @Min(0)
     @Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorFrete;
 
     @NotNull(message = "deve ser informado")
-    @Min(1)
+    @Min(0)
     @Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorDesconto;
 

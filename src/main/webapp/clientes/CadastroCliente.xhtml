@@ -45,7 +45,7 @@
                                   value="#{cadastroClienteBean.cliente.tipo}">
 
                     <f:selectItems value="#{cadastroClienteBean.tipos}" var="tipo"
-                                   itemLabel="#{tipo.name()}" itemValue="#{tipo}"/>
+                                   itemLabel="#{tipo.descricao}" itemValue="#{tipo}"/>
                     <p:ajax event="change" update="labelPessoa maskPessoa"/>
                 </p:selectOneRadio>
 
