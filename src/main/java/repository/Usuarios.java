@@ -2,6 +2,7 @@ package repository;
 
 
 import filter.UsuarioFilter;
+import modelo.Grupo;
 import modelo.Usuario;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;

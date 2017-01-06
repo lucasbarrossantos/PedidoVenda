@@ -30,6 +30,9 @@
                 <p:outputLabel value="Nome" for="nome"/>
                 <p:inputText id="nome" size="70" value="#{pesquisaUsuariosBean.filtro.nome}"/>
 
+                <p:outputLabel value="E-mail" for="email"/>
+                <p:inputText id="email" size="70" value="#{pesquisaUsuariosBean.filtro.email}"/>
+
             </p:panelGrid>
 
             <p:dataTable id="pesquisa-usuarios-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"

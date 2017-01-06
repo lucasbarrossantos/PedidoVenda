@@ -79,6 +79,10 @@ public class CadastroUsuarioBean implements Serializable {
         gruposDoUsuario.add(grupo);
     }
 
+    public boolean isEditando() {
+        return this.usuario.getId() != null;
+    }
+
     public void removerGrupoDeUsuario() {
         gruposDoUsuario.remove(grupoSelecionado);
     }

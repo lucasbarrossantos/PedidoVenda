@@ -26,20 +26,18 @@ public class Cliente extends EntidadeBase {
     @Column(name = "e_mail", nullable = false)
     private String email;
 
-    @NotBlank(message = "deve ser informado")
     @CPF
     @Size(max = 14)
-    @Column(name = "documento_receita_federal", length = 14, nullable = false, unique = true)
+    @Column(name = "documento_receita_federal", length = 14, unique = true)
     private String documentoReceitaFederal;
 
-    @NotBlank(message = "deve ser informado")
     @CNPJ
     @Size(max = 18)
     @Column(length = 18, unique = true)
     private String cnpj;
 
     @NotNull(message = "deve ser informadado")
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Endereco> enderecos = new ArrayList<>();
 
     @NotNull(message = "deve ser informado")

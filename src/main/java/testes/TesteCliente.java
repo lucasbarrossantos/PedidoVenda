@@ -21,7 +21,7 @@ public class TesteCliente {
         Cliente cliente = new Cliente();
         cliente.setNome("João das Couves");
         cliente.setEmail("joao@dascouves.com");
-        cliente.setDocumentoReceitaFederal("111.694.964-40");
+        cliente.setDocumentoReceitaFederal("490.597.657-02");
         cliente.setCnpj("03.405.355/0001-59");
         cliente.setTipo(TipoPessoa.FISICA);
 

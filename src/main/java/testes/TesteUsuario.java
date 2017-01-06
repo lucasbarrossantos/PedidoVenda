@@ -19,8 +19,8 @@ public class TesteUsuario {
 
 
         Grupo grupo = new Grupo();
-        grupo.setNome("Vendas");
-        grupo.setDescricao("Gerente e supervisor");
+        grupo.setNome("Administrador");
+        grupo.setDescricao("Administrador do sistema");
 
 
         manager.persist(grupo);
