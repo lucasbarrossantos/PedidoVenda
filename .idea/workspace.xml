@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27b39fe0-fdd5-45d1-8a1e-c95783e8eb68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/converter/ClienteConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/filter/ClienteFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/Clientes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/CadastroClienteService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log" afterPath="$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CadastroUsuarioBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CadastroUsuarioBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/PesquisaClientesBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/PesquisaClientesBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" afterPath="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/repository/Usuarios.java" afterPath="$PROJECT_DIR$/src/main/java/repository/Usuarios.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testes/TesteCliente.java" afterPath="$PROJECT_DIR$/src/main/java/testes/TesteCliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testes/TesteUsuario.java" afterPath="$PROJECT_DIR$/src/main/java/testes/TesteUsuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/usuarios/CadastroUsuario.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/usuarios/CadastroUsuario.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/usuarios/PesquisaUsuarios.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/usuarios/PesquisaUsuarios.xhtml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,7 +31,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CadastroClienteBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CadastroClienteBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
@@ -57,6 +40,16 @@
                 <element signature="e#3094#3095#0" expanded="true" />
                 <element signature="e#3136#3137#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pedido-venda.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/main/java/service/CadastroUsuarioService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CadastroUsuariosBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/produtos/CadastroProduto.xhtml" />
-        <option value="$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/repository/Usuarios.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CadastroUsuarioBean.java" />
@@ -137,6 +129,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" />
+        <option value="$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log" />
       </list>
     </option>
   </component>
@@ -368,6 +361,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="${sys:catalina.home}" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -919,7 +930,7 @@
       <workItem from="1483383402322" duration="353000" />
       <workItem from="1483409087230" duration="20634000" />
       <workItem from="1483473580560" duration="73321000" />
-      <workItem from="1483704261301" duration="2775000" />
+      <workItem from="1483704261301" duration="2893000" />
     </task>
     <task id="LOCAL-00001" summary="Inserindo Hibernate-Validator no projeto">
       <created>1483048238918</created>
@@ -977,11 +988,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483564323351</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implementando o cadastro de cliente&#10;Servive CadastroClienteService&#10;Repository Clientes&#10;--------------------------------&#10;Páginas - CadastroClientes/PesquisaClientes&#10;">
+      <created>1483709806106</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1483709806106</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143310000" />
+    <option name="totallyTimeSpent" value="143428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1052,7 +1070,8 @@
     <MESSAGE value="Implementando o serviço de cadastro de produto" />
     <MESSAGE value="Implementando a exclusão de produtos" />
     <MESSAGE value="Implementando o cadastro de usuário&#10;Servive CadastroUsuarioService&#10;Repository Usuarios&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementando o cadastro de usuário&#10;Servive CadastroUsuarioService&#10;Repository Usuarios&#10;" />
+    <MESSAGE value="Implementando o cadastro de cliente&#10;Servive CadastroClienteService&#10;Repository Clientes&#10;--------------------------------&#10;Páginas - CadastroClientes/PesquisaClientes&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementando o cadastro de cliente&#10;Servive CadastroClienteService&#10;Repository Clientes&#10;--------------------------------&#10;Páginas - CadastroClientes/PesquisaClientes&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1159,6 +1178,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,13 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -1194,6 +1207,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,6 +1226,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="40" column="102" selection-start-line="40" selection-start-column="102" selection-end-line="40" selection-end-column="102" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,6 +1257,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,6 +1294,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1362,6 +1382,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#434#435#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1519,6 +1544,14 @@
             <element signature="e#3094#3095#0" expanded="true" />
             <element signature="e#3136#3137#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/${sys:catalina.home}/logs/pedido-venda.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
