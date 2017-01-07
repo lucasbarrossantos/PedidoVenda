@@ -16,9 +16,9 @@ public class ItemPedido extends EntidadeBase {
     @Min(1)
     @Max(999)
     @Column(nullable = false, length = 3)
-    private Integer quantidade;
+    private Integer quantidade = 1;
     @Column(nullable = false, precision = 10, scale = 2, name = "valor_unitario")
-    private BigDecimal valorUnitario;
+    private BigDecimal valorUnitario = BigDecimal.ONE;
 
     @NotNull(message = "deve ser informado")
     @ManyToOne
@@ -64,5 +64,10 @@ public class ItemPedido extends EntidadeBase {
     @Transient
     public BigDecimal getValorTotal() {
         return this.getValorUnitario().multiply(new BigDecimal(this.getQuantidade()));
+    }
+
+    @Transient
+    public boolean isProdutoAssociado(){
+        return this.getProduto() != null && this.getProduto().getId() != null;
     }
 }
