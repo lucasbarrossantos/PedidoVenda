@@ -7,6 +7,7 @@ import service.CadastroPedidoService;
 import util.jsf.FacesUtil;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -55,8 +56,9 @@ public class CadastroPedidoBean implements Serializable {
     }
 
     public void inicializar() {
-        if (FacesUtil.isPostback()) {
+        if (FacesUtil.isNotPostback()) {
             this.vendedores = usuarios.vendedores();
+            this.recalcularPedido();
         }
     }
 
@@ -75,8 +77,15 @@ public class CadastroPedidoBean implements Serializable {
         return clientes.porNome(nomeCliente);
     }
 
+    public void recalcularPedido() {
+        if (this.pedido != null) {
+            this.pedido.recalcularValorTotal();
+        }
+    }
+
     /**
      * gets and sets
+     *
      * @return
      */
 

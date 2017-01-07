@@ -115,6 +115,7 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- API de Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
