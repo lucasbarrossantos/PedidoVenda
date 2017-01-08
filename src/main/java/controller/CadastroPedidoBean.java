@@ -48,6 +48,7 @@ public class CadastroPedidoBean implements Serializable {
     @PostConstruct
     public void init() {
         vendedores = usuarios.vendedores();
+        pedido.setEnderecoEntrega(new EnderecoEntrega());
     }
 
     /**
@@ -55,8 +56,14 @@ public class CadastroPedidoBean implements Serializable {
      */
 
     public void salvar() {
-        this.pedido = cadastroPedidoService.salvar(pedido);
-        FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
+        this.pedido.removerItemVazio();
+
+        try {
+            this.pedido = cadastroPedidoService.salvar(pedido);
+            FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
+        }finally {
+            this.pedido.adicionarItemVazio();
+        }
     }
 
     private void limpar() {
@@ -68,8 +75,10 @@ public class CadastroPedidoBean implements Serializable {
         if (FacesUtil.isNotPostback()) {
             this.vendedores = usuarios.vendedores();
 
-            if (this.pedido == null)
+            if (this.pedido == null){
                 pedido = new Pedido();
+                pedido.setEnderecoEntrega(new EnderecoEntrega());
+            }
 
             this.pedido.adicionarItemVazio();
 
@@ -123,16 +132,16 @@ public class CadastroPedidoBean implements Serializable {
     }
 
     private boolean existeItemComProduto(Produto produto) {
-        boolean existeIte = false;
+        boolean existeItem = false;
 
         for (ItemPedido item : this.getPedido().getItens()) {
             if (produto.equals(item.getProduto())) {
-                existeIte = true;
+                existeItem = true;
                 break;
             }
         }
 
-        return existeIte;
+        return existeItem;
     }
 
     public void carregarProdutoPorSku() {
@@ -140,6 +149,19 @@ public class CadastroPedidoBean implements Serializable {
             this.produtoLinhaEditavel = produtos.porSKU(this.sku);
             this.carregarProdutoLinhaEditavel();
         }
+    }
+
+    public void atualizarQuantidade(ItemPedido item, int linha){
+
+        if (item.getQuantidade() < 1){
+            if (linha == 0){
+                item.setQuantidade(1);
+            }else {
+                this.getPedido().getItens().remove(linha);
+            }
+        }
+
+        this.pedido.recalcularValorTotal();
     }
 
     /**

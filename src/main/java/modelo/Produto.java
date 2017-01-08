@@ -28,7 +28,7 @@ public class Produto extends EntidadeBase {
     private BigDecimal valorUnitario;
 
     @NotNull(message = "deve ser informado")
-    @Min(value = 1, message = "valor mínimo é 1")
+    @Min(value = 0, message = "valor mínimo é 1")
     @Max(value = 9999, message = "tem um valor muito alto")
     @Column(precision = 10, scale = 2, name = "quantidade_estoque", length = 5, nullable = false)
     private Integer quantidadeEstoque;

@@ -30,17 +30,14 @@ public class Pedido extends EntidadeBase {
     private Date dataEntrega;
 
     @NotNull(message = "deve ser informado")
-    @Min(0)
     @Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorFrete = BigDecimal.ZERO;
 
     @NotNull(message = "deve ser informado")
-    @Min(0)
     @Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorDesconto = BigDecimal.ZERO;
 
     @NotNull(message = "deve ser informado")
-    @Min(0)
     @Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
     private BigDecimal valorTotal = BigDecimal.ZERO;
 
@@ -209,5 +206,23 @@ public class Pedido extends EntidadeBase {
     @Transient
     public boolean isOrcamento() {
         return StatusPedido.ORCAMENTO.equals(this.getStatus());
+    }
+
+    public void removerItemVazio() {
+        ItemPedido primeiroItem = this.getItens().get(0);
+
+        if (primeiroItem != null && primeiroItem.getProduto().getId() == null) {
+            this.getItens().remove(0);
+        }
+    }
+
+    @Transient
+    public boolean isValorTotalNegativo() {
+        return this.getValorTotal().compareTo(BigDecimal.ZERO) < 0;
+    }
+
+    @Transient
+    public boolean isEmitido() {
+        return StatusPedido.EMITIDO.equals(this.getStatus());
     }
 }

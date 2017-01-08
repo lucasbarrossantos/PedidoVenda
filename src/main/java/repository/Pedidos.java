@@ -15,7 +15,6 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import repository.filter.PedidoFilter;
-import util.jpa.Transactional;
 
 public class Pedidos implements Serializable {
 

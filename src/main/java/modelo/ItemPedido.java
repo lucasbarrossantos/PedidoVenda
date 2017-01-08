@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 public class ItemPedido extends EntidadeBase {
 
     @NotNull(message = "deve ser informado")
-    @Min(1)
     @Max(999)
     @Column(nullable = false, length = 3)
     private Integer quantidade = 1;
@@ -67,7 +66,18 @@ public class ItemPedido extends EntidadeBase {
     }
 
     @Transient
-    public boolean isProdutoAssociado(){
+    public boolean isProdutoAssociado() {
         return this.getProduto() != null && this.getProduto().getId() != null;
+    }
+
+    @Transient
+    public boolean isEstoqueSuficiente() {
+        return this.pedido.isEmitido() || this.getProduto().getId() == null
+                || this.getProduto().getQuantidadeEstoque() >= this.getQuantidade();
+    }
+
+    @Transient
+    public boolean isEstoqueInsuficiente() {
+        return !this.isEstoqueSuficiente();
     }
 }
