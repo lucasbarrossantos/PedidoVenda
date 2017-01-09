@@ -34,6 +34,29 @@
                     <ui:include src="/WEB-INF/template/pedidos/ObservacaoPedido.xhtml"/>
                 </p:tab>
             </p:tabView>
+
+            <p:confirmDialog widgetVar="confirmEmitirPedido" id="confirm-emissao-pedido" closeOnEscape="true"
+                             message="Após emitir o pedido, não poderá mais ser alterado!" header="Emitir pedido">
+
+                <p:commandButton value="Sim" process="@form" update="@form" action="#{emissaoPedidoBean.emitirPedido}"
+                                 oncomplete="if (!args.validationFailed) {PF('confirmEmitirPedido').hide();}"/>
+
+                <p:button value="Não" onclick="PF('confirmEmitirPedido').hide(); return null;"/>
+
+            </p:confirmDialog>
+
+            <p:confirmDialog widgetVar="confirmCancelarPedido" id="confirm-cancelar-pedido"
+                             header="Cancelamento de pedido"
+                             message="Após cancelar o pedido, não poderá mais editá-lo" closeOnEscape="true">
+
+                <p:commandButton value="Cancelar" update="@form" process="@this"
+                                 action="#{cancelamentoPedidoBean.cancelarPedido}"
+                                 oncomplete="if (!args.ValidationFailed){PF('confirmCancelarPedido').hide();}"/>
+
+                <p:button value="Não" onclick="PF('confirmCancelarPedido').hide(); return null"/>
+
+            </p:confirmDialog>
+
         </h:form>
 
     </ui:define>

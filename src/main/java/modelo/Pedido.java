@@ -260,4 +260,19 @@ public class Pedido extends EntidadeBase {
                 || getEnderecoEntrega().getNumero() == null
                 || getEnderecoEntrega().getUf() == null;
     }
+
+    @Transient
+    public boolean isNaoAlteravel() {
+        return !this.isAlteravel();
+    }
+
+    @Transient
+    public boolean isAlteravel() {
+        return this.isOrcamento();
+    }
+
+    @Transient
+    public boolean isEnderecoEntregaEditavel(){
+        return this.getStatus().equals(StatusPedido.CANCELADO);
+    }
 }

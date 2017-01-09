@@ -4,6 +4,7 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
-    <p:inputTextarea rows="10" style="width: 99.6%" value="#{cadastroPedidoBean.pedido.observacao}"/>
+    <p:inputTextarea rows="10" style="width: 99.6%" value="#{cadastroPedidoBean.pedido.observacao}"
+                     disabled="#{cadastroPedidoBean.pedido.enderecoEntregaEditavel}"/>
 
 </ui:composition>

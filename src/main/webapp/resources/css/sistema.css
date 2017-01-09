@@ -116,3 +116,7 @@ footer {
 }
 
 /* Menu sistema fim */
+
+.ui-state-disabled {
+    opacity: .70 !important;
+}
