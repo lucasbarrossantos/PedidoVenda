@@ -12,6 +12,8 @@ import validation.SKU;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.enterprise.event.Observes;
+import javax.enterprise.inject.Produces;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,6 +39,8 @@ public class CadastroPedidoBean implements Serializable {
     @SKU
     private String sku;
 
+    @Produces
+    @PedidoEdicao
     private Pedido pedido;
     private List<Usuario> vendedores;
     private Produto produtoLinhaEditavel;
@@ -61,7 +65,7 @@ public class CadastroPedidoBean implements Serializable {
         try {
             this.pedido = cadastroPedidoService.salvar(pedido);
             FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
-        }finally {
+        } finally {
             this.pedido.adicionarItemVazio();
         }
     }
@@ -71,11 +75,20 @@ public class CadastroPedidoBean implements Serializable {
         pedido.setEnderecoEntrega(new EnderecoEntrega());
     }
 
+    /**
+     * Observador do pedido alterado event
+     *
+     * @param event
+     */
+    public void pedidoAlterado(@Observes PedidoAlteradoEvent event) {
+        this.pedido = event.getPedido();
+    }
+
     public void inicializar() {
         if (FacesUtil.isNotPostback()) {
             this.vendedores = usuarios.vendedores();
 
-            if (this.pedido == null){
+            if (this.pedido == null) {
                 pedido = new Pedido();
                 pedido.setEnderecoEntrega(new EnderecoEntrega());
             }
@@ -151,12 +164,12 @@ public class CadastroPedidoBean implements Serializable {
         }
     }
 
-    public void atualizarQuantidade(ItemPedido item, int linha){
+    public void atualizarQuantidade(ItemPedido item, int linha) {
 
-        if (item.getQuantidade() < 1){
-            if (linha == 0){
+        if (item.getQuantidade() < 1) {
+            if (linha == 0) {
                 item.setQuantidade(1);
-            }else {
+            } else {
                 this.getPedido().getItens().remove(linha);
             }
         }

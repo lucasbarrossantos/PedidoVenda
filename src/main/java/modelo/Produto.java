@@ -2,6 +2,7 @@ package modelo;
 
 
 import org.hibernate.validator.constraints.NotBlank;
+import service.NegocioException;
 import validation.SKU;
 
 import javax.persistence.*;
@@ -87,5 +88,16 @@ public class Produto extends EntidadeBase {
                 ", quantidadeEstoque=" + quantidadeEstoque +
                 ", categoria=" + categoria +
                 '}';
+    }
+
+    public void baixarEstoque(Integer quantidade) {
+        int novaQuantidade = this.getQuantidadeEstoque() - quantidade;
+
+        if (novaQuantidade < 0) {
+            throw new NegocioException("Não há disponibilidade no estoque de " +
+                    quantidade + " itens do produto " + this.getSku() + ".");
+        }
+
+        this.setQuantidadeEstoque(novaQuantidade);
     }
 }
