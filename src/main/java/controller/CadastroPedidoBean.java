@@ -6,6 +6,7 @@ import repository.Clientes;
 import repository.Produtos;
 import repository.Usuarios;
 import service.CadastroPedidoService;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 import validation.SKU;
 
@@ -60,13 +61,16 @@ public class CadastroPedidoBean implements Serializable {
      */
 
     public void salvar() {
-        this.pedido.removerItemVazio();
-
-        try {
-            this.pedido = cadastroPedidoService.salvar(pedido);
-            FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
-        } finally {
-            this.pedido.adicionarItemVazio();
+        if (this.pedido.isSemEnderecoEntrega()) {
+            throw new NegocioException("Informe um endereço de entrega para o pedido!");
+        } else {
+            try {
+                this.pedido.removerItemVazio();
+                this.pedido = cadastroPedidoService.salvar(pedido);
+                FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
+            } finally {
+                this.pedido.adicionarItemVazio();
+            }
         }
     }
 

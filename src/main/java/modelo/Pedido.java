@@ -235,4 +235,29 @@ public class Pedido extends EntidadeBase {
     public boolean isEmissivel() {
         return this.isExistente() && this.isOrcamento();
     }
+
+    @Transient
+    public boolean isNaoCancelavel() {
+        return !this.isCancelavel();
+    }
+
+    @Transient
+    public boolean isCancelavel() {
+        return this.isExistente() && !this.isCancelado();
+    }
+
+    @Transient
+    public boolean isCancelado() {
+        return StatusPedido.CANCELADO.equals(this.getStatus());
+    }
+
+    @Transient
+    public boolean isSemEnderecoEntrega() {
+        return getDataEntrega() == null
+                || getEnderecoEntrega().getCep() == null
+                || getEnderecoEntrega().getCidade() == null
+                || getEnderecoEntrega().getLogradouro() == null
+                || getEnderecoEntrega().getNumero() == null
+                || getEnderecoEntrega().getUf() == null;
+    }
 }

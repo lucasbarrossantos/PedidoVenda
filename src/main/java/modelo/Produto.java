@@ -100,4 +100,13 @@ public class Produto extends EntidadeBase {
 
         this.setQuantidadeEstoque(novaQuantidade);
     }
+
+    /**
+     * Devolvendo a quantidade para o estoque
+     *
+     * @param quantidade
+     */
+    public void adicionarEstoque(Integer quantidade) {
+        this.setQuantidadeEstoque(getQuantidadeEstoque() + quantidade);
+    }
 }
