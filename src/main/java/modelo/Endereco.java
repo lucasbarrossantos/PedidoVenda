@@ -114,4 +114,37 @@ public class Endereco extends EntidadeBase {
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Endereco)) return false;
+        if (!super.equals(o)) return false;
+
+        Endereco endereco = (Endereco) o;
+
+        if (!getLogradouro().equals(endereco.getLogradouro())) return false;
+        if (!getNumero().equals(endereco.getNumero())) return false;
+        if (!getComplemento().equals(endereco.getComplemento())) return false;
+        if (!getCidade().equals(endereco.getCidade())) return false;
+        if (!getUf().equals(endereco.getUf())) return false;
+        if (!getCep().equals(endereco.getCep())) return false;
+        if (!getBairro().equals(endereco.getBairro())) return false;
+        return getCliente().equals(endereco.getCliente());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + getLogradouro().hashCode();
+        result = 31 * result + getNumero().hashCode();
+        result = 31 * result + getComplemento().hashCode();
+        result = 31 * result + getCidade().hashCode();
+        result = 31 * result + getUf().hashCode();
+        result = 31 * result + getCep().hashCode();
+        result = 31 * result + getBairro().hashCode();
+        result = 31 * result + getCliente().hashCode();
+        return result;
+    }
 }

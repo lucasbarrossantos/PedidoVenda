@@ -37,14 +37,14 @@
 
             </p:panelGrid>
 
-            <p:dataTable id="pesquisa-pessoas-table" style="margin-top: 20px" rows="5" paginatorPosition="bottom"
+            <p:dataTable id="pesquisa-pessoas-table" style="margin-top: 20px" rows="7" paginatorPosition="bottom"
                          paginatorAlwaysVisible="false" emptyMessage="Nenhum cliente encontrado." paginator="true"
                          value="#{pesquisaClientesBean.clientesFiltrados}" var="pessoa">
                 <p:column headerText="Nome" style="width: 140px">
                     <h:outputText value="#{pessoa.nome}"/>
                 </p:column>
                 <p:column headerText="Tipo" style="width: 3px">
-                    <h:outputText value="#{pessoa.tipo.name()}"/>
+                    <h:outputText value="#{pessoa.tipo.descricao}"/>
                 </p:column>
 
                 <p:column headerText="CPF/CNPJ" style="width: 17px">

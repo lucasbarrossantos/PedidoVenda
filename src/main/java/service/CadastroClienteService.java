@@ -16,6 +16,12 @@ public class CadastroClienteService implements Serializable {
 
     @Transactional
     public Cliente salvar(Cliente cliente){
+        Cliente cl = this.clientes.porCPF(cliente.getDocumentoReceitaFederal());
+
+        if (cl != null && cliente.getId() == null){
+            throw new NegocioException("Já existe um cliente cadastrado com o CPF " + cliente.getDocumentoReceitaFederal());
+        }
+
         return clientes.guardar(cliente);
     }
 }

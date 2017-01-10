@@ -5,7 +5,9 @@ import modelo.Endereco;
 import modelo.TipoPessoa;
 import org.primefaces.context.RequestContext;
 import service.CadastroClienteService;
+import service.NegocioException;
 import util.jsf.FacesUtil;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,7 +29,6 @@ public class CadastroClienteBean implements Serializable {
 
     private Endereco enderecoRascunho;
     private List<Endereco> enderecosRascunho = new ArrayList<>();
-
     private Endereco enderecoSelecionado;
 
     public CadastroClienteBean() {
@@ -51,6 +52,7 @@ public class CadastroClienteBean implements Serializable {
 
     public void prepararEndereco() {
         this.enderecoRascunho = new Endereco();
+        this.enderecoSelecionado = null;
     }
 
     public void salvar() {
@@ -73,16 +75,15 @@ public class CadastroClienteBean implements Serializable {
     }
 
     public void incluirEndereco() {
-        if (!cliente.isPersisted())
-            enderecosRascunho.add(enderecoRascunho);
-        else cadastroClienteService.salvar(cliente); // Faz o um merge do cliente
+        enderecosRascunho.remove(enderecoSelecionado);
+        enderecosRascunho.add(enderecoRascunho);
     }
 
     public void prepararEnderecoEdicao() {
         enderecoRascunho = enderecoSelecionado;
     }
 
-    public boolean editando(){
+    public boolean editando() {
         return this.cliente.getId() != null;
     }
 

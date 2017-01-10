@@ -36,7 +36,6 @@ public class Cliente extends EntidadeBase {
     @Column(length = 18, unique = true)
     private String cnpj;
 
-    @NotNull(message = "deve ser informadado")
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Endereco> enderecos = new ArrayList<>();
 

@@ -24,8 +24,8 @@
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/clientes/CadastroCliente"/>
                     <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroClienteBean.salvar}"
-                                     update="frm:msg frm:tollbar frm:painel"
-                                     process="frm:tollbar frm:painel"/>
+                                     update="frm:msg frm:tollbar frm:painel frm:enderecos-clientes-table"
+                                     process="frm:tollbar frm:painel frm:painel frm:enderecos-clientes-table"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
                     <p:button value="Pesquisar" outcome="/clientes/PesquisaClientes"/>
@@ -169,7 +169,7 @@
                         <p:spacer/>
                         <p:commandButton value="Incluir endereco"
                                          action="#{cadastroClienteBean.incluirEndereco}"
-                                         process="@this frm:panel-add-cliente"
+                                         process="@this frm:add-endereco-dialog"
                                          update="msgPanel panel-add-cliente enderecos-clientes-table"
                                          oncomplete="if (!args.validationFailed) PF('dialod-add-endereco').hide()"/>
                     </p:panelGrid>

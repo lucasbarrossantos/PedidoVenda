@@ -13,6 +13,7 @@ import util.jpa.Transactional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import java.io.Serializable;
 import java.util.List;
@@ -70,5 +71,16 @@ public class Clientes implements Serializable {
         } catch (PersistenceException e) {
             throw new NegocioException("O cliente não pode ser removido.");
         }
+    }
+
+    public Cliente porCPF(String cpf){
+        try {
+            return manager.createQuery("from Cliente where documentoReceitaFederal = :cpf", Cliente.class)
+                    .setParameter("cpf", cpf)
+                    .getSingleResult();
+        }catch (NoResultException e){
+            return null;
+        }
+
     }
 }
