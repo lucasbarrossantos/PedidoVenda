@@ -18,7 +18,8 @@
             <p:commandButton value="Cancelar"
                              disabled="#{cadastroPedidoBean.pedido.naoCancelavel}"
                              oncomplete="PF('confirmCancelarPedido').show();"/>
-            <p:commandButton value="Enviar por e-mail"/>
+            <p:commandButton value="Enviar por e-mail" action="#{envioPedidoEmailBean.enviarPedido}"
+                             process="@this" disabled="#{cadastroPedidoBean.pedido.naoEnvialPorEmail}"/>
 
             <p:separator/>
 

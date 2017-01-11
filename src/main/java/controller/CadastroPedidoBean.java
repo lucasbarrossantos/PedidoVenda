@@ -79,6 +79,14 @@ public class CadastroPedidoBean implements Serializable {
         pedido.setEnderecoEntrega(new EnderecoEntrega());
     }
 
+    public void carregarDadosEntrega(){
+        if (this.pedido.getCliente().getEnderecos().size() > 0){
+            this.pedido.carregarEnderecoRascunho();
+        }else{
+            this.pedido.setEnderecoEntrega(new EnderecoEntrega());
+        }
+    }
+
     /**
      * Observador do pedido alterado event
      *

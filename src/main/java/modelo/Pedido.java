@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Entity
 @Table(name = "pedido")
@@ -272,7 +273,29 @@ public class Pedido extends EntidadeBase {
     }
 
     @Transient
-    public boolean isEnderecoEntregaEditavel(){
+    public boolean isEnderecoEntregaEditavel() {
         return this.getStatus().equals(StatusPedido.CANCELADO);
+    }
+
+    @Transient
+    public boolean isNaoEnvialPorEmail(){
+        return this.isNovo() || this.isCancelado();
+    }
+
+    @Transient
+    public boolean isNovo(){
+        return getId() == null;
+    }
+
+    public void carregarEnderecoRascunho() {
+        List<Endereco> enderecos = this.getCliente().getEnderecos();
+        for (Endereco endereco : enderecos) {
+            this.enderecoEntrega.setCep(endereco.getCep());
+            this.enderecoEntrega.setCidade(endereco.getCidade());
+            this.enderecoEntrega.setComplemento(endereco.getComplemento());
+            this.enderecoEntrega.setLogradouro(endereco.getLogradouro());
+            this.enderecoEntrega.setNumero(endereco.getNumero());
+            this.enderecoEntrega.setUf(endereco.getUf());
+        }
     }
 }

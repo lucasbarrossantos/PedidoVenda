@@ -5,8 +5,8 @@
     <file url="file://$PROJECT_DIR$/.classpath" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.idea" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.project" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/.settings" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/emails/pedido.template" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

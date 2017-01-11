@@ -5,7 +5,6 @@ import modelo.Endereco;
 import modelo.TipoPessoa;
 import org.primefaces.context.RequestContext;
 import service.CadastroClienteService;
-import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import javax.faces.view.ViewScoped;

@@ -30,7 +30,10 @@
         <p:autoComplete id="cliente" size="40" dropdown="true" value="#{cadastroPedidoBean.pedido.cliente}"
                         completeMethod="#{cadastroPedidoBean.completarCliente}" var="cliente"
                         disabled="#{cadastroPedidoBean.pedido.naoAlteravel}"
-                        itemLabel="#{cliente.nome}" itemValue="#{cliente}" forceSelection="true"/>
+                        itemLabel="#{cliente.nome}" itemValue="#{cliente}" forceSelection="true">
+            <p:ajax event="itemSelect" process="@this" update="@form"
+                    listener="#{cadastroPedidoBean.carregarDadosEntrega}"/>
+        </p:autoComplete>
 
         <p:outputLabel value="Forma de pagamento" for="formaPagamento"/>
         <p:selectOneMenu id="formaPagamento" value="#{cadastroPedidoBean.pedido.formaPagamento}"
