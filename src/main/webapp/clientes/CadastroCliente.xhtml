@@ -28,6 +28,12 @@
                                      process="frm:tollbar frm:painel frm:painel frm:enderecos-clientes-table"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
+                    <p:commandButton value="Enviar por e-mail"
+                                     action="#{envioClienteEmailBean.enviarCliente}"
+                                     process="@this"
+                                     update=":frm:msg"
+                                     disabled="#{cadastroClienteBean.cliente.editando}"/>
+                    <p:separator/>
                     <p:button value="Pesquisar" outcome="/clientes/PesquisaClientes"/>
                 </p:toolbarGroup>
             </p:toolbar>

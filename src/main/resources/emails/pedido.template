@@ -37,8 +37,8 @@
                 <tr>
                     <td>$item.produto.nome</td>
                     <td>$numberTool.format("¤ #0.00", $item.produto.valorUnitario, $locale)</td>
-                    <td>$item.quantidade</td>
-                    <td>$numberTool.format("¤ #0.00", $item.valorTotal, $locale)</td>
+                    <td style="text-align: right">$item.quantidade</td>
+                    <td style="text-align: right">$numberTool.format("¤ #0.00", $item.valorTotal, $locale)</td>
                 </tr>
                 #end
                 #end

@@ -91,4 +91,14 @@ public class Cliente extends EntidadeBase {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
+
+    @Transient
+    public boolean isEditando(){
+        return !this.isExistente();
+    }
+
+    @Transient
+    public boolean isExistente() {
+        return this.getId() != null;
+    }
 }

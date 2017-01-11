@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+    <meta content="text/html" http-equiv="content-type"/>
+
+</head>
+<body style="padding-top: 20px; padding-bottom: 40px;">
+<div style="background-color: #ebebeb; border: 1px solid #CCC; margin-bottom: 8px;
+            margin-top: 10px; margin-right: 8px; margin: 0 auto; max-width: 760px;">
+
+    <div style="background-color:#9ACD32; border: 1px solid #CCC; margin-bottom: 10px;
+                margin-top: 10px; margin-left: 8px; margin-right: 8px;
+                font-family: Consolas; padding-bottom:1px; padding-top:1px;">
+        <h2 style="padding-left: 2%">Prezado, ${cliente.nome}</h2>
+    </div>
+
+    <div style="background-color:#fff; border: 1px solid #CCC; margin-bottom: 10px;
+                    margin-left: 8px;  margin-right: 8px; font-family:Arial;
+                    font-size:12px; line-height:18px; text-align:left;">
+        <h3 style="padding-left: 2%">
+            <strong> Seu cadastro foi realizado com sucesso!</strong>
+        </h3>
+
+        <div style="padding-left: 2%">
+            <table>
+                <tr>
+                    <td style="width: 100px">Número:</td>
+                    <td>$cliente.id</td>
+                </tr>
+                <tr>
+                    <td>Nome:</td>
+                    <td>$cliente.nome</td>
+                </tr>
+                <tr>
+                    <td>Tipo:</td>
+                    <td>$cliente.tipo.descricao</td>
+                </tr>
+                <tr>
+                    <td>CPF:</td>
+                    #if($cliente.cnpj)
+                        <td>$cliente.cnpj</td>
+                    #end
+                    #if($cliente.documentoReceitaFederal)
+                        <td>$cliente.documentoReceitaFederal</td>
+                    #end
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td>$cliente.email</td>
+                </tr>
+            </table>
+        </div>
+
+        <br/>
+
+        <h3 style="padding-left: 2%">
+            <strong> Endereço(s) cadastrado(s)!</strong>
+        </h3>
+
+        <div class="ui-fluid" style="padding-left: 2%">
+            <table border="1" cellspacing="0" cellpadding="3">
+
+                <tr>
+                    <th>Logradouro</th>
+                    <th>Número</th>
+                    <th>Complemento</th>
+                    <th>Cidade/UF</th>
+                    <th>Bairro</th>
+                </tr>
+                #foreach ($endereco in $cliente.enderecos)
+                #if ($endereco.cliente.id)
+                <tr>
+                    <td>$endereco.logradouro</td>
+                    <td>$endereco.numero</td>
+                    <td>$endereco.complemento</td>
+                    <td>$endereco.cidade / $endereco.uf</td>
+                    <td>$endereco.bairro</td>
+                </tr>
+                #end
+                #end
+            </table>
+        </div>
+
+        <br/>
+
+        <h3 style="padding-left: 2%">
+            <strong>Atenção, este e-mail é gerado automaticamente, favor não respondê-lo nem enviar e-mail para esse endereço.</strong>
+        </h3>
+    </div>
+</div>
+
+</body>
+</HTML>

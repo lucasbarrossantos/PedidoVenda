@@ -7,6 +7,7 @@ import org.primefaces.context.RequestContext;
 import service.CadastroClienteService;
 import util.jsf.FacesUtil;
 
+import javax.enterprise.inject.Produces;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -24,6 +25,8 @@ public class CadastroClienteBean implements Serializable {
     @Inject
     private CadastroClienteService cadastroClienteService;
 
+    @Produces
+    @ClienteEmail
     private Cliente cliente;
 
     private Endereco enderecoRascunho;
@@ -85,6 +88,7 @@ public class CadastroClienteBean implements Serializable {
     public boolean editando() {
         return this.cliente.getId() != null;
     }
+
 
     /**
      * geters and sets

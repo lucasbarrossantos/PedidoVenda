@@ -56,6 +56,12 @@ footer {
     padding: 10px;
 }
 
+.navbar-fixed-bottom {
+    bottom: 0;
+    margin-bottom: 0;
+    border-width: 1px 0 0;
+}
+
 .ajax-status {
     position: fixed;
     top: 55px;
