@@ -48,13 +48,17 @@
                     <td>E-mail:</td>
                     <td>$cliente.email</td>
                 </tr>
+                <tr>
+                    <td>Telefone:</td>
+                    <td>$cliente.telefone</td>
+                </tr>
             </table>
         </div>
 
         <br/>
 
         <h3 style="padding-left: 2%">
-            <strong> Endereço(s) cadastrado(s)!</strong>
+            <strong> Endereço(s) cadastrado(s):</strong>
         </h3>
 
         <div class="ui-fluid" style="padding-left: 2%">

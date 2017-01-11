@@ -44,6 +44,9 @@ public class Cliente extends EntidadeBase {
     @Column(nullable = false, length = 10)
     private TipoPessoa tipo;
 
+    @Column(length = 20)
+    private String telefone;
+
     public String getNome() {
         return nome;
     }
@@ -90,6 +93,14 @@ public class Cliente extends EntidadeBase {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Transient

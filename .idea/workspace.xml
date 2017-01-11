@@ -7,18 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b39fe0-fdd5-45d1-8a1e-c95783e8eb68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/logo-empresa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/ClienteEmail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/emails/cliente.template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" afterPath="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/emails/pedido.template" afterPath="$PROJECT_DIR$/src/main/resources/emails/pedido.template" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/emails/cliente.template" afterPath="$PROJECT_DIR$/src/main/resources/emails/cliente.template" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,11 +39,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CadastroCliente.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pedido-venda.cliente" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/87807fa/5a1daca7-0477-4d5a-ab52-9dd5705b01e9/pedido-venda.cliente">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cliente.template" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/emails/cliente.template">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="EnvioClienteEmailBean.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+            <state relative-caret-position="196">
+              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+              <folding>
+                <element signature="e#2373#2374#0" expanded="true" />
+                <element signature="e#2404#2405#0" expanded="true" />
+                <element signature="e#2452#2453#0" expanded="true" />
+                <element signature="e#2492#2493#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pedido.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Pedido.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+              <folding>
+                <element signature="e#376#383#0" expanded="false" />
+                <element signature="e#456#461#0" expanded="false" />
+                <element signature="e#704#744#0" expanded="false" />
+                <element signature="e#866#906#0" expanded="false" />
+                <element signature="e#1044#1084#0" expanded="false" />
+                <element signature="e#1228#1268#0" expanded="false" />
+                <element signature="e#1406#1414#0" expanded="false" />
+                <element signature="e#1554#1562#0" expanded="false" />
+                <element signature="e#1713#1721#0" expanded="false" />
+                <element signature="e#1828#1836#0" expanded="false" />
+                <element signature="method#getValorSubtotal#0;class#Pedido#0" expanded="false" />
+                <element signature="method#recalcularValorTotal#0;class#Pedido#0" expanded="false" />
+                <element signature="method#adicionarItemVazio#0;class#Pedido#0" expanded="false" />
+                <element signature="method#removerItemVazio#0;class#Pedido#0" expanded="false" />
+                <element signature="e#5957#5958#0" expanded="true" />
+                <element signature="e#5999#6000#0" expanded="true" />
+                <element signature="method#isSemEnderecoEntrega#0;class#Pedido#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnderecoEntrega.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelo/EnderecoEntrega.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -81,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/produtos/CadastroProduto.xhtml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/repository/Produtos.java" />
         <option value="$PROJECT_DIR$/src/main/java/testes/BigDe.java" />
@@ -123,15 +203,16 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/EnvioPedidoEmailBean.java" />
         <option value="$PROJECT_DIR$/src/main/resources/emails/pedido.template" />
         <option value="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/EnviarEmail.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ClienteEmail.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CadastroClienteBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelo/Contato.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" />
         <option value="$PROJECT_DIR$/src/main/resources/emails/cliente.template" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" />
       </list>
     </option>
   </component>
@@ -925,7 +1006,7 @@
       <workItem from="1483902325240" duration="40908000" />
       <workItem from="1484047477485" duration="9619000" />
       <workItem from="1484080379314" duration="3143000" />
-      <workItem from="1484093030930" duration="17500000" />
+      <workItem from="1484093030930" duration="19265000" />
     </task>
     <task id="LOCAL-00001" summary="Inserindo Hibernate-Validator no projeto">
       <created>1483048238918</created>
@@ -1074,11 +1155,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484131787475</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Envio de email para cliente">
+      <created>1484138947859</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1484138947859</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253642000" />
+    <option name="totallyTimeSpent" value="255407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1113,7 +1201,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4339934" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4339934" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3308157" sideWeight="0.51155114" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24773414" sideWeight="0.48844886" order="0" side_tool="false" content_ui="combo" />
@@ -1160,7 +1248,8 @@
     <MESSAGE value="Controlando status de pedidos" />
     <MESSAGE value="Cadastro de endereço do cliente" />
     <MESSAGE value="Envio de email com simple-mail" />
-    <option name="LAST_COMMIT_MESSAGE" value="Envio de email com simple-mail" />
+    <MESSAGE value="Envio de email para cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Envio de email para cliente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1173,13 +1262,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/CadastroProdutoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/CadastroUsuarioService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1220,13 +1302,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/EnderecoEntrega.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1271,19 +1346,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/87807fa/5a1daca7-0477-4d5a-ab52-9dd5705b01e9/pedido-venda.cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1395,17 +1457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/ItemPedido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="68" column="19" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
-          <folding>
-            <element signature="e#1714#1715#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/logo-algaworks.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1432,34 +1483,6 @@
         <state relative-caret-position="97">
           <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Pedido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="230" column="19" selection-start-line="230" selection-start-column="19" selection-end-line="230" selection-end-column="19" />
-          <folding>
-            <element signature="e#376#383#0" expanded="false" />
-            <element signature="e#456#461#0" expanded="false" />
-            <element signature="e#704#744#0" expanded="false" />
-            <element signature="e#866#906#0" expanded="false" />
-            <element signature="e#1044#1084#0" expanded="false" />
-            <element signature="e#1228#1268#0" expanded="false" />
-            <element signature="e#1406#1414#0" expanded="false" />
-            <element signature="e#1554#1562#0" expanded="false" />
-            <element signature="e#1713#1721#0" expanded="false" />
-            <element signature="e#1828#1836#0" expanded="false" />
-            <element signature="method#getValorSubtotal#0;class#Pedido#0" expanded="false" />
-            <element signature="method#recalcularValorTotal#0;class#Pedido#0" expanded="false" />
-            <element signature="method#adicionarItemVazio#0;class#Pedido#0" expanded="false" />
-            <element signature="method#removerItemVazio#0;class#Pedido#0" expanded="false" />
-            <element signature="e#5957#5958#0" expanded="true" />
-            <element signature="e#5999#6000#0" expanded="true" />
-            <element signature="method#isSemEnderecoEntrega#0;class#Pedido#0" expanded="false" />
-            <element signature="e#7105#7106#0" expanded="true" />
-            <element signature="e#7175#7176#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1517,22 +1540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/emails/cliente.template">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1545,14 +1552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -1585,10 +1584,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/EnderecoEntrega.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/ItemPedido.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="68" column="19" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+          <folding>
+            <element signature="e#1714#1715#0" expanded="true" />
+            <element signature="e#1799#1800#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Pedido.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+          <folding>
+            <element signature="e#376#383#0" expanded="false" />
+            <element signature="e#456#461#0" expanded="false" />
+            <element signature="e#704#744#0" expanded="false" />
+            <element signature="e#866#906#0" expanded="false" />
+            <element signature="e#1044#1084#0" expanded="false" />
+            <element signature="e#1228#1268#0" expanded="false" />
+            <element signature="e#1406#1414#0" expanded="false" />
+            <element signature="e#1554#1562#0" expanded="false" />
+            <element signature="e#1713#1721#0" expanded="false" />
+            <element signature="e#1828#1836#0" expanded="false" />
+            <element signature="method#getValorSubtotal#0;class#Pedido#0" expanded="false" />
+            <element signature="method#recalcularValorTotal#0;class#Pedido#0" expanded="false" />
+            <element signature="method#adicionarItemVazio#0;class#Pedido#0" expanded="false" />
+            <element signature="method#removerItemVazio#0;class#Pedido#0" expanded="false" />
+            <element signature="e#5957#5958#0" expanded="true" />
+            <element signature="e#5999#6000#0" expanded="true" />
+            <element signature="method#isSemEnderecoEntrega#0;class#Pedido#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Contato.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+          <folding>
+            <element signature="e#2373#2374#0" expanded="true" />
+            <element signature="e#2404#2405#0" expanded="true" />
+            <element signature="e#2452#2453#0" expanded="true" />
+            <element signature="e#2492#2493#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/87807fa/5a1daca7-0477-4d5a-ab52-9dd5705b01e9/pedido-venda.cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/emails/cliente.template">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        <state relative-caret-position="196">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -40,7 +40,8 @@ public class EnvioClienteEmailBean implements Serializable {
                 .put("locale", new Locale("pt", "BR"))
                 .send();
 
-        FacesUtil.addInfoMessage("Cliente enviado por e-mail com sucesso!");
+        FacesUtil.addInfoMessage("Os dados do cliente " + cliente.getNome() +
+                " foram enviados com sucesso para o endereço " + cliente.getEmail());
     }
 
 }

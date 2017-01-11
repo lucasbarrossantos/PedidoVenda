@@ -77,6 +77,10 @@
                 <p:outputLabel value="Email" for="email"/>
                 <p:inputText id="email" size="50" value="#{cadastroClienteBean.cliente.email}"/>
 
+                <p:outputLabel value="Telefone" for="telefone"/>
+                <p:inputMask mask="(99) 99999-9999" id="telefone" value="#{cadastroClienteBean.cliente.telefone}"
+                             placeholder="celular mais usado"/>
+
             </p:panelGrid>
 
             <p:commandButton value="Adicionar endereço" style="margin-top: 20px"
