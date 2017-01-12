@@ -32,13 +32,13 @@
                     <th>Valor total</th>
                 </tr>
                 #foreach ($item in $pedido.itens)
-                #if ($item.produto.id)
-                <tr>
-                    <td>$item.produto.nome</td>
-                    <td>$numberTool.format("¤ #0.00", $item.produto.valorUnitario, $locale)</td>
-                    <td style="text-align: right">$item.quantidade</td>
-                    <td style="text-align: right">$numberTool.format("¤ #0.00", $item.valorTotal, $locale)</td>
-                </tr>
+                    #if ($item.produto.id)
+                    <tr>
+                        <td>$item.produto.nome</td>
+                        <td>$numberTool.format("¤ #0.00", $item.produto.valorUnitario, $locale)</td>
+                        <td style="text-align: right">$item.quantidade</td>
+                        <td style="text-align: right">$numberTool.format("¤ #0.00", $item.valorTotal, $locale)</td>
+                    </tr>
                 #end
                 #end
             </table>

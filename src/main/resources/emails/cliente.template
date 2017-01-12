@@ -68,14 +68,14 @@
                     <th>Bairro</th>
                 </tr>
                 #foreach ($endereco in $cliente.enderecos)
-                #if ($endereco.cliente.id)
-                <tr>
-                    <td>$endereco.logradouro</td>
-                    <td>$endereco.numero</td>
-                    <td>$endereco.complemento</td>
-                    <td>$endereco.cidade / $endereco.uf</td>
-                    <td>$endereco.bairro</td>
-                </tr>
+                    #if ($endereco.cliente.id)
+                    <tr>
+                        <td>$endereco.logradouro</td>
+                        <td>$endereco.numero</td>
+                        <td>$endereco.complemento</td>
+                        <td>$endereco.cidade / $endereco.uf</td>
+                        <td>$endereco.bairro</td>
+                    </tr>
                 #end
                 #end
             </table>

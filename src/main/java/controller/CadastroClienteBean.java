@@ -58,7 +58,7 @@ public class CadastroClienteBean implements Serializable {
     }
 
     public void salvar() {
-        enderecosRascunho.forEach(e -> e.setCliente(cliente)); // Adicionando o clientes aos endereços
+        enderecosRascunho.forEach(e -> e.setCliente(cliente)); // Adicionando o cliente aos endereços
         cliente.setEnderecos(enderecosRascunho); // Adicionando os endereços ao cliente
         cliente = cadastroClienteService.salvar(cliente);
         limpar();

@@ -24,6 +24,7 @@
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/clientes/CadastroCliente"/>
                     <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroClienteBean.salvar}"
+                                     disabled="#{not seguranca.salvarCadastroCliente}"
                                      update="frm:msg frm:tollbar frm:painel frm:enderecos-clientes-table"
                                      process="frm:tollbar frm:painel frm:painel frm:enderecos-clientes-table"/>
                 </p:toolbarGroup>
@@ -85,6 +86,7 @@
 
             <p:commandButton value="Adicionar endereço" style="margin-top: 20px"
                              action="#{cadastroClienteBean.prepararEndereco}"
+                             disabled="#{not seguranca.salvarCadastroCliente}"
                              process="@this" update="add-endereco-dialog"
                              oncomplete="PF('dialod-add-endereco').show(); return null;">
                 <p:resetInput target="panel-add-cliente"/>

@@ -51,4 +51,8 @@ public class Seguranca {
         // Para saber se o usuário logado está no grudo de admin
         return externalContext.isUserInRole("ADMINISTRADORES") || externalContext.isUserInRole("VENDEDORES");
     }
+
+    public boolean isSalvarCadastroCliente(){
+        return externalContext.isUserInRole("ADMINISTRADORES") || externalContext.isUserInRole("VENDEDORES");
+    }
 }
