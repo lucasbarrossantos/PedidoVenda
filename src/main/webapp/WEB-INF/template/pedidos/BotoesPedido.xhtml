@@ -13,10 +13,10 @@
         </p:toolbarGroup>
         <p:toolbarGroup align="right">
             <p:commandButton value="Emitir"
-                             disabled="#{cadastroPedidoBean.pedido.naoEmissivel}"
+                             disabled="#{cadastroPedidoBean.pedido.naoEmissivel or not seguranca.emitirPedidoPermitido}"
                              oncomplete="PF('confirmEmitirPedido').show();"/>
             <p:commandButton value="Cancelar"
-                             disabled="#{cadastroPedidoBean.pedido.naoCancelavel}"
+                             disabled="#{cadastroPedidoBean.pedido.naoCancelavel or not seguranca.cancelarPedidoPermitido}"
                              oncomplete="PF('confirmCancelarPedido').show();"/>
             <p:commandButton value="Enviar por e-mail" action="#{envioPedidoEmailBean.enviarPedido}"
                              process="@this" disabled="#{cadastroPedidoBean.pedido.naoEnvialPorEmail}"/>

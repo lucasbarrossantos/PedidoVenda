@@ -15,28 +15,42 @@
 </h:head>
 
 <h:body>
+
+    <f:metadata>
+        <f:viewParam name="dummy"/>
+        <f:event type="preRenderView" listener="${loginBean.preRender}"/>
+    </f:metadata>
+
     <div id="login-dialog">
         <h1>Login</h1>
-        <h:form id="frm">
+        <h:form id="frm" prependId="false">
 
-            <p:messages autoUpdate="true"/>
-            <div class="ui-fluid">
-                <p:panelGrid columns="2" styleClass="grid-login ui-noborder" layout="grid">
-                    <p:outputLabel value="Email" for="email"/>
-                    <p:inputText id="email" size="30" required="true"/>
+            <p:panelGrid columns="2" styleClass="ui-noborder ui-fluid">
+                <p:messages autoUpdate="true" closable="true"/>
+                <p:outputLabel/>
 
-                    <p:outputLabel value="Senha" for="senha"/>
-                    <p:password size="30" id="senha" feedback="true" match="confirmarSenha"
-                                required="true" promptLabel="Digite a senha" weakLabel="Fraca" goodLabel="Boa"
-                                strongLabel="Forte" validatorMessage="Senhas não conferem!" inline="true"/>
+                <p:inputText id="j_username" size="30" requiredMessage="Informe o e-mail" required="true"
+                             value="#{loginBean.email}" label="E-mail" placeholder="e-mail"/>
 
-                    <p:outputLabel value="Confimar senha" for="confirmarSenha"/>
-                    <p:password required="true" id="confirmarSenha" size="30"/>
+                <p:outputLabel/>
 
-                    <h:panelGroup/>
-                    <p:commandButton value="Login" update="@form"/>
-                </p:panelGrid>
-            </div>
+                <p:password size="30" id="j_password" feedback="true" match="confirmarSenha"
+                            label="Senha" requiredMessage="Informe a senha"
+                            placeholder="senha"
+                            required="true" promptLabel="Digite a senha" weakLabel="Fraca" goodLabel="Boa"
+                            strongLabel="Forte" validatorMessage="Senhas não conferem!" inline="true"/>
+                <p:outputLabel/>
+
+                <p:password required="true" id="confirmarSenha" size="30" requiredMessage="Confirme a senha"
+                            placeholder="confirme a senha"
+                            label="Senha"/>
+
+                <p:outputLabel/>
+                <p:commandButton value="Login" action="#{loginBean.login}" ajax="false"/>
+
+                <h:panelGroup/>
+            </p:panelGrid>
+
         </h:form>
     </div>
 </h:body>

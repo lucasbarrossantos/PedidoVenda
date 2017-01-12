@@ -18,12 +18,13 @@ public class TesteUsuario {
         trx.begin();
 
 
-        Grupo grupo = new Grupo();
-        grupo.setNome("Administrador");
-        grupo.setDescricao("Administrador do sistema");
+        Usuario usuario = new Usuario();
+        usuario.setNome("Lucas Barros");
+        usuario.setEmail("lucas@barros");
+        usuario.setSenha("123");
 
 
-        manager.persist(grupo);
+        manager.persist(usuario);
 
         trx.commit();
     }

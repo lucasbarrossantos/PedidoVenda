@@ -24,11 +24,7 @@
         <div style="padding-left: 2%">
             <table>
                 <tr>
-                    <td style="width: 100px">Número:</td>
-                    <td>$cliente.id</td>
-                </tr>
-                <tr>
-                    <td>Nome:</td>
+                    <td style="width: 100px">Nome:</td>
                     <td>$cliente.nome</td>
                 </tr>
                 <tr>

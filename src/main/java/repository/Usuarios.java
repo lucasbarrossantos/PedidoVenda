@@ -14,6 +14,7 @@ import util.jpa.Transactional;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import java.io.Serializable;
 import java.util.List;
@@ -62,5 +63,17 @@ public class Usuarios implements Serializable {
 
     public List<Usuario> vendedores() {
         return this.manager.createQuery("from Usuario ", Usuario.class).getResultList();
+    }
+
+    public Usuario porEmail(String email) {
+        Usuario usuario = null;
+        try {
+            usuario = this.manager.createQuery("from Usuario where lower(email) = :email", Usuario.class)
+                    .setParameter("email", email.toLowerCase())
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            //TODO nenhum usuário encontrado com e-mail informado
+        }
+        return usuario;
     }
 }
