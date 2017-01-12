@@ -29,6 +29,7 @@
     <http pattern="/javax.faces.resource/**" security="none"/>
     <http pattern="/login.xhtml" security="none"/>
     <http pattern="/Erro.xhtml" security="none"/>
+    <http pattern="/RecuperarSenha.xhtml" security="none"/>
 
     <http auto-config="false" use-expressions="true">
 

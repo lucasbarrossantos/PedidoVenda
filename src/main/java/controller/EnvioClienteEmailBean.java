@@ -4,8 +4,10 @@ import com.outjected.email.api.MailMessage;
 import com.outjected.email.impl.templating.velocity.VelocityTemplate;
 import modelo.Cliente;
 import modelo.Pedido;
+import modelo.Usuario;
 import org.apache.velocity.tools.generic.NumberTool;
 import org.primefaces.context.RequestContext;
+import repository.Usuarios;
 import util.jsf.FacesUtil;
 import util.mail.Mailer;
 
@@ -28,6 +30,11 @@ public class EnvioClienteEmailBean implements Serializable {
     @ClienteEmail
     private Cliente cliente;
 
+    @Inject
+    private Usuarios usuarios;
+
+    private String email;
+
     public void enviarCliente() {
         MailMessage message = mailer.novaMensagem();
 
@@ -44,4 +51,29 @@ public class EnvioClienteEmailBean implements Serializable {
                 " foram enviados com sucesso para o endereço " + cliente.getEmail());
     }
 
+    public void recuperar(){
+        MailMessage message = mailer.novaMensagem();
+        Usuario usuario = usuarios.porEmail(this.email);
+
+        if (usuario != null){
+            message.to(this.email)
+                    .subject("Olá " + this.email)
+                    .bodyHtml(new VelocityTemplate(getClass().getResourceAsStream("/emails/recuperarSenhaUsuario.template")))
+                    .put("usuario", usuario)
+                    .charset("utf-8")
+                    .send();
+            FacesUtil.addInfoMessage("Email enviado com sucesso!");
+            this.email = null;
+        }else{
+            FacesUtil.addErrorMessage("Não há registro de usuário com o e-mail " + this.email);
+        }
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

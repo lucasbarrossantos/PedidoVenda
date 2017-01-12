@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+    <meta content="text/html" http-equiv="content-type"/>
+
+</head>
+<body style="padding-top: 20px; padding-bottom: 40px;">
+<div style="background-color: #ebebeb; border: 1px solid #CCC; margin-bottom: 8px;
+            margin-top: 10px; margin-right: 8px; margin: 0 auto; max-width: 760px;">
+
+    <div style="background-color:#9ACD32; border: 1px solid #CCC; margin-bottom: 10px;
+                margin-top: 10px; margin-left: 8px; margin-right: 8px;
+                font-family: Consolas; padding-bottom:1px; padding-top:1px;">
+        <h2 style="padding-left: 2%">Prezado, ${usuario.nome}</h2>
+    </div>
+
+    <div style="background-color:#fff; border: 1px solid #CCC; margin-bottom: 10px;
+                    margin-left: 8px;  margin-right: 8px; font-family:Arial;
+                    font-size:12px; line-height:18px; text-align:left;">
+        <h3 style="padding-left: 2%">
+            <strong> Este é um e-mail de sua solicitação de recuperar senha!</strong>
+        </h3>
+
+        <br/>
+        <hr/>
+
+        <h3 style="padding-left: 2%">
+            Sua senha é: <strong> $usuario.senha</strong>
+        </h3>
+
+        <h3 style="padding-left: 2%">
+            <strong>Atenção, este e-mail é gerado automaticamente, favor não respondê-lo nem enviar e-mail para esse endereço.</strong>
+        </h3>
+    </div>
+</div>
+
+</body>
+</HTML>
