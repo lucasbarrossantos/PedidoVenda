@@ -7,21 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b39fe0-fdd5-45d1-8a1e-c95783e8eb68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/GraficoPedidosCriadosBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/modelo/vo/DataValor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/security/UsuarioLogado.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/EnvioClienteEmailBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/repository/Pedidos.java" afterPath="$PROJECT_DIR$/src/main/java/repository/Pedidos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/security/Seguranca.java" afterPath="$PROJECT_DIR$/src/main/java/security/Seguranca.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testes/Main.java" afterPath="$PROJECT_DIR$/src/main/java/testes/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CadastroPedidoBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CadastroPedidoBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/GraficoPedidosCriadosBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/GraficoPedidosCriadosBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mail.properties" afterPath="$PROJECT_DIR$/src/main/resources/mail.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/RecuperarSenha.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/RecuperarSenha.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pedidos/PesquisaPedidos.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pedidos/PesquisaPedidos.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/testes.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/testes.xhtml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,12 +40,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GraficoPedidosCriadosBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraficoPedidosCriadosBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/GraficoPedidosCriadosBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
+            <state relative-caret-position="182">
+              <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2438#2439#0" expanded="true" />
+                <element signature="e#2489#2490#0" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
+                <element signature="e#2564#2565#0" expanded="true" />
+                <element signature="e#2621#2622#0" expanded="true" />
+                <element signature="e#2673#2674#0" expanded="true" />
+                <element signature="e#3136#3137#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DadosEntregaPedido.xhtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="8" column="102" selection-start-line="8" selection-start-column="102" selection-end-line="8" selection-end-column="102" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CadastroPedidoBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/CadastroPedidoBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="227" column="16" selection-start-line="227" selection-start-column="16" selection-end-line="227" selection-end-column="16" />
+              <folding>
+                <element signature="e#5675#5676#0" expanded="true" />
+                <element signature="e#5708#5709#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +85,18 @@
       <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sistema.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+              <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -87,17 +120,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CadastroPedido.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/pedidos/CadastroPedido.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-              <folding />
+              <folding>
+                <marker date="1484307140436" expanded="true" signature="52:4531" ph="..." />
+                <marker date="1484307140436" expanded="true" signature="432:4512" ph="..." />
+                <marker date="1484307140436" expanded="true" signature="496:4494" ph="..." />
+                <marker date="1484307140436" expanded="true" signature="988:2616" ph="..." />
+                <marker date="1484307140436" expanded="true" signature="1487:1864" ph="..." />
+                <marker date="1484307140436" expanded="true" signature="1746:1832" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,8 +135,8 @@
       <file leaf-file-name="CapaPedido.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/CapaPedido.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="135">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -137,13 +167,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/modelo/Pedido.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/mail/VelocityTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/mail/SuaVelocityTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/ItensPedido.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/EnvioPedidoEmailBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/clientes/PesquisaClientes.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" />
         <option value="$PROJECT_DIR$/src/main/java/controller/EnviarEmail.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ClienteEmail.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/Contato.java" />
@@ -186,8 +213,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/pedidos/PesquisaPedidos.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/repository/Pedidos.java" />
         <option value="$PROJECT_DIR$/src/main/java/testes/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/GraficoPedidosCriadosBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/CadastroPedidoBean.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml" />
       </list>
     </option>
   </component>
@@ -322,6 +352,96 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pedidos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -345,6 +465,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PedidoVenda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -358,7 +504,7 @@
     <property name="project.structure.side.proportion" value="0.25860155" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="pesqui&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/pedidos/PesquisaPedidos.xhtml&#10;Pedidos&#9;PSI&#9;JAVA://repository.Pedidos&#10;inde&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/index.xhtml&#10;cadas&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/clientes/CadastroCliente.xhtml&#10;bo&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;bot&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;boto&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;lay&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml&#10;la&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml&#10;Cliente&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Cliente.java&#10;cliente&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/repository/Clientes.java&#10;botoes&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;novamen&#9;PSI&#9;JAVA://util.mail.Mailer#novaMensagem&#10;pro&#9;PSI&#9;JAVA://modelo.Produto&#10;ite&#9;PSI&#9;JAVA://modelo.ItemPedido&#10;pedido&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Pedido.java&#10;iten&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/ItensPedido.xhtml&#10;clien&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/clientes/CadastroCliente.xhtml&#10;itens&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/ItensPedido.xhtml&#10;Dados&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml&#10;endereco&#9;PSI&#9;JAVA://modelo.Endereco&#10;endere&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Endereco.java&#10;pes&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/clientes/PesquisaClientes.xhtml&#10;entre&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml&#10;sistem&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/resources/css/sistema.css&#10;obser&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/ObservacaoPedido.xhtml&#10;dados&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml&#10;capa&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/CapaPedido.xhtml&#10;itempe&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/ItemPedido.java&#10;Pedido&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Pedido.java" />
+    <property name="SearchEverywhereHistoryKey" value="sistem&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/resources/css/sistema.css&#10;pesqui&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/pedidos/PesquisaPedidos.xhtml&#10;Pedidos&#9;PSI&#9;JAVA://repository.Pedidos&#10;inde&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/index.xhtml&#10;cadas&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/clientes/CadastroCliente.xhtml&#10;bo&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;bot&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;boto&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;lay&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml&#10;la&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/LayoutPadrao.xhtml&#10;Cliente&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Cliente.java&#10;cliente&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/repository/Clientes.java&#10;botoes&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/BotoesPedido.xhtml&#10;novamen&#9;PSI&#9;JAVA://util.mail.Mailer#novaMensagem&#10;pro&#9;PSI&#9;JAVA://modelo.Produto&#10;ite&#9;PSI&#9;JAVA://modelo.ItemPedido&#10;pedido&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Pedido.java&#10;iten&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/ItensPedido.xhtml&#10;clien&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/clientes/CadastroCliente.xhtml&#10;itens&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/ItensPedido.xhtml&#10;Dados&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml&#10;endereco&#9;PSI&#9;JAVA://modelo.Endereco&#10;endere&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Endereco.java&#10;pes&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/clientes/PesquisaClientes.xhtml&#10;entre&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml&#10;obser&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/ObservacaoPedido.xhtml&#10;dados&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml&#10;capa&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/webapp/WEB-INF/template/pedidos/CapaPedido.xhtml&#10;itempe&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/ItemPedido.java&#10;Pedido&#9;FILE&#9;file:///home/lucasbarros/IdeaProjects/PedidoVenda/src/main/java/modelo/Pedido.java" />
     <property name="last_opened_file_path" value="/media/lucasbarros/Data/cursojavaee/Aulas/simple-email-master" />
   </component>
   <component name="RecentsManager">
@@ -424,6 +570,24 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="33456" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -939,7 +1103,7 @@
       <workItem from="1484093030930" duration="37263000" />
       <workItem from="1484182923266" duration="21887000" />
       <workItem from="1484269507180" duration="1881000" />
-      <workItem from="1484278127717" duration="9379000" />
+      <workItem from="1484278127717" duration="18638000" />
     </task>
     <task id="LOCAL-00001" summary="Inserindo Hibernate-Validator no projeto">
       <created>1483048238918</created>
@@ -1144,11 +1308,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484241528187</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Gráfico de pedidos criados&#10;Charts - Line">
+      <created>1484310664781</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1484310664781</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306552000" />
+    <option name="totallyTimeSpent" value="315811000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1176,7 +1347,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4950495" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49834985" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1235,11 +1406,12 @@
     <MESSAGE value="Segurança das páginas com spring-security" />
     <MESSAGE value="protegendo páginas e componentes" />
     <MESSAGE value="Recuperar senha do usuário" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recuperar senha do usuário" />
+    <MESSAGE value="Gráfico de pedidos criados&#10;Charts - Line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gráfico de pedidos criados&#10;Charts - Line" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="110" />
+      <option name="time" value="116" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1248,63 +1420,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Categoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/filter/PedidoFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/filter/ClienteFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/filter/UsuarioFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="189" column="59" selection-start-line="189" selection-start-column="59" selection-end-line="189" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/Categorias.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/Usuarios.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/security/UsuarioSistema.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1392,14 +1507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="197" column="72" selection-start-line="197" selection-start-column="45" selection-end-line="197" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/login.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -1449,6 +1556,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1456,6 +1564,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1574,19 +1685,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/CapaPedido.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pedidos/PesquisaPedidos.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="72" column="62" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding />
+          <folding>
+            <marker date="1484307140436" expanded="true" signature="52:4531" ph="..." />
+            <marker date="1484307140436" expanded="true" signature="432:4512" ph="..." />
+            <marker date="1484307140436" expanded="true" signature="496:4494" ph="..." />
+            <marker date="1484307140436" expanded="true" signature="988:2616" ph="..." />
+            <marker date="1484307140436" expanded="true" signature="1487:1864" ph="..." />
+            <marker date="1484307140436" expanded="true" signature="1746:1832" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1616,16 +1726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/Pedidos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testes/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -1637,18 +1737,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/clientes/CadastroCliente.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/CapaPedido.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/weld/servlet/weld-servlet/2.2.9.Final/weld-servlet-2.2.9.Final-sources.jar!/org/jboss/weld/el/WeldValueExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/6.0/primefaces-6.0-sources.jar!/org/primefaces/context/PrimePartialViewContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/omnifaces/omnifaces/2.5.1/omnifaces-2.5.1.jar!/org/omnifaces/context/OmniPartialViewContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.1.4.RELEASE/spring-security-web-3.1.4.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/weld/servlet/weld-servlet/2.2.9.Final/weld-servlet-2.2.9.Final-sources.jar!/org/jboss/weld/injection/producer/DefaultLifecycleCallbackInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/Pedidos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/GraficoPedidosCriadosBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
+        <state relative-caret-position="182">
+          <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2489#2490#0" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2564#2565#0" expanded="true" />
+            <element signature="e#2621#2622#0" expanded="true" />
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#3136#3137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/CadastroPedidoBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="227" column="16" selection-start-line="227" selection-start-column="16" selection-end-line="227" selection-end-column="16" />
+          <folding>
+            <element signature="e#5675#5676#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/template/pedidos/DadosEntregaPedido.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="8" column="102" selection-start-line="8" selection-start-column="102" selection-end-line="8" selection-end-column="102" />
           <folding />
         </state>
       </provider>

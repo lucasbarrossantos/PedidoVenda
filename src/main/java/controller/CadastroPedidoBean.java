@@ -11,6 +11,7 @@ import util.jsf.FacesUtil;
 import validation.SKU;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.event.Observes;
@@ -222,5 +223,9 @@ public class CadastroPedidoBean implements Serializable {
 
     public void setSku(String sku) {
         this.sku = sku;
+    }
+
+    public Date getDateHoje(){
+        return new Date();
     }
 }

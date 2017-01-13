@@ -14,8 +14,23 @@
     <ui:define name="corpo">
         <h:form id="frm">
 
-            <p:chart type="line" model="#{graficoPedidosCriadosBean.model}" responsive="true" style="height: 400px"
-            styleClass="chart-bubble chart chart-pie-label"/>
+            <p:messages autoUpdate="true" id="msg" />
+
+            <p:panelGrid columns="2" styleClass="ui-noborder">
+                <p:selectOneMenu id="selecione-dia" value="#{graficoPedidosCriadosBean.diaSelecionado}">
+                    <f:selectItem itemLabel="Selecione o intervalo"/>
+                    <f:selectItems value="#{graficoPedidosCriadosBean.dias}" var="dia"
+                                   itemLabel="#{dia} dias" itemValue="#{dia}"/>
+                </p:selectOneMenu>
+
+                <p:commandButton value="Gerar" ajax="false" update="msg grafico"
+                                 action="#{graficoPedidosCriadosBean.carregarGrafico}"/>
+            </p:panelGrid>
+
+            <p:outputLabel id="grafico">
+                <p:chart type="line" model="#{graficoPedidosCriadosBean.model}" responsive="true"
+                         style="height: 400px"/>
+            </p:outputLabel>
 
         </h:form>
 
