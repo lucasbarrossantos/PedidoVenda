@@ -31,10 +31,10 @@
 
                 <p:outputLabel value="Data de criação"/>
                 <h:panelGroup>
-                    <p:calendar size="12" pattern="MM/dd/yyyy" locale="pt"
+                    <p:calendar size="12" pattern="dd/MM/yyyy" locale="pt"
                                 value="#{pesquisaPedidosBean.filtro.dataCriacaoDe}"/>
                     a
-                    <p:calendar size="12" pattern="MM/dd/yyyy" locale="pt"
+                    <p:calendar size="12" pattern="dd/MM/yyyy" locale="pt"
                                 value="#{pesquisaPedidosBean.filtro.dataCriacaoAte}"/>
                 </h:panelGroup>
 
@@ -70,7 +70,7 @@
 
                 <p:column headerText="Data de criação" style="text-align: center; width: 100px">
                     <h:outputText value="#{pedido.dataCriacao}">
-                        <f:convertDateTime pattern="MM/dd/yyyy"/>
+                        <f:convertDateTime pattern="dd/MM/yyyy"/>
                     </h:outputText>
                 </p:column>
 

@@ -30,7 +30,8 @@
                 <p:outputLabel/>
 
                 <p:inputText id="j_username" size="30" requiredMessage="Informe o e-mail" required="true"
-                             value="#{envioClienteEmailBean.email}" label="E-mail" placeholder="e-mail para envio da senha"/>
+                             value="#{envioClienteEmailBean.email}" label="E-mail"
+                             placeholder="E-mail para envio da senha"/>
 
                 <p:outputLabel/>
                 <p:commandButton value="Envir" action="#{envioClienteEmailBean.recuperar}" ajax="false"/>

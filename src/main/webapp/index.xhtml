@@ -5,15 +5,17 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/template/LayoutPadrao.xhtml">
 
+    <f:metadata>
+        <f:viewParam name="dummy"/>
+        <f:event type="preRenderView" listener="#{graficoPedidosCriadosBean.preRender}"/>
+    </f:metadata>
+
     <ui:define name="titulo">Sistema de pedidos de venda</ui:define>
     <ui:define name="corpo">
         <h:form id="frm">
 
-            <br></br>
-            <br></br>
-            <h1>Bem-vindo!</h1>
-            <br></br>
-            <br></br>
+            <p:chart type="line" model="#{graficoPedidosCriadosBean.model}" responsive="true" style="height: 400px"
+            styleClass="chart-bubble chart chart-pie-label"/>
 
         </h:form>
 

@@ -1,19 +1,27 @@
 package repository;
 
 import java.io.Serializable;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import modelo.Pedido;
+import modelo.Usuario;
+import modelo.vo.DataValor;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.Transformers;
+import org.hibernate.type.StandardBasicTypes;
+import org.hibernate.type.Type;
 import repository.filter.PedidoFilter;
 
 public class Pedidos implements Serializable {
@@ -77,4 +85,58 @@ public class Pedidos implements Serializable {
     public Pedido porId(Long id) {
         return this.manager.find(Pedido.class, id);
     }
+
+    @SuppressWarnings({"unchecked"})
+    public Map<Date, BigDecimal> valoresTotaisPorData(Integer numeroDeDias, Usuario criadoPor) {
+        Session session = manager.unwrap(Session.class);
+
+        numeroDeDias -= 1;
+
+        Calendar dataInicial = Calendar.getInstance();
+        dataInicial = DateUtils.truncate(dataInicial, Calendar.DAY_OF_MONTH);
+        dataInicial.add(Calendar.DAY_OF_MONTH, numeroDeDias * -1);
+
+        Map<Date, BigDecimal> resultado = criarMapaVazio(numeroDeDias, dataInicial);
+
+        Criteria criteria = session.createCriteria(Pedido.class);
+
+        // select date(data_criacao) as data, sum(valor_total) as valor
+        // from pedido where data_criacao >= :dataInicial and vendedor_id = :criadoPor
+        // group by date(data_criacao)
+
+        criteria.setProjection(Projections.projectionList()
+                .add(Projections.sqlGroupProjection("date(data_criacao) as data",
+                        "date(data_criacao)", new String[]{"data"},
+                        new Type[]{StandardBasicTypes.DATE}))
+                .add(Projections.sum("valorTotal").as("valor"))
+        )
+                .add(Restrictions.ge("dataCriacao", dataInicial.getTime()));
+
+        if (criadoPor != null) {
+            criteria.add(Restrictions.eq("vendedor", criadoPor));
+        }
+
+        List<DataValor> valoresPorData = criteria
+                .setResultTransformer(Transformers.aliasToBean(DataValor.class)).list();
+
+        for (DataValor dataValor : valoresPorData) {
+            resultado.put(dataValor.getData(), dataValor.getValor());
+        }
+
+        return resultado;
+    }
+
+    private Map<Date, BigDecimal> criarMapaVazio(Integer numeroDeDias,
+                                                 Calendar dataInicial) {
+        dataInicial = (Calendar) dataInicial.clone();
+        Map<Date, BigDecimal> mapaInicial = new TreeMap<>();
+
+        for (int i = 0; i <= numeroDeDias; i++) {
+            mapaInicial.put(dataInicial.getTime(), BigDecimal.ZERO);
+            dataInicial.add(Calendar.DAY_OF_MONTH, 1);
+        }
+
+        return mapaInicial;
+    }
+
 }

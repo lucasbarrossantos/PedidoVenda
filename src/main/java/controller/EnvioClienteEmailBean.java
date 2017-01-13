@@ -3,10 +3,9 @@ package controller;
 import com.outjected.email.api.MailMessage;
 import com.outjected.email.impl.templating.velocity.VelocityTemplate;
 import modelo.Cliente;
-import modelo.Pedido;
 import modelo.Usuario;
 import org.apache.velocity.tools.generic.NumberTool;
-import org.primefaces.context.RequestContext;
+import org.hibernate.validator.constraints.Email;
 import repository.Usuarios;
 import util.jsf.FacesUtil;
 import util.mail.Mailer;
@@ -69,6 +68,7 @@ public class EnvioClienteEmailBean implements Serializable {
         }
     }
 
+    @Email(message = "email inválido")
     public String getEmail() {
         return email;
     }

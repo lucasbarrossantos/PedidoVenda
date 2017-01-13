@@ -30,6 +30,7 @@
     <http pattern="/login.xhtml" security="none"/>
     <http pattern="/Erro.xhtml" security="none"/>
     <http pattern="/RecuperarSenha.xhtml" security="none"/>
+    <http pattern="/testes.xhtml" security="none"/>
 
     <http auto-config="false" use-expressions="true">
 

@@ -12,29 +12,8 @@
 </h:head>
 
 <h:body>
-    <h:form>
+    <h:form id="frm">
 
-        <f:metadata>
-            <f:viewAction action="#{cadastroProdutoBean.inicializar}"/>
-        </f:metadata>
-
-        <p:panelGrid columns="2">
-            <p:outputLabel value="Categoria" for="categoria"/>
-            <p:selectOneMenu id="categoria" style="width: 200px" value="#{cadastroProdutoBean.categoriaPai}">
-                <f:selectItem itemLabel="Selecione a categoria"/>
-                <f:selectItems value="#{cadastroProdutoBean.categoriasRaizes}" var="categoria"
-                               itemLabel="#{categoria.descricao}" itemValue="#{categoria}"/>
-                <p:ajax listener="#{cadastroProdutoBean.carregarSubcategorias}" update="subCategoria"/>
-            </p:selectOneMenu>
-
-            <p:outputLabel value="Subcategoria" for="subCategoria"/>
-            <p:selectOneMenu id="subCategoria" style="width: 200px"
-                             value="#{cadastroProdutoBean.produto.categoria}">
-                <f:selectItem itemLabel="Selecione a subcategoria"/>
-                <f:selectItems value="#{cadastroProdutoBean.subcategorias}" var="subcategoria"
-                               itemValue="#{subcategoria}" itemLabel="#{subcategoria.descricao}"/>
-            </p:selectOneMenu>
-        </p:panelGrid>
 
 
     </h:form>
