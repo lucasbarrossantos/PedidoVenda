@@ -58,4 +58,8 @@ public class Seguranca {
     public boolean isSalvarCadastroCliente(){
         return externalContext.isUserInRole("ADMINISTRADORES") || externalContext.isUserInRole("VENDEDORES");
     }
+
+    public boolean isPodeVerPie(){
+        return externalContext.isUserInRole("ADMINISTRADORES");
+    }
 }

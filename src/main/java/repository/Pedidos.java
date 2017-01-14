@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import modelo.Pedido;
 import modelo.Usuario;
 import modelo.vo.DataValor;
+import modelo.vo.GraficoValorUsuario;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.Criteria;
@@ -139,4 +140,22 @@ public class Pedidos implements Serializable {
         return mapaInicial;
     }
 
+    @SuppressWarnings("unchecked")
+    public Map<String, BigDecimal> vendasDeUsuarios() {
+
+        Map<String, BigDecimal> resultado = new TreeMap<>();
+
+        List<GraficoValorUsuario> valorUsuario;
+
+        valorUsuario = manager.createQuery("select new modelo.vo.GraficoValorUsuario(p.vendedor as usuario, " +
+                "sum(p.valorTotal) as valor) " +
+                "from Pedido p group by p.vendedor", GraficoValorUsuario.class)
+                .getResultList();
+
+        for (GraficoValorUsuario queryResult : valorUsuario) {
+            resultado.put(queryResult.getUsuario().getNome(), queryResult.getValor());
+        }
+
+        return resultado;
+    }
 }

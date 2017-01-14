@@ -14,23 +14,39 @@
     <ui:define name="corpo">
         <h:form id="frm">
 
-            <p:messages autoUpdate="true" id="msg" />
+            <p:messages autoUpdate="true" id="msg"/>
 
-            <p:panelGrid columns="2" styleClass="ui-noborder">
-                <p:selectOneMenu id="selecione-dia" value="#{graficoPedidosCriadosBean.diaSelecionado}">
-                    <f:selectItem itemLabel="Selecione o intervalo"/>
-                    <f:selectItems value="#{graficoPedidosCriadosBean.dias}" var="dia"
-                                   itemLabel="#{dia} dias" itemValue="#{dia}"/>
-                </p:selectOneMenu>
+            <p:tabView style="margin-top: 20px" dynamic="true" effect="fade">
+                <p:tab title="Gráfico de Pedidos criados" ariaLabel="Lucas">
+                    <p:panelGrid columns="2" styleClass="ui-noborder">
+                        <p:selectOneMenu id="selecione-dia" value="#{graficoPedidosCriadosBean.diaSelecionado}">
+                            <f:selectItem itemLabel="Selecione o intervalo"/>
+                            <f:selectItems value="#{graficoPedidosCriadosBean.dias}" var="dia"
+                                           itemLabel="#{dia} dias" itemValue="#{dia}"/>
+                        </p:selectOneMenu>
 
-                <p:commandButton value="Gerar" ajax="false" update="msg grafico"
-                                 action="#{graficoPedidosCriadosBean.carregarGrafico}"/>
-            </p:panelGrid>
+                        <p:commandButton value="Gerar" ajax="false" update="msg grafico"
+                                         action="#{graficoPedidosCriadosBean.carregarGrafico}"/>
+                    </p:panelGrid>
 
-            <p:outputLabel id="grafico">
-                <p:chart type="line" model="#{graficoPedidosCriadosBean.model}" responsive="true"
-                         style="height: 400px"/>
-            </p:outputLabel>
+                    <p:outputLabel id="grafico">
+                        <p:chart type="line" model="#{graficoPedidosCriadosBean.model}" responsive="true"
+                                 style="height: 400px"/>
+                    </p:outputLabel>
+                </p:tab>
+
+                <p:tab title="Gráfico de vendas por usuário" rendered="#{seguranca.podeVerPie}">
+
+                    <p:commandButton value="Visualizar gráfico" update="label-pie" ajax="false"/>
+                    <br/><br/>
+
+                    <p:outputLabel id="label-pie" style="width: 20px; margin-top: 40px">
+                        <p:chart type="pie" model="#{graficoVendasUsuario.model}" responsive="true"
+                                 style="width:400px;height:300px;"/>
+                    </p:outputLabel>
+
+                </p:tab>
+            </p:tabView>
 
         </h:form>
 
