@@ -15,7 +15,7 @@ public class CadastroClienteService implements Serializable {
     private Clientes clientes;
 
     @Transactional
-    public Cliente salvar(Cliente cliente){
+    public Cliente salvar(Cliente cliente) throws NegocioException {
         Cliente cl = this.clientes.porCPF(cliente.getDocumentoReceitaFederal());
 
         if (cl != null && cliente.getId() == null){

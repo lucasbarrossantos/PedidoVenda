@@ -4,6 +4,7 @@ import modelo.Categoria;
 import modelo.Produto;
 import repository.Categorias;
 import service.CadastroProdutoService;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import javax.faces.view.ViewScoped;
@@ -55,10 +56,14 @@ public class CadastroProdutoBean implements Serializable {
             carregarSubcategorias();
     }
 
-    public void salvar() {
-        this.produto = cadastroProdutoService.salvar(this.produto);
-        limpar();
-        FacesUtil.addInfoMessage("Produto salvo com sucesso!");
+    public void salvar() throws NegocioException {
+        try {
+            this.produto = cadastroProdutoService.salvar(this.produto);
+            limpar();
+            FacesUtil.addInfoMessage("Produto salvo com sucesso!");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
     private void limpar() {

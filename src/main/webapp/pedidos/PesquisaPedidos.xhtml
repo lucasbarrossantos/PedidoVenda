@@ -70,7 +70,7 @@
 
                 <p:column headerText="Data de criação" style="text-align: center; width: 100px">
                     <h:outputText value="#{pedido.dataCriacao}">
-                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" locale="pt_BR" timeZone="GMT-03:00"/>
                     </h:outputText>
                 </p:column>
 

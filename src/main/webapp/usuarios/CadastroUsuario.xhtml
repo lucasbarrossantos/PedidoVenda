@@ -12,19 +12,30 @@
         <f:metadata>
             <o:viewParam name="usuario" value="#{cadastroUsuarioBean.usuario}"/>
             <f:viewAction action="#{cadastroUsuarioBean.inicializar}"/>
+
+            <f:event type="preRenderView" listener="#{cadastroUsuarioBean.inicializar}"/>
         </f:metadata>
 
         <h:form id="frm">
+
+            <p:focus id="focus" context="frm"/>
+
             <h1>#{cadastroUsuarioBean.editando ? 'Edição de usuário' : 'Novo usuário'}</h1>
-            <p:messages autoUpdate="true" closable="true" id="msg"/>
+            <p:messages autoUpdate="false" closable="true" id="msg"/>
 
             <p:toolbar style="margin-top: 20px">
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/usuarios/CadastroUsuario"/>
-                    <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroUsuarioBean.salvar}"
-                                     update="@form"/>
+                    <p:commandButton value="Salvar" action="#{cadastroUsuarioBean.salvar}"
+                                     process="@this msg painel gruposTable"
+                                     update="msg focus painel gruposTable"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
+                    <p:commandButton value="Novo grupo" oncomplete="PF('dialog-novo-grupo').show();"
+                                     update="novo-grupo" process="@this" action="#{cadastroGrupoBean.prepararGrupo}">
+
+                        <p:resetInput target="novo-grupo"/>
+                    </p:commandButton>
                     <p:button value="Pesquisar" outcome="/usuarios/PesquisaUsuarios"/>
                 </p:toolbarGroup>
             </p:toolbar>
@@ -32,7 +43,9 @@
             <p:panelGrid id="painel" columns="2" styleClass="ui-noborder" columnClasses="rotulo, campo"
                          style="margin-top: 20px">
                 <p:outputLabel value="Nome" for="nome"/>
-                <p:inputText id="nome" size="50" value="#{cadastroUsuarioBean.usuario.nome}"/>
+                <p:inputText id="nome" size="50" value="#{cadastroUsuarioBean.usuario.nome}">
+                </p:inputText>
+
 
                 <p:outputLabel value="E-mail" for="email"/>
                 <p:inputText id="email" size="50" value="#{cadastroUsuarioBean.usuario.email}"/>
@@ -54,7 +67,7 @@
 
                 <p:commandButton value="Adicionar grupo"
                                  action="#{cadastroUsuarioBean.adicionarGrupoAoUsuario}"
-                                 update="gruposTable" process="@this grupoDeUsuario"/>
+                                 update="frm:msg gruposTable" process="@this grupoDeUsuario" validateClient="true"/>
             </p:panelGrid>
 
             <p:dataTable id="gruposTable" value="#{cadastroUsuarioBean.gruposDoUsuario}" var="grupo"
@@ -87,6 +100,43 @@
                 <p:button value="Não" onclick="PF('confirm-remover-grupo-usuario').hide(); return false;"/>
 
             </p:confirmDialog>
+
+            <p:dialog widgetVar="dialog-novo-grupo" id="novo-grupo" header="Novo grupo" closeOnEscape="true"
+                      modal="true"
+                      resizable="false">
+
+                <h:panelGroup id="painel-novo-grupo">
+
+                    <p:messages id="msgGrupo" autoUpdate="false" closable="true"/>
+
+                    <p:panelGrid columns="2" styleClass="ui-noborder">
+
+                        <p:outputLabel value="Nome" for="nomeGrupo"/>
+                        <p:inputText id="nomeGrupo" size="37" value="#{cadastroGrupoBean.grupo.nome}"
+                                     required="true" requiredMessage="Informe o nome"/>
+
+                        <p:outputLabel value="Descrição" for="descricaoGrupo"/>
+                        <h:panelGroup>
+                            <p:inputTextarea id="descricaoGrupo"
+                                             value="#{cadastroGrupoBean.grupo.descricao}"
+                                             rows="4" cols="40" required="true"
+                                             requiredMessage="Informe a descrição"
+                                             counter="contador" counterTemplate="Restam {0} caracteres"
+                                             maxlength="160"/>
+                            <br/>
+                            <h:outputText id="contador"/>
+                        </h:panelGroup>
+
+                        <p:outputLabel/>
+                        <p:commandButton value="Adicionar" action="#{cadastroGrupoBean.adicionarGrupo}"
+                                         process="painel-novo-grupo"
+                                         update="painel-novo-grupo :frm:grupoDeUsuario"
+                                         oncomplete="if (!args.validationFailed) PF('dialog-novo-grupo').hide();"/>
+
+                    </p:panelGrid>
+                </h:panelGroup>
+
+            </p:dialog>
 
         </h:form>
 

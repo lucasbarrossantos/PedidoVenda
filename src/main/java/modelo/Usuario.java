@@ -3,7 +3,6 @@ package modelo;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -16,8 +15,8 @@ import java.util.List;
 public class Usuario extends EntidadeBase {
 
     @NotBlank(message = "deve ser informado")
-    @Size(max = 60)
-    @Column(nullable = false, length = 60)
+    @Size(max = 25, message = "Quantidade máxima é 25 caracteres! Informe o nome e sobre nome.")
+    @Column(nullable = false, length = 25)
     private String nome;
 
     @NotBlank(message = "deve ser informado")

@@ -3,6 +3,7 @@ package controller;
 import repository.filter.ProdutoFilter;
 import modelo.Produto;
 import repository.Produtos;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import java.io.Serializable;
@@ -30,10 +31,14 @@ public class PesquisaProdutosBean implements Serializable {
         filtro = new ProdutoFilter();
     }
 
-    public void excluir() {
-        produtos.remover(produtoSelecionado);
-        produtosFiltrados.remove(produtoSelecionado);
-        FacesUtil.addInfoMessage("Produto: " + produtoSelecionado.getSku() + " excluído com sucesso.");
+    public void excluir() throws NegocioException {
+        try {
+            produtos.remover(produtoSelecionado);
+            produtosFiltrados.remove(produtoSelecionado);
+            FacesUtil.addInfoMessage("Produto: " + produtoSelecionado.getSku() + " excluído com sucesso.");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
     public void pesquisar() {

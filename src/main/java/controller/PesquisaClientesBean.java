@@ -3,6 +3,7 @@ package controller;
 import repository.filter.ClienteFilter;
 import modelo.Cliente;
 import repository.Clientes;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import javax.faces.view.ViewScoped;
@@ -48,10 +49,14 @@ public class PesquisaClientesBean implements Serializable {
         clientesFiltrados = clientes.filtrados(filtro);
     }
 
-    public void remover() {
-        clientes.remover(clienteSelecionado);
-        clientesFiltrados.remove(clienteSelecionado);
-        FacesUtil.addInfoMessage("Cliente removido com sucesso.");
+    public void remover() throws NegocioException {
+        try {
+            clientes.remover(clienteSelecionado);
+            clientesFiltrados.remove(clienteSelecionado);
+            FacesUtil.addInfoMessage("Cliente removido com sucesso.");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
     /**

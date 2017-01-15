@@ -2,6 +2,7 @@ package controller;
 
 import modelo.Pedido;
 import service.CancelamentoPedidoService;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import javax.enterprise.context.RequestScoped;
@@ -26,11 +27,15 @@ public class CancelamentoPedidoBean implements Serializable {
     @PedidoEdicao
     private Pedido pedido;
 
-    public void cancelarPedido() {
-        this.pedido = cancelamentoPedidoService.cancelar(this.pedido);
-        this.pedidoAlteradoEventEvent.fire(new PedidoAlteradoEvent(this.pedido));
+    public void cancelarPedido() throws NegocioException {
+        try {
+            this.pedido = cancelamentoPedidoService.cancelar(this.pedido);
+            this.pedidoAlteradoEventEvent.fire(new PedidoAlteradoEvent(this.pedido));
 
-        FacesUtil.addInfoMessage("Pedido cancelado com sucesso!");
+            FacesUtil.addInfoMessage("Pedido cancelado com sucesso!");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
 }

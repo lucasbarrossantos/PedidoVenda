@@ -63,7 +63,7 @@ public class Clientes implements Serializable {
     }
 
     @Transactional
-    public void remover(Cliente clienteSelecionado) {
+    public void remover(Cliente clienteSelecionado) throws NegocioException {
         try {
             Cliente cliente = porId(clienteSelecionado.getId());
             manager.remove(cliente);

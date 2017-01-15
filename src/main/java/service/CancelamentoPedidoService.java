@@ -20,7 +20,7 @@ public class CancelamentoPedidoService implements Serializable {
     private EstoqueService estoqueService;
 
     @Transactional
-    public Pedido cancelar(Pedido pedido) {
+    public Pedido cancelar(Pedido pedido) throws NegocioException {
         pedido = this.pedidos.porId(pedido.getId());
 
         if (pedido.isNaoCancelavel()) {

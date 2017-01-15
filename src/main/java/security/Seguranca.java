@@ -55,11 +55,11 @@ public class Seguranca {
         return externalContext.isUserInRole("ADMINISTRADORES") || externalContext.isUserInRole("VENDEDORES");
     }
 
-    public boolean isSalvarCadastroCliente(){
+    public boolean isSalvarCadastroCliente() {
         return externalContext.isUserInRole("ADMINISTRADORES") || externalContext.isUserInRole("VENDEDORES");
     }
 
-    public boolean isPodeVerPie(){
+    public boolean isPodeVerPie() {
         return externalContext.isUserInRole("ADMINISTRADORES");
     }
 }

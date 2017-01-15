@@ -57,13 +57,17 @@ public class CadastroUsuarioBean implements Serializable {
         sugestaoGrupos = grupos.todos();
     }
 
-    public void salvar() {
-        if (gruposDoUsuario.size() > 0)
-            usuario.setGrupos(gruposDoUsuario);
+    public void salvar() throws NegocioException {
+        try {
+            if (gruposDoUsuario.size() > 0)
+                usuario.setGrupos(gruposDoUsuario);
 
-        cadastroUsuarioService.salvar(usuario);
-        limpar();
-        FacesUtil.addInfoMessage("Usuário salvo com sucesso.");
+            cadastroUsuarioService.salvar(usuario);
+            limpar();
+            FacesUtil.addInfoMessage("Usuário salvo com sucesso.");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
     private void limpar() {
@@ -71,11 +75,17 @@ public class CadastroUsuarioBean implements Serializable {
         gruposDoUsuario = new ArrayList<>();
     }
 
-    public void adicionarGrupoAoUsuario() {
-        if (gruposDoUsuario.contains(grupo))
-            throw new NegocioException("O grupo selecionado já foi adicionado ao usuário.");
+    public void adicionarGrupoAoUsuario() throws NegocioException {
+        try {
+            if (gruposDoUsuario.contains(grupo)) {
+                throw new NegocioException("O grupo selecionado já foi adicionado ao usuário.");
+            }
 
-        gruposDoUsuario.add(grupo);
+            gruposDoUsuario.add(grupo);
+
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
     public boolean isEditando() {

@@ -32,6 +32,7 @@ public class EnvioClienteEmailBean implements Serializable {
     @Inject
     private Usuarios usuarios;
 
+    @Email(message = "inválido")
     private String email;
 
     public void enviarCliente() {
@@ -68,7 +69,6 @@ public class EnvioClienteEmailBean implements Serializable {
         }
     }
 
-    @Email(message = "email inválido")
     public String getEmail() {
         return email;
     }

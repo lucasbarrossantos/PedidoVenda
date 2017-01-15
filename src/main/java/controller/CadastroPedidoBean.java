@@ -2,6 +2,9 @@ package controller;
 
 import modelo.*;
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.validator.constraints.NotBlank;
+import org.primefaces.context.RequestContext;
+import org.primefaces.event.SelectEvent;
 import repository.Clientes;
 import repository.Produtos;
 import repository.Usuarios;
@@ -16,6 +19,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -61,18 +65,27 @@ public class CadastroPedidoBean implements Serializable {
      * Métodos
      */
 
-    public void salvar() {
-        if (this.pedido.isSemEnderecoEntrega()) {
-            throw new NegocioException("Informe um endereço de entrega para o pedido!");
-        } else {
-            try {
-                this.pedido.removerItemVazio();
-                this.pedido = cadastroPedidoService.salvar(pedido);
-                FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
-            } finally {
-                this.pedido.adicionarItemVazio();
+    public void salvar() throws NegocioException {
+        try {
+            if (this.pedido.isSemEnderecoEntrega()) {
+                throw new NegocioException("Informe um endereço de entrega para o pedido!");
+            } else {
+                try {
+                    this.pedido.removerItemVazio();
+                    this.pedido = cadastroPedidoService.salvar(pedido);
+                    FacesUtil.addInfoMessage("Pedido salvo com sucesso.");
+                } finally {
+                    this.pedido.adicionarItemVazio();
+                }
             }
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
         }
+    }
+
+    public void clienteSelecionado(SelectEvent event) {
+        pedido.setCliente((Cliente) event.getObject()); // Passa o cliente selecionado
+        RequestContext.getCurrentInstance().update("frm:cliente");
     }
 
     private void limpar() {
@@ -80,10 +93,10 @@ public class CadastroPedidoBean implements Serializable {
         pedido.setEnderecoEntrega(new EnderecoEntrega());
     }
 
-    public void carregarDadosEntrega(){
-        if (this.pedido.getCliente().getEnderecos().size() > 0){
+    public void carregarDadosEntrega() {
+        if (this.pedido.getCliente().getEnderecos().size() > 0) {
             this.pedido.carregarEnderecoRascunho();
-        }else{
+        } else {
             this.pedido.setEnderecoEntrega(new EnderecoEntrega());
         }
     }
@@ -225,7 +238,20 @@ public class CadastroPedidoBean implements Serializable {
         this.sku = sku;
     }
 
-    public Date getDateHoje(){
+    public Date getDateHoje() {
         return new Date();
+    }
+
+    @NotBlank(message = "deve ser informado")
+    public String getNomeCliente() {
+        return pedido.getCliente() == null ? null : pedido.getCliente().getNome();
+    }
+
+    /**
+     * Para driblar o erro do campo readonly do campo nome do cliente
+     *
+     * @param nome
+     */
+    public void setNomeCliente(String nome) {
     }
 }

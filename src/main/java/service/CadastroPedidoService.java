@@ -15,7 +15,7 @@ public class CadastroPedidoService implements Serializable {
     private Pedidos pedidos;
 
     @Transactional
-    public Pedido salvar(Pedido pedido){
+    public Pedido salvar(Pedido pedido) throws NegocioException {
         pedido.recalcularValorTotal();
 
         if (pedido.getItens().isEmpty()){

@@ -20,26 +20,29 @@ public class EmissaoPedidoBean implements Serializable {
     @Inject
     private EmissaoPedidoService emissaoPedidoService;
 
+    public void emitirPedido() throws NegocioException {
+        try {
+            if (!this.pedido.isExistente()) {
+                throw new NegocioException("O Pedido deve ser salvo antes de tentar emitir!");
+            } else {
+                this.pedido.removerItemVazio();
+                try {
+                    this.pedido = this.emissaoPedidoService.emitir(this.pedido);
+                    this.pedidoAlteradoEventEvent.fire(new PedidoAlteradoEvent(this.pedido)); // Passando o novo pedido que acabou de salvar para recuperar na página de CadastroPedido
+                    FacesUtil.addInfoMessage("Pedido emitido com sucesso.");
+                } finally {
+                    this.pedido.adicionarItemVazio();
+                }
+            }
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
+    }
+
     @Inject
     @PedidoEdicao
     private Pedido pedido;
 
     @Inject
     private Event<PedidoAlteradoEvent> pedidoAlteradoEventEvent;
-
-    public void emitirPedido() {
-
-        if (!this.pedido.isExistente()) {
-            throw new NegocioException("O Pedido deve ser salvo antes de tentar emitir!");
-        } else {
-            this.pedido.removerItemVazio();
-            try {
-                this.pedido = this.emissaoPedidoService.emitir(this.pedido);
-                this.pedidoAlteradoEventEvent.fire(new PedidoAlteradoEvent(this.pedido)); // Passando o novo pedido que acabou de salvar para recuperar na página de CadastroPedido
-                FacesUtil.addInfoMessage("Pedido emitido com sucesso.");
-            } finally {
-                this.pedido.adicionarItemVazio();
-            }
-        }
-    }
 }

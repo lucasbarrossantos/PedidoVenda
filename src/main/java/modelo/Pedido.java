@@ -1,8 +1,6 @@
 package modelo;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.math.BigDecimal;
@@ -10,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Stream;
 
 @Entity
 @Table(name = "pedido")
@@ -164,14 +161,14 @@ public class Pedido extends EntidadeBase {
         this.itens = itens;
     }
 
-    @Transactional
+    @Transient
     public boolean isExistente() {
         return isPersisted();
     }
 
     @PrePersist
     void prePersist() {
-        setDataCriacao(new Date());
+        setDataCriacao(Calendar.getInstance().getTime());
     }
 
     @Transient

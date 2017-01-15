@@ -5,6 +5,11 @@
               version="2.2">
 
     <application>
+
+        <action-listener>org.primefaces.application.DialogActionListener</action-listener>
+        <navigation-handler>org.primefaces.application.DialogNavigationHandler</navigation-handler>
+        <view-handler>org.primefaces.application.DialogViewHandler</view-handler>
+
         <message-bundle>config</message-bundle>
 
         <locale-config>
@@ -12,9 +17,10 @@
         </locale-config>
     </application>
 
+    <!-- ExceptionHandler do primeFaces -->
     <factory>
         <exception-handler-factory>
-            util.jsf.JsfExceptionHandlerFactory
+            org.primefaces.application.exceptionhandler.PrimeExceptionHandlerFactory
         </exception-handler-factory>
     </factory>
 

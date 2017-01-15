@@ -5,6 +5,7 @@ import modelo.Endereco;
 import modelo.TipoPessoa;
 import org.primefaces.context.RequestContext;
 import service.CadastroClienteService;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import javax.enterprise.inject.Produces;
@@ -57,12 +58,16 @@ public class CadastroClienteBean implements Serializable {
         this.enderecoSelecionado = null;
     }
 
-    public void salvar() {
-        enderecosRascunho.forEach(e -> e.setCliente(cliente)); // Adicionando o cliente aos endereços
-        cliente.setEnderecos(enderecosRascunho); // Adicionando os endereços ao cliente
-        cliente = cadastroClienteService.salvar(cliente);
-        limpar();
-        FacesUtil.addInfoMessage("Cliente salvo com sucesso.");
+    public void salvar() throws NegocioException {
+        try {
+            enderecosRascunho.forEach(e -> e.setCliente(cliente)); // Adicionando o cliente aos endereços
+            cliente.setEnderecos(enderecosRascunho); // Adicionando os endereços ao cliente
+            cliente = cadastroClienteService.salvar(cliente);
+            limpar();
+            FacesUtil.addInfoMessage("Cliente salvo com sucesso.");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
     private void limpar() {

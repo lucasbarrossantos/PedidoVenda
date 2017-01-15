@@ -41,6 +41,9 @@ public class LoginBean implements Serializable {
         facesContext.responseComplete();
     }
 
+    /**
+     * Capturando o parametro da url
+     */
     public void preRender() {
         if ("true".equals(request.getParameter("invalid"))) {
             FacesUtil.addErrorMessage("Usuário ou senha inválido!");

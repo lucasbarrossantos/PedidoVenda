@@ -3,6 +3,7 @@ package controller;
 import repository.filter.UsuarioFilter;
 import modelo.Usuario;
 import repository.Usuarios;
+import service.NegocioException;
 import util.jsf.FacesUtil;
 
 import javax.faces.view.ViewScoped;
@@ -28,13 +29,17 @@ public class PesquisaUsuariosBean implements Serializable {
         filtro = new UsuarioFilter();
     }
 
-    public void excluirUsuario(){
-        usuarios.remover(usuarioSelecionado);
-        usuariosFiltrados.remove(usuarioSelecionado);
-        FacesUtil.addInfoMessage("Usuário " + usuarioSelecionado.getNome() + " removido com sucesso.");
+    public void excluirUsuario() throws NegocioException {
+        try {
+            usuarios.remover(usuarioSelecionado);
+            usuariosFiltrados.remove(usuarioSelecionado);
+            FacesUtil.addInfoMessage("Usuário " + usuarioSelecionado.getNome() + " removido com sucesso.");
+        } catch (NegocioException e) {
+            FacesUtil.addErrorMessage(e.getMessage());
+        }
     }
 
-    public void pesquisar(){
+    public void pesquisar() {
         usuariosFiltrados = usuarios.filtrados(filtro);
     }
 

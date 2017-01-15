@@ -21,12 +21,21 @@
         <f:event type="preRenderView" listener="${loginBean.preRender}"/>
     </f:metadata>
 
+    <p:ajaxStatus styleClass="ajax-status">
+        <f:facet name="start">
+            <p:graphicImage library="images" name="carregando.gif"/>
+        </f:facet>
+        <f:facet name="complete">
+            <h:outputText/>
+        </f:facet>
+    </p:ajaxStatus>
+
     <div id="login-dialog">
         <h1>Recuperar senha</h1>
-        <h:form id="frm" prependId="false">
+        <h:form id="frm" >
 
             <p:panelGrid columns="2" styleClass="ui-noborder ui-fluid">
-                <p:messages autoUpdate="true" closable="true"/>
+                <p:messages autoUpdate="false" closable="true"/>
                 <p:outputLabel/>
 
                 <p:inputText id="j_username" size="30" requiredMessage="Informe o e-mail" required="true"
@@ -34,7 +43,8 @@
                              placeholder="E-mail para envio da senha"/>
 
                 <p:outputLabel/>
-                <p:commandButton value="Envir" action="#{envioClienteEmailBean.recuperar}" ajax="false"/>
+                <p:commandButton value="Enviar" action="#{envioClienteEmailBean.recuperar}" update="@form"
+                                 validateClient="true"/>
 
                 <p:outputLabel/>
                 <p:link value="Voltar ao login" outcome="/login"/>

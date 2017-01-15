@@ -16,6 +16,8 @@
         </f:metadata>
 
         <h:form id="frm">
+            <p:focus/>
+
             <h1>#{cadastroProdutoBean.editando ? 'Edição de produto' : 'Novo produto'}</h1>
             <p:messages autoUpdate="true" closable="true" id="msg"/>
 
@@ -23,6 +25,7 @@
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/produtos/CadastroProduto"/>
                     <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroProdutoBean.salvar}"
+                                     validateClient="true"
                                      update="@form"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
