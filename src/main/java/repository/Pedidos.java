@@ -32,13 +32,12 @@ public class Pedidos implements Serializable {
     @Inject
     private EntityManager manager;
 
-    @SuppressWarnings("unchecked")
-    public List<Pedido> filtrados(PedidoFilter filtro) {
+    private Criteria criarCriteriaParaFiltro(PedidoFilter filtro) {
         Session session = this.manager.unwrap(Session.class);
 
         Criteria criteria = session.createCriteria(Pedido.class)
-                // fazemos uma associação (join) com cliente e nomeamos como "c"
-                .createAlias("cliente", "c")
+                // fazemos uma associação (join) com cliente e nomeamos como "clicnte"
+                .createAlias("cliente", "cliente")
                 // fazemos uma associação (join) com vendedor e nomeamos como "v"
                 .createAlias("vendedor", "v");
 
@@ -75,7 +74,23 @@ public class Pedidos implements Serializable {
             criteria.add(Restrictions.in("status", filtro.getStatuses()));
         }
 
-        return criteria.addOrder(Order.asc("id")).list();
+        return criteria;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Pedido> filtrados(PedidoFilter filtro) {
+        Criteria criteria = criarCriteriaParaFiltro(filtro);
+
+        criteria.setFirstResult(filtro.getPrimeiroRegistro());
+        criteria.setMaxResults(filtro.getQuantidadeRegistr());
+
+        if (filtro.isAscendente() && filtro.getPropriedadeOrdenacao() != null) {
+            criteria.addOrder(Order.asc(filtro.getPropriedadeOrdenacao()));
+        } else if (filtro.getPropriedadeOrdenacao() != null){
+            criteria.addOrder(Order.desc(filtro.getPropriedadeOrdenacao()));
+        }
+
+        return criteria.list();
     }
 
     public Pedido guardar(Pedido pedido) {
@@ -157,5 +172,11 @@ public class Pedidos implements Serializable {
         }
 
         return resultado;
+    }
+
+    public int quantidadeFiltrados(PedidoFilter filtro) {
+        Criteria criteria = criarCriteriaParaFiltro(filtro);
+        criteria.setProjection(Projections.rowCount());
+        return ((Number) criteria.uniqueResult()).intValue();
     }
 }
