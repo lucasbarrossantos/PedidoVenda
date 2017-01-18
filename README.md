@@ -1,6 +1,6 @@
 # Pedido Venda
 
-Para excecutar o projeto siga os passos: 
+Para executar o projeto siga os passos: 
 
 - 1 <strong>[Você precisará usar [git](https://git-for-windows.github.io/) neste passo] </strong> 
 Clone o repositório da biblioteca: <br/>
