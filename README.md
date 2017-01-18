@@ -23,5 +23,7 @@ que é a versão atual do projeto que foi clonado, ficando assim:
 </dependency>
 ```
 
-#Autor
+# Autor
 <h2> Lucas Barros Santos </h2>
+
+<strong> Contato: </strong> lucas-barros28@hotmail.com / lucas.barros@facape.br <br/>+55 (87)9 9642-1975  
