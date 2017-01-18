@@ -1,5 +1,4 @@
 # Pedido Venda
-<br/>
 
 Para excecutar o projeto siga os passos: 
 
