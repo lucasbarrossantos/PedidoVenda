@@ -20,7 +20,7 @@ public class TesteUsuario {
 
         Usuario usuario = new Usuario();
         usuario.setNome("Lucas Barros");
-        usuario.setEmail("lucas@barros");
+        usuario.setEmail("lucas-barros28@hotmail.com");
         usuario.setSenha("123");
 
 

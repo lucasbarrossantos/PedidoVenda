@@ -43,6 +43,7 @@
 
         <intercept-url pattern="/produtos/**" access="hasAnyRole('ADMINISTRADORES')"/>
         <intercept-url pattern="/clientes/**" access="hasAnyRole('ADMINISTRADORES', 'VENDEDORES', 'AUXILIARES')"/>
+        <intercept-url pattern="/relatorios/**" access="hasAnyRole('ADMINISTRADORES', 'VENDEDORES', 'AUXILIARES')"/>
         <intercept-url pattern="/usuarios/**" access="hasAnyRole('ADMINISTRADORES')"/>
 
         <intercept-url pattern="/AcessoNegado.xhtml" access="isAuthenticated()"/>

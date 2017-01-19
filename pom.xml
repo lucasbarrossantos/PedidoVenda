@@ -199,6 +199,21 @@
             <version>3.1.4.RELEASE</version>
         </dependency>
 
+        <!-- Jasper -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>6.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 
