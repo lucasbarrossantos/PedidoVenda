@@ -26,7 +26,6 @@ public class FotoProdutoBean implements Serializable {
             byte[] imagem = this.produtoSelecionado.getFoto();
             content = new DefaultStreamedContent(new ByteArrayInputStream(imagem), "image/jpg", "produto.jpg");
         }
-
         return content;
     }
 

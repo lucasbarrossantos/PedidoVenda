@@ -7,20 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b39fe0-fdd5-45d1-8a1e-c95783e8eb68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PedidoVenda.iml" afterPath="$PROJECT_DIR$/PedidoVenda.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/CadastroProdutoBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/CadastroProdutoBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modelo/Produto.java" afterPath="$PROJECT_DIR$/src/main/java/modelo/Produto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/produtos/CadastroProduto.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/produtos/CadastroProduto.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/produtos/PesquisaProdutos.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/produtos/PesquisaProdutos.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java" afterPath="$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,8 +49,8 @@
       <file leaf-file-name="FotoProdutoBean.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="433">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,11 +131,11 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/RelatorioPedidosEmitidosBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/Produto.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/produtos/CadastroProduto.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/produtos/PesquisaProdutos.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/sistema.css" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CadastroProdutoBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java" />
       </list>
     </option>
   </component>
@@ -816,7 +804,7 @@
       <workItem from="1484790377598" duration="5031000" />
       <workItem from="1484832049302" duration="1445000" />
       <workItem from="1484863866545" duration="1159000" />
-      <workItem from="1484869062832" duration="3391000" />
+      <workItem from="1484869062832" duration="3632000" />
     </task>
     <task id="LOCAL-00001" summary="Inserindo Hibernate-Validator no projeto">
       <created>1483048238918</created>
@@ -1077,11 +1065,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484795375342</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Adicionando imagem ao produto">
+      <created>1484872557470</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1484872557470</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397202000" />
+    <option name="totallyTimeSpent" value="397443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1152,7 +1147,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Criando um produtor CDI para injetar EntityManager" />
     <MESSAGE value="Implementando o serviço de cadastro de produto" />
     <MESSAGE value="Implementando a exclusão de produtos" />
     <MESSAGE value="Implementando o cadastro de usuário&#10;Servive CadastroUsuarioService&#10;Repository Usuarios&#10;" />
@@ -1177,7 +1171,8 @@
     <MESSAGE value="Exceptionhandler do primefaces&#10;Foco de formulários&#10;validações client/side" />
     <MESSAGE value="Carregamento lazy em DataTable" />
     <MESSAGE value="Criação de relatório com Jasper Studio - Relatório de pedidos emitidos filtrados por data de criação" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação de relatório com Jasper Studio - Relatório de pedidos emitidos filtrados por data de criação" />
+    <MESSAGE value="Adicionando imagem ao produto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando imagem ao produto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1589,8 +1584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/FotoProdutoBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
