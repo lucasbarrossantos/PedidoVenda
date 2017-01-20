@@ -27,3 +27,8 @@ que é a versão atual do projeto que foi clonado, ficando assim:
 <h2> Lucas Barros Santos </h2>
 
 <strong> Contato: </strong> lucas-barros28@hotmail.com / lucas.barros@facape.br <br/>+55 (87)9 9642-1975  
+
+# Descrição
+
+Projeto realizado com base no curso <strong> Sistemas Comerciais Java EE com CDI, JPA e PrimeFaces </strong> [AlgaWorks](http://www.algaworks.com)
+ <h6> Por Thiago Faria de Andrade </h6>

@@ -8,6 +8,12 @@
 <h:head>
     <title>Seleção de cliente</title>
 
+    <style type="text/css">
+        .ui-widget {
+            font-size: 90%;
+        }
+    </style>
+
     <h:outputStylesheet library="css" name="sistema.css"/>
 </h:head>
 <h:body>
@@ -19,6 +25,8 @@
             <p:commandButton value="Pesquisar" action="#{selecaoClienteBean.pesquisar}"
                              update="@form"/>
         </div>
+
+        <i id="customheader" class="fa fa-fw fa-car" style="display:none"></i>
 
         <p:dataTable value="#{selecaoClienteBean.clientesFiltrados}" var="cliente"
                      style="margin-top: 20px" emptyMessage="Nenhum cliente encontrado." rows="10"
