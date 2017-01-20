@@ -15,7 +15,7 @@
             <f:viewAction action="#{cadastroProdutoBean.inicializar}"/>
         </f:metadata>
 
-        <h:form id="frm">
+        <h:form id="frm" enctype="multipart/form-data">
             <p:focus/>
 
             <h1>#{cadastroProdutoBean.editando ? 'Edição de produto' : 'Novo produto'}</h1>
@@ -25,7 +25,7 @@
                 <p:toolbarGroup>
                     <p:button value="Novo" outcome="/produtos/CadastroProduto"/>
                     <p:commandButton value="Salvar" id="btnSalvar" action="#{cadastroProdutoBean.salvar}"
-                                     validateClient="true"
+                                     validateClient="true" ajax="false"
                                      update="@form"/>
                 </p:toolbarGroup>
                 <p:toolbarGroup align="right">
@@ -66,7 +66,25 @@
                              value="#{cadastroProdutoBean.produto.quantidadeEstoque}">
                     <f:convertNumber maxIntegerDigits="2" maxFractionDigits="2"/>
                 </p:inputText>
+
+                <p:outputLabel value="Foto" for="foto"/>
+                <h:panelGroup>
+                    <p:commandButton rendered="#{cadastroProdutoBean.produto.hasFoto()}" icon="ui-icon-extlink"
+                                     title="Imagem"
+                                     process="@this" oncomplete="PF('mostraImagem').show()"
+                                     update=":frm:mostraImagemDialog">
+                        <f:setPropertyActionListener target="#{fotoProdutoBean.produtoSelecionado}"
+                                                     value="#{cadastroProdutoBean.produto}"/>
+                    </p:commandButton>
+                    <p:fileUpload id="foto" value="#{cadastroProdutoBean.fotoProduto}" mode="simple"/>
+                </h:panelGroup>
+
             </p:panelGrid>
+
+            <p:dialog id="mostraImagemDialog" header="Imagem" widgetVar="mostraImagem" modal="true"
+                      closeOnEscape="true">
+                <p:graphicImage value="#{fotoProdutoBean.foto}" cache="false"/>
+            </p:dialog>
 
         </h:form>
 

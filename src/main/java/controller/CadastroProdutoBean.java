@@ -2,6 +2,7 @@ package controller;
 
 import modelo.Categoria;
 import modelo.Produto;
+import org.primefaces.model.UploadedFile;
 import repository.Categorias;
 import service.CadastroProdutoService;
 import service.NegocioException;
@@ -27,6 +28,7 @@ public class CadastroProdutoBean implements Serializable {
     @Inject
     private CadastroProdutoService cadastroProdutoService;
 
+    private UploadedFile fotoProduto;
 
     private Produto produto;
     private Categoria categoriaPai;
@@ -58,6 +60,12 @@ public class CadastroProdutoBean implements Serializable {
 
     public void salvar() throws NegocioException {
         try {
+            //Verifica se tem imagem e atribui
+            if (this.fotoProduto != null && this.fotoProduto.getContents() != null
+                    && this.fotoProduto.getContents().length > 0) {
+                this.produto.setFoto(this.fotoProduto.getContents());
+            }
+
             this.produto = cadastroProdutoService.salvar(this.produto);
             limpar();
             FacesUtil.addInfoMessage("Produto salvo com sucesso!");
@@ -110,5 +118,13 @@ public class CadastroProdutoBean implements Serializable {
 
     public List<Categoria> getSubcategorias() {
         return subcategorias;
+    }
+
+    public UploadedFile getFotoProduto() {
+        return fotoProduto;
+    }
+
+    public void setFotoProduto(UploadedFile fotoProduto) {
+        this.fotoProduto = fotoProduto;
     }
 }

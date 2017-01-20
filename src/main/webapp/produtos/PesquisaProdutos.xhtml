@@ -57,6 +57,13 @@
                     <h:outputText value="#{produto.quantidadeEstoque}"/>
                 </p:column>
 
+                <p:column headerText="Imagem" style="width: 100px; text-align: center">
+                    <p:commandButton icon="ui-icon-extlink" title="Imagem" process="@this"
+                                     oncomplete="PF('mostraImagem').show()" update=":frmPesquisa:mostraImagemDialog">
+                        <f:setPropertyActionListener target="#{fotoProdutoBean.produtoSelecionado}" value="#{produto}"/>
+                    </p:commandButton>
+                </p:column>
+
                 <p:column style="width: 70px; text-align: center">
                     <p:button icon="ui-icon-pencil" title="Editar" outcome="/produtos/CadastroProduto">
                         <f:param name="produto" value="#{produto.id}"/>
@@ -81,6 +88,12 @@
                 <p:button value="Não" onclick="PF('confirmExclusaoProduto').hide(); return false;"/>
 
             </p:confirmDialog>
+
+            <p:dialog id="mostraImagemDialog" header="Imagem" widgetVar="mostraImagem" modal="true"
+                      closeOnEscape="true">
+                <h:outputText value="Nenhuma imagem cadastrada" rendered="#{fotoProdutoBean.foto == null}"/>
+                <p:graphicImage value="#{fotoProdutoBean.foto}" cache="false"/>
+            </p:dialog>
 
         </h:form>
 

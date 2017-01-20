@@ -39,6 +39,9 @@ public class Produto extends EntidadeBase {
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 
+    @Lob
+    private byte[] foto;
+
     public String getNome() {
         return nome;
     }
@@ -101,6 +104,14 @@ public class Produto extends EntidadeBase {
         this.setQuantidadeEstoque(novaQuantidade);
     }
 
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
     /**
      * Devolvendo a quantidade para o estoque
      *
@@ -108,5 +119,9 @@ public class Produto extends EntidadeBase {
      */
     public void adicionarEstoque(Integer quantidade) {
         this.setQuantidadeEstoque(getQuantidadeEstoque() + quantidade);
+    }
+
+    public boolean hasFoto() {
+        return this.foto != null && this.foto.length > 0;
     }
 }
