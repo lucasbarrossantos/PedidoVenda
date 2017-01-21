@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         .formLogin()
             .loginPage("/login.xhtml")
-            .failureForwardUrl("/login.xhtml?invalid=true")
+            .failureUrl("/login.xhtml?invalid=true")
             .and()
 
         .logout()

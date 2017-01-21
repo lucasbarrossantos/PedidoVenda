@@ -33,11 +33,9 @@
 
                 <p:outputLabel/>
 
-                <p:password size="30" id="password" feedback="true"
+                <p:password size="30" id="password"
                             label="Senha" requiredMessage="Informe a senha"
-                            placeholder="Senha"
-                            required="true" promptLabel="Digite a senha" weakLabel="Fraca" goodLabel="Boa"
-                            strongLabel="Forte" validatorMessage="Senhas não conferem!" inline="true"/>
+                            placeholder="Senha" required="true"/>
                 <p:outputLabel/>
 
                 <p:commandButton value="Entrar" action="#{loginBean.login}" ajax="false"/>
