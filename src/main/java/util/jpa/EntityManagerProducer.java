@@ -1,5 +1,7 @@
 package util.jpa;
 
+import org.hibernate.Session;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
@@ -19,8 +21,8 @@ public class EntityManagerProducer {
 
     @Produces
     @RequestScoped
-    public EntityManager createEntityManager() {
-        return factory.createEntityManager();
+    public Session createEntityManager() {
+        return (Session) factory.createEntityManager();
     }
 
     /**
@@ -28,7 +30,7 @@ public class EntityManagerProducer {
      * Quando a requisição terminar, então, o método é chamado e o manager é fechado!
      * @param manager
      */
-    public void closeEntityManager(@Disposes EntityManager manager) {
+    public void closeEntityManager(@Disposes Session manager) {
         manager.close();
     }
 }

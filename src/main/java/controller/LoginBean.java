@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.Serializable;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -33,14 +32,6 @@ public class LoginBean implements Serializable {
 
     private String email;
 
-    public void login() throws ServletException, IOException {
-        // Dispachando a requisição para outro lugar
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/login.xhtml");
-        dispatcher.forward(request, response);
-
-        facesContext.responseComplete();
-    }
-
     /**
      * Capturando o parametro da url
      */
@@ -48,6 +39,14 @@ public class LoginBean implements Serializable {
         if ("true".equals(request.getParameter("invalid"))) {
             FacesUtil.addErrorMessage("Usuário ou senha inválido!");
         }
+    }
+
+    public void login() throws ServletException, IOException {
+        // Dispachando a requisição para outro lugar
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/login.xhtml");
+        dispatcher.forward(request, response);
+
+        facesContext.responseComplete();
     }
 
     public String getEmail() {

@@ -33,7 +33,8 @@ public class Pedidos implements Serializable {
     private EntityManager manager;
 
     private Criteria criarCriteriaParaFiltro(PedidoFilter filtro) {
-        Session session = this.manager.unwrap(Session.class);
+        //Session session = this.manager.unwrap(Session.class);
+        Session session = (Session) manager; // hibernate 5.2.x
 
         Criteria criteria = session.createCriteria(Pedido.class)
                 // fazemos uma associação (join) com cliente e nomeamos como "clicnte"
