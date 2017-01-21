@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Locale;
+import java.util.Properties;
 
 @Named
 @RequestScoped
@@ -40,11 +41,11 @@ public class EnvioClienteEmailBean implements Serializable {
 
         message.to(this.cliente.getEmail())
                 .subject("Olá " + this.cliente.getNome())
-                .charset("utf-8")
                 .bodyHtml(new VelocityTemplate(getClass().getResourceAsStream("/emails/cliente.template")))
                 .put("cliente", this.cliente) // Passando um objeto para o template do VelocityTemplate
                 .put("numberTool", new NumberTool())
                 .put("locale", new Locale("pt", "BR"))
+                .charset("utf-8")
                 .send();
 
         FacesUtil.addInfoMessage("Os dados do cliente " + cliente.getNome() +

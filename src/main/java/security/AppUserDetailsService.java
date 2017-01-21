@@ -26,6 +26,8 @@ public class AppUserDetailsService implements UserDetailsService {
 
         if (usuario != null) {
             user = new UsuarioSistema(usuario, getGrupos(usuario));
+        }else {
+            throw new UsernameNotFoundException("Usuário não encontrado.");
         }
 
         return user;

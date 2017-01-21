@@ -28,12 +28,12 @@
                 <p:messages autoUpdate="true" closable="true"/>
                 <p:outputLabel/>
 
-                <p:inputText id="j_username" size="30" requiredMessage="Informe o e-mail" required="true"
+                <p:inputText id="username" size="30" requiredMessage="Informe o e-mail" required="true"
                              value="#{loginBean.email}" label="E-mail" placeholder="E-mail"/>
 
                 <p:outputLabel/>
 
-                <p:password size="30" id="j_password" feedback="true" match="confirmarSenha"
+                <p:password size="30" id="password" feedback="true" match="confirmarSenha"
                             label="Senha" requiredMessage="Informe a senha"
                             placeholder="Senha"
                             required="true" promptLabel="Digite a senha" weakLabel="Fraca" goodLabel="Boa"
@@ -45,7 +45,7 @@
                             label="Senha"/>
 
                 <p:outputLabel/>
-                <p:commandButton value="Login" action="#{loginBean.login}" ajax="false"/>
+                <p:commandButton value="Entrar" action="#{loginBean.login}" ajax="false"/>
 
                 <h:panelGroup/>
 

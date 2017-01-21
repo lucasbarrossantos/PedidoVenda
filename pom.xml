@@ -202,17 +202,17 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>3.1.4.RELEASE</version>
+            <version>4.1.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>3.1.4.RELEASE</version>
+            <version>4.1.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>3.1.4.RELEASE</version>
+            <version>4.1.3.RELEASE</version>
         </dependency>
 
         <!-- Jasper -->
@@ -223,12 +223,14 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
             <version>6.0.0</version>
             <scope>compile</scope>
         </dependency>
+        -->
 
 
     </dependencies>
