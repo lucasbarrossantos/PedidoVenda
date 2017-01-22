@@ -104,7 +104,7 @@ public class Produtos implements Serializable {
     }
 
     public List<Produto> porNome(String nomeProduto) {
-        return this.manager.createQuery("from Produto where upper(nome) like :nome", Produto.class)
+        return this.manager.createNamedQuery("Cliente.porNome", Produto.class)
                 .setParameter("nome", "%" + nomeProduto.toUpperCase() + "%")
                 .getResultList();
     }

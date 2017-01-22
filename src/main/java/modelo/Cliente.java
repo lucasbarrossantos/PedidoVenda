@@ -14,6 +14,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "cliente")
+@NamedQuery(name = "Cliente.porNome",
+        query = "from Cliente where upper(nome) like :nome")
 public class Cliente extends EntidadeBase {
 
     @NotBlank(message = "deve ser informado")
@@ -104,7 +106,7 @@ public class Cliente extends EntidadeBase {
     }
 
     @Transient
-    public boolean isEditando(){
+    public boolean isEditando() {
         return !this.isExistente();
     }
 
