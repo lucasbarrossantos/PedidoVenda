@@ -3,7 +3,6 @@ package repository;
 
 import modelo.Categoria;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.criterion.MatchMode;
 import repository.filter.ProdutoFilter;
 import modelo.Produto;
 import service.NegocioException;
@@ -80,31 +79,12 @@ public class Produtos implements Serializable {
         return query.getResultList();
     }
 
-    /*
-    @SuppressWarnings("unchecked")
-    public List<Produto> filtrados(ProdutoFilter filtro) {
-        Session session = manager.unwrap(Session.class);
-        Criteria criteria = session.createCriteria(Produto.class);
-
-        if (StringUtils.isNotBlank(filtro.getSku())) {
-            criteria.add(Restrictions.eq("sku", filtro.getSku()));
-        }
-
-        if (StringUtils.isNotBlank(filtro.getNome())) {
-            criteria.add(Restrictions.ilike("nome", filtro.getNome(), MatchMode.ANYWHERE));
-        }
-
-        return criteria.addOrder(Order.asc("nome")).list();
-    }
-
-    */
-
     public Produto porId(Long id) {
         return manager.find(Produto.class, id);
     }
 
     public List<Produto> porNome(String nomeProduto) {
-        return this.manager.createNamedQuery("Cliente.porNome", Produto.class)
+        return this.manager.createNamedQuery("Produto.porNome", Produto.class)
                 .setParameter("nome", "%" + nomeProduto.toUpperCase() + "%")
                 .getResultList();
     }

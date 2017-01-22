@@ -32,10 +32,6 @@ public class Clientes implements Serializable {
     @Inject
     private EntityManager manager;
 
-    public List<Cliente> todos() {
-        return manager.createQuery("from Cliente ", Cliente.class).getResultList();
-    }
-
     public Cliente guardar(Cliente cliente) {
         return manager.merge(cliente);
     }

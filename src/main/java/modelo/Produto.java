@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "produto")
+@NamedQuery(name = "Produto.porNome", query = "from Produto where upper(nome) like :nome")
 public class Produto extends EntidadeBase {
 
     @Column(nullable = false, length = 80)

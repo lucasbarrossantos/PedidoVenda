@@ -16,7 +16,13 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuarios implements Serializable {
@@ -30,20 +36,24 @@ public class Usuarios implements Serializable {
         return manager.merge(usuario);
     }
 
-    @SuppressWarnings("unchecked")
     public List<Usuario> filtrados(UsuarioFilter filtro) {
-        Session session = manager.unwrap(Session.class);
-        Criteria criteria = session.createCriteria(Usuario.class);
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Usuario> criteriaQuery = builder.createQuery(Usuario.class);
+        List<Predicate> predicates = new ArrayList<>();
+        Root<Usuario> usuarioRoot = criteriaQuery.from(Usuario.class);
 
         if (StringUtils.isNotBlank(filtro.getNome())) {
-            criteria.add(Restrictions.ilike("nome", filtro.getNome(), MatchMode.ANYWHERE));
+            predicates.add(builder.like(usuarioRoot.get("nome"), "%" + filtro.getNome() + "%"));
         }
 
         if (StringUtils.isNotBlank(filtro.getEmail())) {
-            criteria.add(Restrictions.ilike("email", filtro.getEmail(), MatchMode.ANYWHERE));
+            predicates.add(builder.like(usuarioRoot.get("email"), "%" + filtro.getEmail() + "%"));
         }
 
-        return criteria.addOrder(Order.asc("nome")).list();
+        criteriaQuery.select(usuarioRoot);
+        criteriaQuery.where(predicates.toArray(new Predicate[0]));
+        TypedQuery<Usuario> query = manager.createQuery(criteriaQuery);
+        return query.getResultList();
     }
 
     @Transactional
