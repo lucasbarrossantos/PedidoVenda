@@ -1,24 +1,24 @@
-INSERT INTO `pedido-venda`.categoria (descricao) VALUES ('Informática');
-INSERT INTO `pedido-venda`.categoria (descricao) VALUES ('Eletrodomésticos');
-INSERT INTO `pedido-venda`.categoria (descricao) VALUES ('Móveis');
+INSERT INTO `pedido-venda`.categoria (id, descricao) VALUES (1, 'Informática');
+INSERT INTO `pedido-venda`.categoria (id, descricao) VALUES (2, 'Eletrodomésticos');
+INSERT INTO `pedido-venda`.categoria (id, descricao) VALUES (3, 'Móveis');
 
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Computadores', 1);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Notebooks', 1);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Tablets', 1);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Monitores', 1);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Impressoras', 1);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Acessórios', 1);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (4, 'Computadores', 1);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (5, 'Notebooks', 1);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (6, 'Tablets', 1);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (7, 'Monitores', 1);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (8, 'Impressoras', 1);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (9, 'Acessórios', 1);
 
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Ar condicionados', 2);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Fogões', 2);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Fornos elétricos', 2);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Microondas', 2);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Refrigeradores', 2);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (10, 'Ar condicionados', 2);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (11, 'Fogões', 2);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (12, 'Fornos elétricos', 2);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (13, 'Microondas', 2);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (14, 'Refrigeradores', 2);
 
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Cadeiras', 3);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Mesas', 3);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Racks', 3);
-INSERT INTO `pedido-venda`.categoria (descricao, categoria_pai_id) VALUES ('Sofás', 3);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (15, 'Cadeiras', 3);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (16, 'Mesas', 3);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (17, 'Racks', 3);
+INSERT INTO `pedido-venda`.categoria (id, descricao, categoria_pai_id) VALUES (18, 'Sofás', 3);
 
 INSERT INTO `pedido-venda`.usuario (id, email, nome, senha) VALUES (1, 'lucas@barros', 'Lucas Barros', '123');
 INSERT INTO `pedido-venda`.usuario (id, email, nome, senha) VALUES (2, 'joane@amorim', 'Joane Amorim', '123');

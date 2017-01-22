@@ -33,12 +33,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
           .authorizeRequests()
                     .antMatchers("/login.xhtml", "/Erro.xhtml", "/javax.faces.resource/**").permitAll()
-                    .antMatchers("/index.xhtml", "/AcessoNegado.xhtml", "/dialogos/**").authenticated()
-                    .antMatchers("/pedidos/**").hasAnyAuthority("VENDEDORES", "AUXILIARES", "ADMINISTRADORES")
-                    .antMatchers("/produtos/**").hasAnyAuthority("ADMINISTRADORES")
-                    .antMatchers("/clientes/**").hasAnyAuthority("ADMINISTRADORES", "VENDEDORES", "AUXILIARES")
-                    .antMatchers("/relatorios/**").hasAnyAuthority("ADMINISTRADORES", "VENDEDORES")
-                    .antMatchers("/usuarios/**").hasAnyAuthority("ADMINISTRADORES")
+                    .antMatchers("/index.xhtml", "/AcessoNegado.xhtml", "/dialogos/**").authenticated() // Precisa estar autenticado
+                    .antMatchers("/pedidos/**").hasAnyRole("VENDEDORES", "AUXILIARES", "ADMINISTRADORES") // Precisa ter permissão de...
+                    .antMatchers("/produtos/**").hasAnyRole("ADMINISTRADORES")
+                    .antMatchers("/clientes/**").hasAnyRole("ADMINISTRADORES", "VENDEDORES", "AUXILIARES")
+                    .antMatchers("/relatorios/**").hasAnyRole("ADMINISTRADORES", "VENDEDORES")
+                    .antMatchers("/usuarios/**").hasAnyRole("ADMINISTRADORES")
                     .and()
 
         .formLogin()

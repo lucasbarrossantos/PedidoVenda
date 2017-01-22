@@ -26,7 +26,7 @@ public class AppUserDetailsService implements UserDetailsService {
 
         if (usuario != null) {
             user = new UsuarioSistema(usuario, getGrupos(usuario));
-        }else {
+        } else {
             throw new UsernameNotFoundException("Usuário não encontrado.");
         }
 
@@ -37,7 +37,7 @@ public class AppUserDetailsService implements UserDetailsService {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
         for (Grupo grupo : usuario.getGrupos()) {
-            authorities.add(new SimpleGrantedAuthority(grupo.getNome().toUpperCase().trim()));
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + grupo.getNome().toUpperCase()));
         }
 
         return authorities;
