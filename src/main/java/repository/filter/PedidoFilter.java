@@ -19,7 +19,7 @@ public class PedidoFilter implements Serializable {
     private StatusPedido[] statuses;
 
     private int primeiroRegistro;
-    private int quantidadeRegistr;
+    private int quantidadeRegistros;
     private String propriedadeOrdenacao;
     private boolean ascendente;
 
@@ -87,12 +87,12 @@ public class PedidoFilter implements Serializable {
         this.primeiroRegistro = primeiroRegistro;
     }
 
-    public int getQuantidadeRegistr() {
-        return quantidadeRegistr;
+    public int getQuantidadeRegistros() {
+        return quantidadeRegistros;
     }
 
-    public void setQuantidadeRegistr(int quantidadeRegistr) {
-        this.quantidadeRegistr = quantidadeRegistr;
+    public void setQuantidadeRegistros(int quantidadeRegistros) {
+        this.quantidadeRegistros = quantidadeRegistros;
     }
 
     public String getPropriedadeOrdenacao() {

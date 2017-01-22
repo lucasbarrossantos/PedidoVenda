@@ -42,7 +42,7 @@ public class PesquisaPedidosBean implements Serializable {
             public List<Pedido> load(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters) {
 
                 filtro.setPrimeiroRegistro(first);
-                filtro.setQuantidadeRegistr(pageSize);
+                filtro.setQuantidadeRegistros(pageSize);
                 filtro.setPropriedadeOrdenacao(sortField);
                 filtro.setAscendente(SortOrder.ASCENDING.equals(sortOrder));
                 setRowCount(pedidos.quantidadeFiltrados(filtro));
