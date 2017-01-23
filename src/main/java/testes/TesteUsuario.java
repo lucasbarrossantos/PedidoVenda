@@ -19,9 +19,9 @@ public class TesteUsuario {
 
 
         Usuario usuario = new Usuario();
-        usuario.setNome("Lucas Barros");
-        usuario.setEmail("lucas-barros28@hotmail.com");
-        usuario.setSenha("123");
+        usuario.setNome("Pérola");
+        usuario.setEmail("lulua@amanda");
+        usuario.setSenha("amandinha");
 
 
         manager.persist(usuario);
